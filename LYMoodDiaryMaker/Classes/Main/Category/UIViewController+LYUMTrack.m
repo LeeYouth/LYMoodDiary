@@ -7,8 +7,8 @@
 //
 
 #import "UIViewController+LYUMTrack.h"
-#import <UMAnalytics/MobClick.h>
 #import <objc/runtime.h>
+//#import <UMAnalytics/MobClick.h>
 
 @implementation UIViewController (LYUMTrack)
 
@@ -49,8 +49,8 @@
     
     if ([LYServerConfig LYConfigEnv] == LYServerEnvProduct) {
         //正式环境，打开友盟页面统计
-        NSString *controllerName = [NSString stringWithFormat:@"%@",[[self class] description]];
-        [MobClick beginLogPageView:controllerName];
+//        NSString *controllerName = [NSString stringWithFormat:@"%@",[[self class] description]];
+//        [MobClick beginLogPageView:controllerName];
     }
     
     LYLog(@"LY_viewWillAppear = %@",NSStringFromClass([self class]));
@@ -62,8 +62,8 @@
     
     if ([LYServerConfig LYConfigEnv] == LYServerEnvProduct) {
         //正式环境，打开友盟页面统计
-        NSString *controllerName = [NSString stringWithFormat:@"%@",[[self class] description]];
-        [MobClick endLogPageView:controllerName];
+//        NSString *controllerName = [NSString stringWithFormat:@"%@",[[self class] description]];
+//        [MobClick endLogPageView:controllerName];
     }
     
     LYLog(@"LY_viewWillDisappear = %@",NSStringFromClass([self class]));

@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UMShare/UMShare.h>
+//#import <UMShare/UMShare.h>
 
 @interface LYShareTool : NSObject
 
 /** 分享一张图片到三方平台 */
-+ (void)shareImage:(UIImage *)image
-    toPlatformType:(UMSocialPlatformType)platformType;
+//+ (void)shareImage:(UIImage *)image
+//    toPlatformType:(UMSocialPlatformType)platformType;
 
 @end

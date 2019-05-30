@@ -1,5 +1,5 @@
 
-target 'LYWeChatMaker' do
+target 'LYMoodDiaryMaker' do
     
 
     pod 'IQKeyboardManager',:inhibit_warnings => true
@@ -7,16 +7,8 @@ target 'LYWeChatMaker' do
     pod 'SDWebImage', '3.7.3’,:inhibit_warnings => true
     pod 'MBProgressHUD', '~> 1.0.0',:inhibit_warnings => true
     pod 'Masonry',:inhibit_warnings => true
-    pod 'TZImagePickerController',:inhibit_warnings => true
     pod 'MSWeakTimer', '~> 1.1.0',:inhibit_warnings => true
-    pod 'THLabel', '~> 1.4.0',:inhibit_warnings => true
 
-    pod 'UMCCommon'
-    pod 'UMCSecurityPlugins'
-    pod 'UMCAnalytics'
-    pod 'UMCPush'
-    pod 'UMCErrorCatch'
-    pod 'UMCShare/Social/ReducedWeChat'
 
     pod 'YYKit',:inhibit_warnings => true
     pod 'JGProgressHUD'
