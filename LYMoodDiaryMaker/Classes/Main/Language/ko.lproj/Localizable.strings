@@ -1,0 +1,68 @@
+/* 
+  Localizable.strings
+  LYMoodDiaryMaker
+
+  Created by CNFOL_iOS on 2019/5/19.
+  Copyright © 2019 LYoung_iOS. All rights reserved.
+*/
+
+kLYEmptyDataMessage     = "기분이나 말투 없음";
+kLYButtonEnsureTitle    = "결정";
+kLYMoodToday            = "오늘";
+kLYMoodYesterday        = "어제";
+kLYSheetPreview         = "미리보기";
+kLYSheetDelete          = "삭제";
+kLYSheetCancel          = "취소";
+kLYEditMoodTitle        = "기분 편집";
+kLYRecordMoodTitle      = "기분 전환";
+kLYNavigationMoodSave   = "저장";
+kLYMoodSaveSuccess      = "성공적으로 저장되었습니다.";
+kLYEditMoodDetail       = "여기에서 기분과 텍스트를 다시 편집 할 수 있습니다.";
+kLYRecordMoodDetail     = "현재의 분위기를 선택하고 현재의 정신 상태를 입력하여 기분 이력을 기록 할 수 있습니다.";
+kLYRecordMoodAlertTitle = "심장 박동을 기록하는 단락 추가 ~";
+
+kLYSettingTitle         = "설정";
+kLYSettingCellHistory   = "기분의 역사";
+kLYSettingCellExport    = "수출CSV";
+kLYSettingCellNovice    = "초보자 가이드";
+kLYSettingCellRate      = "점수로 이동";
+kLYSettingCellPrivacy   = "개인 정보 보호 계약";
+kLYSettingCellAbout     = "정보";
+kLYSettingCellVersion   = "버전 번호";
+kLYSettingCurrentVersion= "현재 버전 번호";
+
+kLYExportBegin          = "시작";
+kLYExportEnd            = "끝";
+kLYExportTime           = "시간";
+
+kLYMoodNameHappy        = "Happy";
+kLYMoodNameInLove       = "Inove";
+kLYMoodNameMad          = "Mad";
+kLYMoodNameSad          = "Sad";
+kLYMoodNameCool         = "Cool";
+kLYMoodNameCry          = "Cry";
+kLYMoodNameSleep        = "Sleep";
+kLYMoodNameHungry       = "Hungry";
+
+kLYExportEmptyData      = "이 기간은 기록되지 않습니다.";
+kLYExportErrorDate      = "내보내기 전에 시작일과 종료일을 선택하십시오.";
+
+kLYHomePageGuideTitle    = "어제의 기록을 보려면 오른쪽으로 스 와이프하고 왼쪽으로 스 와이프하여 새로운 분위기를 추가하십시오.";
+kLYHomePageGuideOK       = "OK";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+kLYHowToUseOne          = "I, How to add, modify, delete or preview mood diary? \n1, Click on the bottom right corner of the home page to jump to the Add mood diary interface. Click on an emoticon to add or modify. You can add text by typing text. Click the Save button in the upper right corner and this mood will be recorded. \n2, Click on any of the history will enter the editing interface, you can edit the mood. \n3, Long press any of the list to pop up the delete or preview box, click the function to preview or delete. Long press on the preview interface to copy text. (Note: The mood record will disappear permanently after deletion!)";
+kLYHowToUseTwo          = "II, How to view and export the historical mood diary? \n1, Find the historical mood in the setting interface, click the date in the upper right corner, click OK, you can view the historical mood record under this date. \n2, Export mood: select a start date, then select an end date, click the export button below, you can export the mood history in this time period.";
+kLYSettingPricacyText   = "\nThis Privacy Policy describes our privacy policy related policies and practices. Please read our privacy policy carefully. \n\nI. How does this app collect your personal information\n We will not collect your personal information for commercial users, and our app does not need to be registered to use. \n\n II, How does this app use your personal information\n 1. We will not collect any personal information about you including phone numbers, email addresses, etc. So you don't have to worry about privacy leaks during your use. \n 2, We do not collect information, nor will it be used for commercial purposes. \n\n III. Legal Disclaimer\nWhen required by law (such as assisting public security organs) or obeying judicial procedures, court orders, and threats to the company's statutory rights due to user behavior, or applicable to this We have the right to disclose your personal information when the company's mobile app legal process. \nIf the Company determines that disclosure is reasonable and necessary in order to enforce the terms and conditions of the Company or to protect our operations, we may disclose information about you. \n\n IV. Changes to this Privacy Policy\n The Company will change this Policy Agreement from time to time in accordance with national laws and regulations. Before the modification is implemented, the company will notify this policy change in the App User Agreement so that you can understand how we collect and use your personal information, who can access it, and under what circumstances we disclose it. \nThe company reserves the right to modify this policy at any time, so please check it frequently. \n\n V. Privacy Issues\ If you have any questions or concerns about our privacy policy or data processing, please contact us at 13277853764.\n";

@@ -1,0 +1,70 @@
+/* 
+  Localizable.strings
+  LYMoodDiaryMaker
+
+  Created by CNFOL_iOS on 2019/5/19.
+  Copyright © 2019 LYoung_iOS. All rights reserved.
+*/
+
+kLYEmptyDataMessage     = "无心情或文字";
+kLYButtonEnsureTitle    = "确定";
+kLYMoodToday            = "今天";
+kLYMoodYesterday        = "昨天";
+kLYSheetPreview         = "预览";
+kLYSheetDelete          = "删除";
+kLYSheetCancel          = "取消";
+kLYEditMoodTitle        = "编辑心情";
+kLYRecordMoodTitle      = "记录心情";
+kLYNavigationMoodSave   = "保存";
+kLYMoodSaveSuccess      = "保存成功";
+kLYEditMoodDetail       = "在这里，您可以重新编辑您的心情和文字。";
+kLYRecordMoodDetail     = "选择当前心情，输入当前的心理状态，这样就可以记录您的心情历程了。";
+kLYRecordMoodAlertTitle = "添加一段文字记录心里历程吧~";
+
+kLYSettingTitle         = "设置";
+kLYSettingCellHistory   = "心情史";
+kLYSettingCellExport    = "导出CSV";
+kLYSettingCellNovice    = "新手指南";
+kLYSettingCellRate      = "去评分";
+kLYSettingCellPrivacy   = "隐私协议";
+kLYSettingCellAbout     = "关于";
+kLYSettingCellVersion   = "版本号";
+kLYSettingCurrentVersion= "当前版本号";
+
+kLYExportBegin          = "开始";
+kLYExportEnd            = "结束";
+kLYExportTime           = "时间";
+
+kLYMoodNameHappy        = "开心";
+kLYMoodNameInLove       = "喜欢";
+kLYMoodNameMad          = "愤怒";
+kLYMoodNameSad          = "悲伤";
+kLYMoodNameCool         = "酷";
+kLYMoodNameCry          = "大哭";
+kLYMoodNameSleep        = "睡着了";
+kLYMoodNameHungry       = "饿死了";
+
+kLYExportEmptyData      = "这个时间段没有记录哦";
+kLYExportErrorDate      = "请先选择好开始和结束日期再导出哦";
+
+
+kLYHomePageGuideTitle    = "向右滑动可以查看昨天的记录，向左滑动可以添加新的心情。";
+kLYHomePageGuideOK       = "好的";
+
+
+
+
+
+
+
+
+
+
+
+
+kLYHowToUseOne          = "一、如何添加、修改、删除或预览心情日记？\n1、点击首页右下角，跳转到添加心情日记界面。点击表情可以添加或修改。输入文字就可以添加文字了，点击右上角保存按钮，这条心情就会记录。\n2、点击历史的任何一条就会进入到编辑界面，可以对心情进行编辑。\n3、长按列表的任何一条弹出删除或者预览框，点击功能进行预览或者删除。预览界面长按可以进行文字复制。(注意：删除之后心情记录就会永久消失哦！)";
+kLYHowToUseTwo          = "二、如何查看、导出历史心情日记？\n1、在设置界面找到历史心情，点击右上角选择日期，点击确认，即可查看这个日期下的历史心情记录。\n2、导出心情：选择一个开始日期，然后再选择一个结束日期，点击下方的导出按钮，这样就可以导出这个时间段内的心情历史了。";
+kLYSettingPricacyText   = "\n本隐私政策介绍本公司的隐私数据相关政策和惯例，请你仔细阅读我们的隐私政策。\n\n一、此APP如何收集您的个人信息\n我们不会搜集您的个人信息用作商业用户，我们的APP您不必注册即可使用。\n\n二、此APP如何使用您的个人信息\n      1、我们不会搜集您的任何私人信息包括电话号码、邮箱等等。所以您完全不必担心您在使用过程中隐私泄露问题。\n      2、我们不搜集信息，也不会用于商业用途。\n\n三、法律免责声明\n在法律要求的情况下（如协助公安机关）或遵守司法程序、法院指令，以及因用户行为而致使本公司的法定权益收到威胁，或适用于本公司的移动App的法律程序时，我们有权透露您的个人信息。\n如果本公司确定为了执行本公司的条款和条件或保护我们的经营，披露是合理必须的，则我们可能会披露与您有关的信息。\n\n 四、本隐私政策的更改\n本公司会根据国家法律法规不定时更改本政策协议。修改执行之前，本公司将会在App用户协议通知本次政策更改，以便您了解我们如何收集、使用您的个人信息，哪些人可以访问这些信息，以及在什么情况下我们会披露这些信息。\n本公司保留随时修改本政策的权利，因此请经常查看。\n\n五、隐私问题\n如果你对本公司的隐私政策或数据处理有任何问题或顾虑，请通过13277853764与我们联系。\n";
+
+
+
