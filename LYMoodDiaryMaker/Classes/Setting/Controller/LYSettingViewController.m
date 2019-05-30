@@ -51,6 +51,7 @@
     
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
     headerView.title       = LY_LocalizedString(@"kLYSettingTitle");
+    headerView.detailTitle = @"\n";
     self.tableView.tableHeaderView = headerView;
     
     
