@@ -37,6 +37,20 @@
     return nil;
 }
 
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat offset = scrollView.contentOffset.y;
+    
+    if (offset >= NAVBAR_HEIGHT) {
+        self.navBarView.navBarTitle = self.title;
+        self.navBarView.showShadow  = YES;
+    }else{
+        self.navBarView.navBarTitle = @"";
+        self.navBarView.showShadow  = NO;
+    }
+    
+}
+
 #pragma mark - 懒加载
 - (UITableView *)tableView {
     if (!_tableView) {

@@ -21,7 +21,7 @@ kLYEditMoodDetail       = "ここであなたはあなたの気分とテキス�
 kLYRecordMoodDetail     = "あなたの現在の気分を選択し、あなたの気分履歴を記録できるようにあなたの現在の精神状態を入力してください。";
 kLYRecordMoodAlertTitle = "あなたの心の歴史を記録するために段落を追加する";
 
-kLYSettingTitle         = "設定";
+kLYSettingTitle         = "機能";
 kLYSettingCellHistory   = "歴史";
 kLYSettingCellExport    = "エクスポートするCSV";
 kLYSettingCellNovice    = "初心者向けガイド";
@@ -29,7 +29,26 @@ kLYSettingCellRate      = "コメントする";
 kLYSettingCellPrivacy   = "プライバシー規約";
 kLYSettingCellAbout     = "について";
 kLYSettingCellVersion   = "バージョン番号";
+kLYSettingCellPasscode  = "パスワード";
+kLYSettingCellSupport   = "サポート";
 kLYSettingCurrentVersion= "現在のバージョン番号";
+
+kLYGeneralPasscodeset     = "パスワードを設定";
+kLYGeneralPasscodeChange  = "パスワード変更";
+kLYGeneralPasscodeTouchID = "Touch ID";
+
+kLYInputViewOldPasscode      = "古いパスワードを入力してください";
+kLYInputViewInputPasscode    = "パスコードを入力してください";
+kLYInputViewInputNewPasscode = "新しいパスコードを入力してください";
+kLYInputViewInputOnePasscode = "パスコードを入力";
+kLYInputViewReEnterPasscode  = "パスコードを再入力してください";
+kLYInputViewOneMinutePasscode  = "1分後にもう一度お試しください";
+kLYInputViewInvalidPasscode    = "無効なパスコード";
+kLYInputViewDontSamePasscode   = "別のパスコードを入力してください。 同じパスコードを再利用することはできません。";
+kLYInputViewNotMatchPasscode   = "输パスコードが一致しませんでした。 再試行する。";
+kLYInputViewAttemptPasscode    = "パスコード試行の失敗";
+kLYDoYouWantTouchID            = "認証にTouch IDを使用しますか？";
+kLYCantUserTouchID             = "タッチIDを有効にする";
 
 kLYExportBegin          = "開始";
 kLYExportEnd            = "終わり";

@@ -62,4 +62,7 @@
     return LYColor(LYBlackColorHex);
 }
 
++ (UIColor *)navTitleColor{
+    return LYColor(LYBlackColorHex);
+}
 @end

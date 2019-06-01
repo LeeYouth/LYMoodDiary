@@ -77,4 +77,13 @@
     return [UIFont fontAliWithName:AlibabaPuHuiTiL size:15.f];
 }
 
+/** tabbar */
++ (UIFont *)tabbarTitleFont{
+    return [UIFont fontAliWithName:AlibabaPuHuiTiL size:11.f];
+}
+
++ (UIFont *)navTitleFont{
+    return [UIFont fontAliWithName:AlibabaPuHuiTiR size:18.f];
+}
+
 @end

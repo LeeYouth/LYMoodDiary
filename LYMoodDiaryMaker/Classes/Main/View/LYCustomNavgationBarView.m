@@ -148,18 +148,20 @@
 - (void)setShowShadow:(BOOL)showShadow{
     _showShadow = showShadow;
     if (showShadow) {
-        self.layer.shadowColor = LYColor(@"#AAAAAA").CGColor;
-        self.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+        self.clipsToBounds = NO;
+        self.layer.shadowColor = LYColor(@"#5a5a5a").CGColor;
         self.layer.shadowRadius = 4.0;
-        self.layer.shadowOpacity = 1.0;
-        
+        self.layer.shadowOpacity = 0.2;
+        self.layer.masksToBounds = NO;
+        self.layer.shadowOffset = CGSizeMake(0, 2);
+
         self.lineView.hidden = YES;
     } else {
         
         self.layer.shadowColor = [UIColor clearColor].CGColor;
         self.layer.shadowOffset = CGSizeMake(0, 0);
         self.layer.shadowRadius = 0;
-        self.layer.shadowOpacity = 1.0;
+        self.layer.shadowOpacity = 0.3;
     }
 }
 
@@ -188,7 +190,7 @@
     return LY_LAZY(_leftButton, ({
         UIButton *button = [UIButton new];
         button.tag = 0;
-        [button setImage:[UIImage imageNamed:@"navBarBackItemIcon"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"navBar_backItemIcon"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
         button;
@@ -198,7 +200,7 @@
     return LY_LAZY(_rightButton, ({
         UIButton *button = [UIButton new];
         button.tag = 1;
-        [button setImage:[UIImage imageNamed:@"bottomToolBar_next"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"navBar_saveicon"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(leftButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
         button.hidden = YES;
@@ -209,8 +211,8 @@
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
         view.textAlignment = NSTextAlignmentCenter;
-        view.textColor = LYColor(@"#515151");
-        view.font = LYSystemFont(16.f);
+        view.textColor = [UIColor navTitleColor];
+        view.font = [UIFont navTitleFont];
         [self addSubview:view];
         view;
     }));

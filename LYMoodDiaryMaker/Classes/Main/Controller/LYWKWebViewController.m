@@ -107,7 +107,7 @@ static NSString *const canGoBack = @"canGoBack";
 //        self.leftBarButton.tintColor = tinColor;
 //        self.navigationItem.leftBarButtonItem = self.leftBarButton;
 //
-//        self.leftBarButtonSecond = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"webView_closeItem"] style:UIBarButtonItemStyleDone target:self action:@selector(closeBarItemAction)];
+//        self.leftBarButtonSecond = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navBar_closeicon"] style:UIBarButtonItemStyleDone target:self action:@selector(closeBarItemAction)];
 //        self.leftBarButtonSecond.imageInsets = UIEdgeInsetsMake(0, -20, 0, 20);
 //        self.leftBarButtonSecond.tintColor = tinColor;
 //    }else
@@ -120,7 +120,7 @@ static NSString *const canGoBack = @"canGoBack";
 //        self.leftBarButton.tintColor = tinColor;
 //
 //        //设置关闭按钮，以及关闭按钮和返回按钮之间的距离
-//        self.leftBarButtonSecond = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"webView_closeItem"] style:UIBarButtonItemStyleDone target:self action:@selector(closeBarItemAction)];
+//        self.leftBarButtonSecond = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"navBar_closeicon"] style:UIBarButtonItemStyleDone target:self action:@selector(closeBarItemAction)];
 //        self.leftBarButtonSecond.imageInsets = UIEdgeInsetsMake(0, -20, 0, 20);
 //        self.leftBarButtonSecond.tintColor = tinColor;
 //

@@ -39,23 +39,26 @@
     
     WEAKSELF(weakSelf);
     self.navBarView.leftBarItemImage  = [UIImage imageNamed:@"navBar_closeicon"];
-    self.navBarView.rightItemTitle = LY_LocalizedString(@"kLYNavigationMoodSave");
-    self.navBarView.rightBarItemImage = nil;
+    self.navBarView.rightBarItemImage = [UIImage imageNamed:@"navBar_saveicon"];
     self.navBarView.navColor = [UIColor whiteColor];
     self.navBarView.btnBlock = ^(UIButton *sender) {
         [weakSelf.view endEditing:YES];
         if (sender.tag == 0) {
             //返回
-            if (weakSelf.isPush) {
+            if ([weakSelf.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]){
                 [weakSelf.navigationController popViewControllerAnimated:YES];
-            }else{
-                if (weakSelf.itemBlock) {
-                    weakSelf.itemBlock(sender.tag);
-                }
+                return;
             }
             
+            if([weakSelf respondsToSelector:@selector(dismissModalViewControllerAnimated:)]) {
+                [weakSelf dismissViewControllerAnimated:YES completion:nil];
+                return;
+            }
+            
+            
         }else if (sender.tag == 1){
-            if (weakSelf.isPush) {
+            
+            if (weakSelf.editMoodArray.count) {
                 //编辑保存
                 [weakSelf editMoodAction];
             }else{
@@ -72,6 +75,8 @@
     [self setupTableHeaderUI];
     
     [self.tableView reloadData];
+    
+    [self textViewBecomeFirstResponder];
 
 }
 
@@ -101,7 +106,17 @@
             if (self.itemBlock) {
                 self.itemBlock(1);
             }
-            [self.navigationController popViewControllerAnimated:YES];
+            
+            if ([self.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]){
+                [self.navigationController popViewControllerAnimated:YES];
+                return;
+            }
+            
+            if([self respondsToSelector:@selector(dismissModalViewControllerAnimated:)]) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+                return;
+            }
+            
         });
     }
 }
@@ -171,9 +186,7 @@
     }
     LYWriteMoodDiaryTableCell *cell = [LYWriteMoodDiaryTableCell cellWithTableView:tableView];
     cell.model = model;
-    if (self.isPush) {
-        [cell.textView becomeFirstResponder];
-    }
+    [cell.textView becomeFirstResponder];
     return cell;
 }
 

@@ -16,14 +16,8 @@ typedef void(^LYWriteMoodDiaryViewControllerItemBlock)(NSInteger index);
 
 /** 需要编辑的心情 */
 @property(nonatomic, strong) NSMutableArray *editMoodArray;
-/** 是否是push */
-@property(nonatomic, assign) BOOL isPush;
 /** 回调 */
 @property(nonatomic, copy) LYWriteMoodDiaryViewControllerItemBlock itemBlock;
-/** 键盘成为第一响应*/
-- (void)textViewBecomeFirstResponder;
-/** 键盘失去第一响应 */
-- (void)textViewResignFirstResponder;
 
 @end
 

@@ -21,7 +21,7 @@ kLYEditMoodDetail       = "여기에서 기분과 텍스트를 다시 편집 할
 kLYRecordMoodDetail     = "현재의 분위기를 선택하고 현재의 정신 상태를 입력하여 기분 이력을 기록 할 수 있습니다.";
 kLYRecordMoodAlertTitle = "심장 박동을 기록하는 단락 추가 ~";
 
-kLYSettingTitle         = "설정";
+kLYSettingTitle         = "기능";
 kLYSettingCellHistory   = "기분의 역사";
 kLYSettingCellExport    = "수출CSV";
 kLYSettingCellNovice    = "초보자 가이드";
@@ -29,7 +29,27 @@ kLYSettingCellRate      = "점수로 이동";
 kLYSettingCellPrivacy   = "개인 정보 보호 계약";
 kLYSettingCellAbout     = "정보";
 kLYSettingCellVersion   = "버전 번호";
+kLYSettingCellPasscode  = "비밀번호";
+kLYSettingCellSupport   = "지원";
 kLYSettingCurrentVersion= "현재 버전 번호";
+
+kLYGeneralPasscodeset     = "암호 설정";
+kLYGeneralPasscodeChange  = "비밀번호 변경";
+kLYGeneralPasscodeTouchID = "Touch ID";
+
+kLYInputViewOldPasscode      = "이전 패스 코드를 입력하십시오.";
+kLYInputViewInputPasscode    = "패스 코드를 입력하십시오.";
+kLYInputViewInputNewPasscode = "새 암호 코드를 입력하십시오.";
+kLYInputViewInputOnePasscode = "암호 코드를 입력하십시오.";
+kLYInputViewReEnterPasscode  = "암호를 다시 입력하십시오.";
+kLYInputViewOneMinutePasscode  = "1 분 후에 다시 시도하십시오.";
+kLYInputViewInvalidPasscode    = "패스 코드가 잘못되었습니다.";
+kLYInputViewDontSamePasscode   = "다른 암호를 입력하십시오. 동일한 암호를 다시 사용할 수 없습니다.";
+kLYInputViewNotMatchPasscode   = "암호가 일치하지 않습니다. \ 다시 시도하십시오.";
+kLYInputViewAttemptPasscode    = "패스 코드 시도 실패";
+kLYDoYouWantTouchID            = "터치 ID를 사용하여 인증 하시겠습니까?";
+kLYCantUserTouchID             = "터치 ID 사용";
+
 
 kLYExportBegin          = "시작";
 kLYExportEnd            = "끝";

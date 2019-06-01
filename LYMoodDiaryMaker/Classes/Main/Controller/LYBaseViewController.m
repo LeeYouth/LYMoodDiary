@@ -17,7 +17,6 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 
-    self.navBarView.navBarTitle = self.title;
     [self.view bringSubviewToFront:self.navBarView];
 }
 

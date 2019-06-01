@@ -37,6 +37,7 @@ typedef enum : NSUInteger {
 
 /** 列表心情字体大小 */
 + (UIFont *)moodFont;
+
 /** 列表心情时间字体大小 */
 + (UIFont *)moodTimeFont;
 
@@ -47,6 +48,13 @@ typedef enum : NSUInteger {
 
 /** 关于我们 */
 + (UIFont *)aboutUsFont;
+
+/** tabbar */
++ (UIFont *)tabbarTitleFont;
+
+
+/** 导航栏标题字号 */
++ (UIFont *)navTitleFont;
 
 @end
 

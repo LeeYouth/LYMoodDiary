@@ -23,6 +23,7 @@
     
     self.tableView.backgroundColor = LYHomePageColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.title = LY_LocalizedString(@"kLYSettingCellNovice");
     
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
     headerView.title       = LY_LocalizedString(@"kLYSettingCellNovice");

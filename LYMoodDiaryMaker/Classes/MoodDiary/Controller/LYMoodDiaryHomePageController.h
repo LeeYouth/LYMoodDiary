@@ -14,9 +14,6 @@ typedef void(^LYMoodDiaryHomePageControllerBlock)(LYMoodDiaryModel *model);
 
 @interface LYMoodDiaryHomePageController : LYBaseTableViewController
 
-@property(nonatomic, assign) BOOL yesterday;
-@property(nonatomic, copy) LYViewDidSelected itemClick;
-
 /** 刷新下数据 */
 - (void)reloadTableData;
 

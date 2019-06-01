@@ -45,6 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** 列表视图头部标题颜色 */
 + (UIColor *)tableHeaderTitleColor;
 
+/** 导航栏title颜色 */
++ (UIColor *)navTitleColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

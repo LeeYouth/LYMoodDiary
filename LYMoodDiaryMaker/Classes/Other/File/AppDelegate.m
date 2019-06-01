@@ -11,8 +11,12 @@
 #import "LYMoodDiaryHomePageController.h"
 #import "LYBaseNavigationController.h"
 #import "LYHomePageViewController.h"
+#import "LYMainRootViewController.h"
+#import "LYCustomPasscodeViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<LYPasscodeViewControllerDelegate>
+
+@property (nonatomic, strong) LYCustomPasscodeViewController *passcodeVC;
 
 @end
 
@@ -45,12 +49,27 @@
 
     //配置服务器类型
     [LYServerConfig setLYConfigEnv:LYServerEnvDevelop];
-    
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     self.window = [[UIWindow alloc] init];
-    LYBaseNavigationController *nav = [[LYBaseNavigationController alloc] initWithRootViewController:[[LYHomePageViewController alloc] init]];
     
-    [self.window setRootViewController: nav];
+    
+    self.passcodeVC = [[LYCustomPasscodeViewController alloc] initWithNibName:nil bundle:nil];
+    self.passcodeVC.delegate = self;
+    self.passcodeVC.type = LYPasscodeViewControllerCheckPasscodeType;
+    self.passcodeVC.passcodeStyle = LYPasscodeInputViewNormalPasscodeStyle;
+    [self.passcodeVC startTouchIDAuthenticationIfPossible:^(BOOL prompted) {
+        if (prompted) {
+            
+        } else {
+
+        }
+    }];
+    
+    //设置了密码
+    if ([LYPasscodeManager passcodeSwitchOn] && [LYPasscodeManager hasSetPasscode]) {
+        [self.window setRootViewController:self.passcodeVC];
+    }else{
+        [self.window setRootViewController:[[LYMainRootViewController alloc] init]];
+    }
     [self.window makeKeyAndVisible];
     // 友盟UMSocial
     [self LYUMSocialApplication:application didFinishLaunchingWithOptions:launchOptions];
@@ -92,6 +111,40 @@ supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {
     return UIInterfaceOrientationMaskPortrait;
 }
+
+#pragma mark - LYPasscodeViewControllerDelegate
+
+- (void)passcodeViewController:(LYPasscodeViewController *)aViewController authenticatePasscode:(NSString *)aPasscode resultHandler:(void (^)(BOOL))aResultHandler{
+    //
+    if ([aPasscode isEqualToString:[LYPasscodeManager getOldPasscode]]) {
+        aResultHandler(YES);
+    } else {
+        aResultHandler(NO);
+    }
+}
+
+- (void)passcodeViewControllerDidFailAttempt:(LYPasscodeViewController *)aViewController{
+    
+    //验证失败
+}
+
+- (NSUInteger)passcodeViewControllerNumberOfFailedAttempts:(LYPasscodeViewController *)aViewController
+{
+    return 0;
+}
+
+- (NSDate *)passcodeViewControllerLockUntilDate:(LYPasscodeViewController *)aViewController
+{
+    return nil;
+}
+
+- (void)passcodeViewController:(LYPasscodeViewController *)aViewController didFinishWithPasscode:(NSString *)aPasscode{
+    if (aViewController.type == LYPasscodeViewControllerCheckPasscodeType) {
+        [self.window setRootViewController:[[LYMainRootViewController alloc] init] ];
+    }
+
+}
+
 
 
 @end

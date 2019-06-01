@@ -15,6 +15,6 @@ target 'LYMoodDiaryMaker' do
     pod 'BGFMDB', '~> 2.0.9'
     pod 'FSCalendar'
 
-
+    pod 'CYLTabBarController', '~> 1.24.0'
 
 end

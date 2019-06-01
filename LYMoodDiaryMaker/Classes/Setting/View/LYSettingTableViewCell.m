@@ -71,6 +71,7 @@
 - (void)setTypeName:(NSString *)typeName{
     _typeName = typeName;
 
+    
     NSString *title = @"";
     if ([typeName isEqualToString:@"history"]) {
         
@@ -80,9 +81,22 @@
         
         title = LY_LocalizedString(@"kLYSettingCellExport");
         
+    }else if ([typeName isEqualToString:@"passcode"]){
+        
+        title = LY_LocalizedString(@"kLYSettingCellPasscode");
+        
     }else if ([typeName isEqualToString:@"noviceManual"]){
         
         title = LY_LocalizedString(@"kLYSettingCellNovice");
+        
+    }else if ([typeName isEqualToString:@"aboutUs"]){
+        
+        title = LY_LocalizedString(@"kLYSettingCellAbout");
+    }
+    
+    else if ([typeName isEqualToString:@"support"]){
+        
+        title = LY_LocalizedString(@"kLYSettingCellSupport");
         
     }else if ([typeName isEqualToString:@"star"]){
         
@@ -92,8 +106,6 @@
         
         title = LY_LocalizedString(@"kLYSettingCellPrivacy");
         
-    }else if ([typeName isEqualToString:@"aboutUs"]){
-        title = [NSString stringWithFormat: @"%@%@",LY_LocalizedString(@"kLYSettingCellAbout"),[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]];
     }else if ([typeName isEqualToString:@"version"]){
         title = [NSString stringWithFormat: @"%@ %@",LY_LocalizedString(@"kLYSettingCellVersion"),[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     }

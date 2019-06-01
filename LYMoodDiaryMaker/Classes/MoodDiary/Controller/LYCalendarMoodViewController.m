@@ -109,11 +109,10 @@
     WEAKSELF(weakSelf);
     LYWriteMoodDiaryViewController *vc = [[LYWriteMoodDiaryViewController alloc] init];
     vc.editMoodArray = [NSMutableArray arrayWithObject:model];
-    vc.isPush = YES;
     vc.itemBlock = ^(NSInteger index) {
         [weakSelf loadNewData];
     };
-    [self.navigationController pushViewController:vc animated:YES];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma makr - 删除一条心情l记录

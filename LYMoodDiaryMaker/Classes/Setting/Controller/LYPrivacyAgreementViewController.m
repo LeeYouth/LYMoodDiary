@@ -15,7 +15,8 @@
     [super viewDidLoad];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    self.title = LY_LocalizedString(@"kLYSettingCellPrivacy");
+
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
     headerView.title       =  LY_LocalizedString(@"kLYSettingCellPrivacy");
     self.tableView.tableHeaderView = headerView;

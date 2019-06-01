@@ -42,8 +42,8 @@
 }
 
 - (void)updateUI{
-    CGFloat leftMargin = kLYContentLeftMargin;
-    CGFloat leftMargin1 = kLYContentLeftMargin + 4;
+    CGFloat leftMargin = kLYContentLeftMargin - 4;
+    CGFloat leftMargin1 = kLYContentLeftMargin;
     CGFloat topMargin  = 15;
     CGFloat tempMargin = 10;
     CGFloat titleH = 0;
@@ -68,7 +68,7 @@
         self.detailLabel.text = self.detailTitle;
     }
     
-    CGFloat bottomH = 0;
+    CGFloat bottomH = 15;
     if (self.title.length && self.detailTitle.length) {
         bottomH = 15;
     }

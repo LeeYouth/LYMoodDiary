@@ -21,7 +21,7 @@ kLYEditMoodDetail       = "Here you can re-edit your mood and text.";
 kLYRecordMoodDetail     = "Choose your current mood and enter your current mental state so you can record your mood history.";
 kLYRecordMoodAlertTitle = "Add a paragraph to record your heart history~";
 
-kLYSettingTitle         = "Settings";
+kLYSettingTitle         = "General";
 kLYSettingCellHistory   = "History";
 kLYSettingCellExport    = "Export to CSV";
 kLYSettingCellNovice    = "Help";
@@ -29,7 +29,27 @@ kLYSettingCellRate      = "Rate us on App Store";
 kLYSettingCellPrivacy   = "Privacy Policy";
 kLYSettingCellAbout     = "About";
 kLYSettingCellVersion   = "Version";
+kLYSettingCellPasscode  = "Passcode";
+kLYSettingCellSupport   = "Support";
 kLYSettingCurrentVersion= "Current Version ";
+
+kLYGeneralPasscodeset     = "Set Passcode";
+kLYGeneralPasscodeChange  = "Change Passcode";
+kLYGeneralPasscodeTouchID = "Touch ID";
+
+kLYInputViewOldPasscode      = "Enter your old passcode";
+kLYInputViewInputPasscode    = "Enter your passcode";
+kLYInputViewInputNewPasscode = "Enter your new passcode";
+kLYInputViewInputOnePasscode = "Enter a passcode";
+kLYInputViewReEnterPasscode  = "Re-enter your passcode";
+kLYInputViewOneMinutePasscode  = "Try again in 1 minute";
+kLYInputViewInvalidPasscode    = "Invalid Passcode";
+kLYInputViewDontSamePasscode   = "Enter a different passcode. Cannot re-use the same passcode.";
+kLYInputViewNotMatchPasscode   = "Passcodes did not match.\nTry again.";
+kLYInputViewAttemptPasscode    = "Failed Passcode Attempt";
+kLYDoYouWantTouchID            = "Do you want to use Touch ID for authentication?";
+kLYCantUserTouchID             = "Enable Touch ID";
+
 
 kLYExportBegin          = "Begin";
 kLYExportEnd            = "End";

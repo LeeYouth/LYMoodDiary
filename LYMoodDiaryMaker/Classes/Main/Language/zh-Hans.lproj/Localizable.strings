@@ -21,7 +21,7 @@ kLYEditMoodDetail       = "在这里，您可以重新编辑您的心情和文�
 kLYRecordMoodDetail     = "选择当前心情，输入当前的心理状态，这样就可以记录您的心情历程了。";
 kLYRecordMoodAlertTitle = "添加一段文字记录心里历程吧~";
 
-kLYSettingTitle         = "设置";
+kLYSettingTitle         = "功能";
 kLYSettingCellHistory   = "心情史";
 kLYSettingCellExport    = "导出CSV";
 kLYSettingCellNovice    = "新手指南";
@@ -29,7 +29,28 @@ kLYSettingCellRate      = "去评分";
 kLYSettingCellPrivacy   = "隐私协议";
 kLYSettingCellAbout     = "关于";
 kLYSettingCellVersion   = "版本号";
+kLYSettingCellPasscode  = "密码";
+kLYSettingCellAbout     = "支持";
 kLYSettingCurrentVersion= "当前版本号";
+
+kLYGeneralPasscodeset     = "设置密码";
+kLYGeneralPasscodeChange  = "更改密码";
+kLYGeneralPasscodeTouchID = "Touch ID";
+
+kLYInputViewOldPasscode      = "请输入旧密码";
+kLYInputViewInputPasscode    = "请输入密码";
+kLYInputViewInputNewPasscode = "请输入新密码";
+kLYInputViewInputOnePasscode = "请输入一个密码";
+kLYInputViewReEnterPasscode  = "请再次输入密码";
+kLYInputViewOneMinutePasscode  = "1分钟后再次尝试";
+kLYInputViewInvalidPasscode    = "无效的密码";
+kLYInputViewDontSamePasscode   = "请输入不同的密码，无法重复使用相同的密码。";
+kLYInputViewNotMatchPasscode   = "输入密码不匹配，请重新输入。";
+kLYInputViewAttemptPasscode    = "次密码尝试失败。";
+kLYDoYouWantTouchID            = "您想使用Touch ID进行身份验证吗？";
+kLYCantUserTouchID             = "使用Touch ID";
+
+
 
 kLYExportBegin          = "开始";
 kLYExportEnd            = "结束";

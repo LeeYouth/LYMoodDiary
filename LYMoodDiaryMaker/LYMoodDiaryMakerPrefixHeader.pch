@@ -8,45 +8,65 @@
 
 #ifdef __OBJC__
 
-//mian
-#import "LYBaseCustomTableHeaderView.h"
-#import "LYMoodDiaryModel.h"
-#import "UIFont+LYMoodFont.h"
-#import "UIColor+LYMoodColor.h"
-#import "LYBaseViewController.h"
-#import "LYBaseTableViewController.h"
+//macro
 #import "LYConst.h"
-#import "LYToastTool.h"
-#import "LYServerConfig.h"
 #import "LYMacro.h"
-#import "UIControl+LYUMTrack.h"
-#import "UIViewController+LYUMTrack.h"
-#import "UIImage+Extention.h"
-#import "UIColor+MTColorTool.h"
-#import <Masonry.h>
-#import "LYAppTool.h"
-#import <YYKit.h>
-#import "MBProgressHUD.h"
-#import "MBProgressHUD+LYHUD.h"
-#import "UIViewController+BackButtonHandler.h"
-#import "LYEnsureOrCancelAlertView.h"
-#import "LYBaseNavigationController.h"
-#import "LYBaseTableViewCell.h"
-#import "SGEasyButton.h"
-#import "LYNetworkHelper.h"
-#import "LYStickerView.h"
-#import "LYEmojiPopMenu.h"
-#import "UIView+LYCorners.h"
-#import "LYEmptyViewHeader.h"
-#import "LYCustomEmptyDataView.h"
-#import "LYWriteMoodDiaryViewController.h"
-#import "LYActionSheet.h"
-#import "LYMoodDiaryPreviewViewController.h"
-#import "LYLocalizedHelper.h"
-#import "LYHomepageGuideView.h"
 
+//third part
+#import <CYLTabBarController/CYLTabBarController.h>
+#import <Masonry.h>
+#import <YYKit.h>
+#import "SGEasyButton.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import "UIImageView+WebCache.h"
+#import "MBProgressHUD.h"
+#import "LYNetworkHelper.h"
+
+//const & tool
+#import "LYServerConfig.h"
+#import "LYLocalizedHelper.h"
+#import "LYToastTool.h"
+#import "LYAppTool.h"
+#import "LYPasscodeMacro.h"
+
+//category
+#import "UIFont+LYMoodFont.h"
+#import "UIColor+LYMoodColor.h"
+#import "UIControl+LYUMTrack.h"
+#import "UIImage+Extention.h"
+#import "UIColor+MTColorTool.h"
+#import "UIView+LYCorners.h"
+#import "UIViewController+BackButtonHandler.h"
+#import "MBProgressHUD+LYHUD.h"
+#import "UIViewController+LYUMTrack.h"
+#import "UIViewController+LYAlpha.h"
+
+//base
+#import "LYMoodDiaryModel.h"
+
+#import "LYBaseViewController.h"
+#import "LYBaseTableViewController.h"
+#import "LYMoodDiaryPreviewViewController.h"
+#import "LYWriteMoodDiaryViewController.h"
+#import "LYBaseNavigationController.h"
+
+#import "LYEnsureOrCancelAlertView.h"
+#import "LYBaseCustomTableHeaderView.h"
+#import "LYStickerView.h"
+#import "LYEmojiPopMenu.h"
+#import "LYEmptyViewHeader.h"
+#import "LYCustomEmptyDataView.h"
+#import "LYHomepageGuideView.h"
+#import "LYActionSheet.h"
+#import "LYBaseTableViewCell.h"
+
+
+
+
+
+
+
+
 
 
 #endif

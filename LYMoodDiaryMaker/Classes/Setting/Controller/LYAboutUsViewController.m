@@ -22,9 +22,10 @@
 //    [self exportAppTitle];
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+    self.title = LY_LocalizedString(@"kLYSettingCellSupport");
+
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = [NSString stringWithFormat:@"%@%@",LY_LocalizedString(@"kLYSettingCellAbout"),[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]];
+    headerView.title       = LY_LocalizedString(@"kLYSettingCellSupport");
     self.tableView.tableHeaderView = headerView;
 
 }

@@ -32,7 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navBarView.leftBarItemImage = [UIImage imageNamed:@"navBarBackItemIcon"];
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.sloganView];
@@ -50,10 +49,9 @@
     }];
     
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = LY_LocalizedString(@"kLYSettingTitle");
-    headerView.detailTitle = @"\n";
+    headerView.title       = LY_LocalizedString(@"kLYSettingCellAbout");
     self.tableView.tableHeaderView = headerView;
-    
+    self.title = LY_LocalizedString(@"kLYSettingCellAbout");
     
     [self.tableView reloadData];
 }
@@ -84,7 +82,7 @@
     if ([typeName isEqualToString:@"history"]) {
         //历史心情
         LYCalendarMoodViewController *historyVC = [[LYCalendarMoodViewController alloc] init];
-        historyVC.leftItemImage = @"navBarBackItemIcon";
+        historyVC.leftItemImage = @"navBar_backItemIcon";
         [self.navigationController pushViewController:historyVC animated:YES];
 
     }else if ([typeName isEqualToString:@"export"]){
@@ -105,7 +103,7 @@
         LYPrivacyAgreementViewController *privacyVC = [[LYPrivacyAgreementViewController alloc] init];
         [self.navigationController pushViewController:privacyVC animated:YES];
         return;
-    }else if ([typeName isEqualToString:@"aboutUs"]){
+    }else if ([typeName isEqualToString:@"support"]){
         LYAboutUsViewController *viewController = [[LYAboutUsViewController alloc] init];
         [self.navigationController pushViewController:viewController animated:YES];
     }else if ([typeName isEqualToString:@"version"]){
@@ -129,7 +127,7 @@
 - (NSMutableArray *)typeArray{
     if (!_typeArray) {
         _typeArray = [NSMutableArray array];
-        [_typeArray addObjectsFromArray:@[@"history",@"export",@"noviceManual",@"star",@"protocol",@"aboutUs",@"version"]];
+        [_typeArray addObjectsFromArray:@[@"star",@"support",@"version"]];
     }
     return _typeArray;
 }
