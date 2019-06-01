@@ -46,6 +46,8 @@
 		CF432EA822A230CE00ABD7E6 /* LYGeneralPasscodeSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = CF432EA722A230CE00ABD7E6 /* LYGeneralPasscodeSectionHeader.m */; };
 		CF432EAB22A2549000ABD7E6 /* LYPasscodeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF432EAA22A2549000ABD7E6 /* LYPasscodeManager.m */; };
 		CF432EB122A2626500ABD7E6 /* LYCustomPasscodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF432EB022A2626500ABD7E6 /* LYCustomPasscodeViewController.m */; };
+		CF432EB322A292E100ABD7E6 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF432EB222A292E100ABD7E6 /* LocalAuthentication.framework */; };
+		CF432EB622A2982400ABD7E6 /* LYTouchIDDefultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF432EB522A2982300ABD7E6 /* LYTouchIDDefultViewController.m */; };
 		CF6C42E721AE336B002287F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6C42E521AE336B002287F9 /* AppDelegate.m */; };
 		CF6C42EA21AE33BA002287F9 /* AppDelegate+UMSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = CF6C42E921AE33BA002287F9 /* AppDelegate+UMSocial.m */; };
 		CF6C42EC21AE3522002287F9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6C42EB21AE3522002287F9 /* CoreTelephony.framework */; };
@@ -225,6 +227,9 @@
 		CF432EAC22A25BDA00ABD7E6 /* LYPasscodeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPasscodeMacro.h; sourceTree = "<group>"; };
 		CF432EAF22A2626500ABD7E6 /* LYCustomPasscodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYCustomPasscodeViewController.h; sourceTree = "<group>"; };
 		CF432EB022A2626500ABD7E6 /* LYCustomPasscodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYCustomPasscodeViewController.m; sourceTree = "<group>"; };
+		CF432EB222A292E100ABD7E6 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		CF432EB422A2982300ABD7E6 /* LYTouchIDDefultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYTouchIDDefultViewController.h; sourceTree = "<group>"; };
+		CF432EB522A2982300ABD7E6 /* LYTouchIDDefultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTouchIDDefultViewController.m; sourceTree = "<group>"; };
 		CF6C42E521AE336B002287F9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CF6C42E621AE336B002287F9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CF6C42E821AE33BA002287F9 /* AppDelegate+UMSocial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+UMSocial.h"; sourceTree = "<group>"; };
@@ -401,6 +406,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF432EB322A292E100ABD7E6 /* LocalAuthentication.framework in Frameworks */,
 				CF40606221EB1C500059B790 /* libc++.tbd in Frameworks */,
 				CF6C430721AE4752002287F9 /* UserNotifications.framework in Frameworks */,
 				CF6C42F221AE354B002287F9 /* SystemConfiguration.framework in Frameworks */,
@@ -440,6 +446,7 @@
 		8847CAF3C953983C83423804 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF432EB222A292E100ABD7E6 /* LocalAuthentication.framework */,
 				CF40606121EB1C4F0059B790 /* libc++.tbd */,
 				CF6C430621AE4752002287F9 /* UserNotifications.framework */,
 				CF6C42F121AE354B002287F9 /* SystemConfiguration.framework */,
@@ -975,6 +982,8 @@
 				CF6C431321AE6C5A002287F9 /* LYBaseNavigationController.m */,
 				CF6C431821AE7703002287F9 /* LYWKWebViewController.h */,
 				CF6C431921AE7703002287F9 /* LYWKWebViewController.m */,
+				CF432EB422A2982300ABD7E6 /* LYTouchIDDefultViewController.h */,
+				CF432EB522A2982300ABD7E6 /* LYTouchIDDefultViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1362,6 +1371,7 @@
 				CF7C326A228CFA86003BF247 /* LYCalendarPickerMenu.m in Sources */,
 				CF3DF01121F9AAB8000B8853 /* LYMoodDiaryHomePageController.m in Sources */,
 				CF3DEFEE21F066DA000B8853 /* UIButton+SGCountdown.m in Sources */,
+				CF432EB622A2982400ABD7E6 /* LYTouchIDDefultViewController.m in Sources */,
 				CF6C432321AE7B57002287F9 /* LYAppTool.m in Sources */,
 				CF432EA522A22C0600ABD7E6 /* LYGeneralPasscodeCell.m in Sources */,
 				CFDB56B0212521BA00501905 /* LYBaseModel.m in Sources */,

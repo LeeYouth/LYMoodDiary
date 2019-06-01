@@ -233,5 +233,105 @@ static NSString *const LYTouchIDManagerTouchIDEnabledAccountName = @"enabled";
     return (status == errSecSuccess || status == errSecItemNotFound);
 }
 
++ (void)initTouchIDWithMessage:(NSString *)message
+                    completion:(void(^)(BOOL prompted))aCompletionBlock{
+    LAContext *context = [[LAContext alloc]init];
+    context.localizedFallbackTitle = LY_LocalizedString(@"kLYCantUserTouchID");
+    
+    NSError *error = nil;
+
+    if ([context canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error]) {
+        
+        //用于设置提示语，表示为什么要使用Touch ID，如代码中@"您是这设备的所有者吗？"。
+        [context evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:message.length?message: LY_LocalizedString(@"kLYUseTouchIDToHome") reply:^(BOOL success, NSError * _Nullable error) {
+            
+            if (success) {
+                
+                if (aCompletionBlock) {
+                    aCompletionBlock(YES);
+                }
+                
+            } else if (error) {
+                if (aCompletionBlock) {
+                    aCompletionBlock(NO);
+                }
+                
+                switch (error.code)
+                {
+                        // 用户未提供有效证书,(3次机会失败 --身份验证失败)。
+                    case LAErrorAuthenticationFailed:
+                    {
+                        
+                    }
+                        break;
+                        
+                    case LAErrorUserCancel:
+                    {
+                        // 认证被取消,(用户点击取消按钮)。
+                    }
+                        break;
+                        
+                    case LAErrorUserFallback:
+                    {
+                        //用户选择“手势验证”，切换主线程处理
+                    }
+                        break;
+                        
+                    case LAErrorSystemCancel:
+                    {
+                        //在这种情况下，系统终止验证处理，因为另一个应用被激活了。
+                    }
+                        break;
+                        
+                    case LAErrorPasscodeNotSet:
+                    {
+                        // 身份验证无法启动,因为密码在设备上没有设置。
+                    }
+                        break;
+                        
+                    case LAErrorTouchIDNotEnrolled:
+                    {
+                        //设备Touch ID不可用，用户未录入(在5s 上没有设置指纹密码时)
+                    }
+                        break;
+                        
+                        
+                        
+                    case LAErrorTouchIDNotAvailable:
+                    {
+                        //设备Touch ID不可用，例如未打开
+                    }
+                        break;
+                        
+                    case LAErrorTouchIDLockout:
+                    {
+                        //多次连续使用Touch ID失败，Touch ID被锁，需要用户输入密码解锁
+                    }
+                        break;
+                        
+                    case LAErrorAppCancel:
+                    {
+                        //当前软件被挂起取消了授权(如突然来了电话,应用进入前台)
+
+                    }
+                        break;
+                        
+                    case LAErrorInvalidContext:
+                    {
+                        
+                    }
+                        break;
+                }
+            }
+        }];
+        
+    } else {
+        if (aCompletionBlock) {
+            aCompletionBlock(NO);
+        }
+        
+    }
+}
+
 @end
 

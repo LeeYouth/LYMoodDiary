@@ -50,6 +50,8 @@ kLYInputViewAttemptPasscode    = "パスコード試行の失敗";
 kLYDoYouWantTouchID            = "認証にTouch IDを使用しますか？";
 kLYCantUserTouchID             = "タッチIDを有効にする";
 
+kLYUseTouchIDToHome            = "ホームボタンで既存の電話の指紋を確認する";
+
 kLYExportBegin          = "開始";
 kLYExportEnd            = "終わり";
 kLYExportTime           = "時間";

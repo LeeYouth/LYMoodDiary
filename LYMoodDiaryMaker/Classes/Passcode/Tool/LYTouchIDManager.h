@@ -24,4 +24,6 @@
 
 - (void)deletePasscodeWithCompletionBlock:(void(^)(BOOL success))completionBlock;
 
++ (void)initTouchIDWithMessage:(NSString *)message
+                    completion:(void(^)(BOOL prompted))aCompletionBlock;
 @end

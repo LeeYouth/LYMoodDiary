@@ -50,6 +50,8 @@ kLYInputViewAttemptPasscode    = "패스 코드 시도 실패";
 kLYDoYouWantTouchID            = "터치 ID를 사용하여 인증 하시겠습니까?";
 kLYCantUserTouchID             = "터치 ID 사용";
 
+kLYUseTouchIDToHome            = "홈 버튼으로 기존 전화 지문 확인";
+
 
 kLYExportBegin          = "시작";
 kLYExportEnd            = "끝";

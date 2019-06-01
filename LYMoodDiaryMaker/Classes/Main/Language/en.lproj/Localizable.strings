@@ -50,6 +50,8 @@ kLYInputViewAttemptPasscode    = "Failed Passcode Attempt";
 kLYDoYouWantTouchID            = "Do you want to use Touch ID for authentication?";
 kLYCantUserTouchID             = "Enable Touch ID";
 
+kLYUseTouchIDToHome            = "Verify existing phone fingerprints with the Home button";
+
 
 kLYExportBegin          = "Begin";
 kLYExportEnd            = "End";

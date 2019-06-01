@@ -50,6 +50,8 @@ kLYInputViewAttemptPasscode    = "次密码尝试失败。";
 kLYDoYouWantTouchID            = "您想使用Touch ID进行身份验证吗？";
 kLYCantUserTouchID             = "使用Touch ID";
 
+kLYUseTouchIDToHome            = "通过Home键验证已有手机指纹";
+
 
 
 kLYExportBegin          = "开始";

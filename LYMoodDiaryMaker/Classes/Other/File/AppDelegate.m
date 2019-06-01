@@ -13,11 +13,9 @@
 #import "LYHomePageViewController.h"
 #import "LYMainRootViewController.h"
 #import "LYCustomPasscodeViewController.h"
+#import "LYTouchIDDefultViewController.h"
 
 @interface AppDelegate ()<LYPasscodeViewControllerDelegate>
-
-@property (nonatomic, strong) LYCustomPasscodeViewController *passcodeVC;
-@property (nonatomic, strong) LYMainRootViewController *mainRootVC;
 
 @end
 
@@ -40,29 +38,39 @@
     self.window = [[UIWindow alloc] init];
     
     
-    self.mainRootVC = [[LYMainRootViewController alloc] init];
-    
-    self.passcodeVC = [[LYCustomPasscodeViewController alloc] initWithNibName:nil bundle:nil];
-    self.passcodeVC.delegate = self;
-    self.passcodeVC.type = LYPasscodeViewControllerCheckPasscodeType;
-    self.passcodeVC.passcodeStyle = LYPasscodeInputViewNormalPasscodeStyle;
-    LYTouchIDManager *touchIDManager = [[LYTouchIDManager alloc] initWithKeychainServiceName:LYPasscodeKeychainServiceName];
-    touchIDManager.promptText = @"BKPasscodeView Touch ID Demo";
-    self.passcodeVC.touchIDManager = touchIDManager;
-    
-    [self.passcodeVC startTouchIDAuthenticationIfPossible:^(BOOL prompted) {
-        if (prompted) {
-            
-        } else {
-
-        }
-    }];
-    
+ 
     //设置了密码
     if ([LYPasscodeManager passcodeSwitchOn] && [LYPasscodeManager hasSetPasscode]) {
-        [self.window setRootViewController:self.passcodeVC];
+        
+        if ([LYPasscodeManager touchIDSwitchOn]) {
+            //有限touch id
+            LYTouchIDDefultViewController *cusVC = [[LYTouchIDDefultViewController alloc] init];
+            [self.window setRootViewController:cusVC];
+            
+            [LYTouchIDManager initTouchIDWithMessage:@"" completion:^(BOOL prompted) {
+                if (prompted) {
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self.window setRootViewController:[[LYMainRootViewController alloc] init]];
+                    });
+                }else{
+                    LYCustomPasscodeViewController *passcodeVC = [[LYCustomPasscodeViewController alloc] initWithNibName:nil bundle:nil];
+                    passcodeVC.delegate = self;
+                    passcodeVC.type = LYPasscodeViewControllerCheckPasscodeType;
+                    passcodeVC.passcodeStyle = LYPasscodeInputViewNormalPasscodeStyle;
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [self.window setRootViewController:passcodeVC];
+                    });
+                }
+            }];
+        }else{
+            LYCustomPasscodeViewController *passcodeVC = [[LYCustomPasscodeViewController alloc] initWithNibName:nil bundle:nil];
+            passcodeVC.delegate = self;
+            passcodeVC.type = LYPasscodeViewControllerCheckPasscodeType;
+            passcodeVC.passcodeStyle = LYPasscodeInputViewNormalPasscodeStyle;
+            [self.window setRootViewController:passcodeVC];
+        }
     }else{
-        [self.window setRootViewController:self.mainRootVC];
+        [self.window setRootViewController:[[LYMainRootViewController alloc] init]];
     }
     [self.window makeKeyAndVisible];
     // 友盟UMSocial
@@ -134,7 +142,7 @@ supportedInterfaceOrientationsForWindow:(UIWindow *)window
 
 - (void)passcodeViewController:(LYPasscodeViewController *)aViewController didFinishWithPasscode:(NSString *)aPasscode{
     if (aViewController.type == LYPasscodeViewControllerCheckPasscodeType) {
-        [self.window setRootViewController:self.mainRootVC];
+        [self.window setRootViewController:[[LYMainRootViewController alloc] init]];
     }
 
 }
