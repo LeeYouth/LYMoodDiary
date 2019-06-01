@@ -13,5 +13,6 @@
 #import "LYPasscodeManager.h"
 #import "LYPasscodeViewController.h"
 #import "LYTouchIDManager.h"
+#import "LYPasscodeLockScreenManager.h"
 
 #endif /* LYEmptyViewHeader_h */

@@ -17,6 +17,7 @@
 @interface AppDelegate ()<LYPasscodeViewControllerDelegate>
 
 @property (nonatomic, strong) LYCustomPasscodeViewController *passcodeVC;
+@property (nonatomic, strong) LYMainRootViewController *mainRootVC;
 
 @end
 
@@ -34,28 +35,21 @@
         }
     }
 #warning - 在这里配置正式、测试，log开关
-//    //配置服务器类型
-//    [LYServerConfig setLYConfigEnv:LYServerEnvDevelop];
-//    [LYNetworkTools enableInterfaceDebug:YES];
-//
-//    [[UITabBar appearance] setShadowImage:[[UIImage alloc]init]];
-//    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc]init]];
-//    
-//
-//    [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//    // 设置状态栏的状态
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
-//
-
     //配置服务器类型
     [LYServerConfig setLYConfigEnv:LYServerEnvDevelop];
     self.window = [[UIWindow alloc] init];
     
     
+    self.mainRootVC = [[LYMainRootViewController alloc] init];
+    
     self.passcodeVC = [[LYCustomPasscodeViewController alloc] initWithNibName:nil bundle:nil];
     self.passcodeVC.delegate = self;
     self.passcodeVC.type = LYPasscodeViewControllerCheckPasscodeType;
     self.passcodeVC.passcodeStyle = LYPasscodeInputViewNormalPasscodeStyle;
+    LYTouchIDManager *touchIDManager = [[LYTouchIDManager alloc] initWithKeychainServiceName:LYPasscodeKeychainServiceName];
+    touchIDManager.promptText = @"BKPasscodeView Touch ID Demo";
+    self.passcodeVC.touchIDManager = touchIDManager;
+    
     [self.passcodeVC startTouchIDAuthenticationIfPossible:^(BOOL prompted) {
         if (prompted) {
             
@@ -68,7 +62,7 @@
     if ([LYPasscodeManager passcodeSwitchOn] && [LYPasscodeManager hasSetPasscode]) {
         [self.window setRootViewController:self.passcodeVC];
     }else{
-        [self.window setRootViewController:[[LYMainRootViewController alloc] init]];
+        [self.window setRootViewController:self.mainRootVC];
     }
     [self.window makeKeyAndVisible];
     // 友盟UMSocial
@@ -140,11 +134,9 @@ supportedInterfaceOrientationsForWindow:(UIWindow *)window
 
 - (void)passcodeViewController:(LYPasscodeViewController *)aViewController didFinishWithPasscode:(NSString *)aPasscode{
     if (aViewController.type == LYPasscodeViewControllerCheckPasscodeType) {
-        [self.window setRootViewController:[[LYMainRootViewController alloc] init] ];
+        [self.window setRootViewController:self.mainRootVC];
     }
 
 }
-
-
 
 @end

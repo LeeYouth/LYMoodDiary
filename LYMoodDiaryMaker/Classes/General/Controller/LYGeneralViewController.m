@@ -46,8 +46,8 @@
     headerView.title       = LY_LocalizedString(@"kLYSettingTitle");
     self.tableView.tableHeaderView = headerView;
     
-    
     [self.tableView reloadData];
+    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

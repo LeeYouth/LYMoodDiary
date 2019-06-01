@@ -168,6 +168,8 @@
                 textField.font = [UIFont writeMoodFont];
                 textField.clearButtonMode = UITextFieldViewModeWhileEditing;
                 textField.returnKeyType = UIReturnKeyDone;
+                textField.inputAccessoryView = [[UIView alloc] initWithFrame:CGRectZero];
+                [textField reloadInputViews];
                 
                 [self setPasscodeField:textField];
                 break;

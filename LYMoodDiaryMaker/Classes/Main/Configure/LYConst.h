@@ -53,3 +53,7 @@ UIKIT_EXTERN NSString *const kHASOPENPASSCODESTRING;
 
 //是否开启了touch id密码按钮
 UIKIT_EXTERN NSString *const kHASOPENPASSCODETOUCHID;
+
+
+
+UIKIT_EXTERN NSString *const LYPasscodeKeychainServiceName;

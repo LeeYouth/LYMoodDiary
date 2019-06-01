@@ -58,3 +58,6 @@ NSString *const kHASOPENPASSCODESTRING = @"kHASOPENPASSCODESTRING";
 
 //是否开启了touch id密码按钮
 NSString *const kHASOPENPASSCODETOUCHID = @"kHASOPENPASSCODETOUCHID";
+
+
+NSString *const LYPasscodeKeychainServiceName = @"LYPasscodeKeychainServiceName";
