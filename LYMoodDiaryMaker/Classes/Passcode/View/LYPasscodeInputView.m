@@ -83,7 +83,7 @@
     aLabel.numberOfLines = 1;
     aLabel.textAlignment = NSTextAlignmentCenter;
     aLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    aLabel.font = [UIFont boldSystemFontOfSize:15.0f];
+    aLabel.font = [UIFont writeMoodFont];
 }
 
 + (void)configureMessageLabel:(UILabel *)aLabel
@@ -92,7 +92,7 @@
     aLabel.numberOfLines = 0;
     aLabel.textAlignment = NSTextAlignmentCenter;
     aLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    aLabel.font = [UIFont systemFontOfSize:15.0f];
+    aLabel.font = [UIFont moodTimeFont];
 }
 
 + (void)configureErrorMessageLabel:(UILabel *)aLabel
@@ -101,11 +101,11 @@
     aLabel.numberOfLines = 0;
     aLabel.textAlignment = NSTextAlignmentCenter;
     aLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    aLabel.backgroundColor = [UIColor colorWithRed:0.63 green:0.2 blue:0.13 alpha:1];
+    aLabel.backgroundColor = LYColor(@"#E53A40");
     aLabel.textColor = [UIColor whiteColor];
-    aLabel.font = [UIFont systemFontOfSize:15.0f];
+    aLabel.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:14.f];
     
-    aLabel.layer.cornerRadius = 10.0f;
+    aLabel.layer.cornerRadius = 4.0f;
     aLabel.layer.masksToBounds = YES;
 }
 
