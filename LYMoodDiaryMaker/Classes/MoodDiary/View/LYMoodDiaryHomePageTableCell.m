@@ -150,11 +150,6 @@
     return LY_LAZY(_iconImageView, ({
         CGFloat iconW = 50;
         UIImageView *view = [UIImageView new];
-//        view.contentMode = UIViewContentModeScaleAspectFit;
-//        view.layer.cornerRadius = iconW/2;
-//        view.layer.masksToBounds = YES;
-//        view.layer.borderColor = [UIColor whiteColor].CGColor;
-//        view.layer.borderWidth = 4.f;
         view.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClickAction)];
         [view addGestureRecognizer:tap];
@@ -176,19 +171,19 @@
         UIView *view = [UIView new];
         view.layer.cornerRadius = 14.f;
         // 长按
-        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
-        [view addGestureRecognizer:longPress];
-        
-        UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap)];
-        singleTapGesture.numberOfTapsRequired     = 1;
-        singleTapGesture.numberOfTouchesRequired  = 1;
-        [view addGestureRecognizer:singleTapGesture];
-
-        UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGestureAction)];
-        doubleTapGesture.numberOfTapsRequired    = 2;
-        doubleTapGesture.numberOfTouchesRequired = 1;
-        [view addGestureRecognizer:doubleTapGesture];
-        [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
+//        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+//        [view addGestureRecognizer:longPress];
+//        
+//        UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleSingleTap)];
+//        singleTapGesture.numberOfTapsRequired     = 1;
+//        singleTapGesture.numberOfTouchesRequired  = 1;
+//        [view addGestureRecognizer:singleTapGesture];
+//
+//        UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGestureAction)];
+//        doubleTapGesture.numberOfTapsRequired    = 2;
+//        doubleTapGesture.numberOfTouchesRequired = 1;
+//        [view addGestureRecognizer:doubleTapGesture];
+//        [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
 
         view;
     }));

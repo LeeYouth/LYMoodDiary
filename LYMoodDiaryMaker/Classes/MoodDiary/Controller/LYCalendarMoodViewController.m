@@ -43,10 +43,11 @@
     
     
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = [[NSDate date] stringWithFormat:kHEADERTITLEDATEFORMAT];
-    headerView.detailTitle = [[NSDate date] stringWithFormat:kHEADERDETAILTITLEDATEFORMAT];
+    headerView.title       = [self.currentDate tableHeaderTitle];
+    headerView.detailTitle = [self.currentDate tableHeaderDetailTitle];
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.title = [self.currentDate navigationTitle];
     
     LYCustomEmptyDataView *customView = [[LYCustomEmptyDataView alloc] init];
     customView.title = LY_LocalizedString(@"kLYEmptyDataMessage");
@@ -78,60 +79,28 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WEAKSELF(weakSelf);
     LYMoodDiaryHomePageTableCell *cell = [LYMoodDiaryHomePageTableCell cellWithTableView:tableView];
     cell.model = self.dataArray[indexPath.row];
-    cell.didSelected = ^(NSInteger index) {
-        if (index == 0) {
-            //预览
-            LYMoodDiaryPreviewViewController *previewVC = [[LYMoodDiaryPreviewViewController alloc] init];
-            previewVC.previewModel = weakSelf.dataArray[indexPath.row];
-            [weakSelf.navigationController presentViewController:previewVC animated:YES completion:nil];
-        }else if (index == 1){
-            //删除
-            [weakSelf deleteMoodWithModel:weakSelf.dataArray[indexPath.row]];
-        }else if (index == 10001){
-            //进入编辑
-            [weakSelf editMoodWithModel:self.dataArray[indexPath.row]];
-        }
-    };
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-//    [self editMoodWithModel:self.dataArray[indexPath.row]];
-}
+    //进入预览
+    [FFRouter routeURL:kMoodDiaryPreviewRouter withParameters:@{kRouterParamKey:self.dataArray[indexPath.row]}];
 
-#pragma makr - 跳转到编辑心情界面
-- (void)editMoodWithModel:(LYMoodDiaryModel *)model{
-    WEAKSELF(weakSelf);
-    LYWriteMoodDiaryViewController *vc = [[LYWriteMoodDiaryViewController alloc] init];
-    vc.editMoodArray = [NSMutableArray arrayWithObject:model];
-    vc.itemBlock = ^(NSInteger index) {
-        [weakSelf loadNewData];
-    };
-    [self presentViewController:vc animated:YES completion:nil];
 }
-
-#pragma makr - 删除一条心情l记录
-- (void)deleteMoodWithModel:(LYMoodDiaryModel *)model{
-    NSString *where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"enterDate"),bg_sqlValue(model.enterDate)];
-    if ([LYMoodDiaryModel bg_delete:kLYMOODTABLENAME where:where]) {
-        [self loadNewData];
-    }
-}
-
 #pragma mark - 选择日期
 - (void)calendarPickerDate{
     WEAKSELF(weakSelf);
     LYCalendarPickerMenu *menu = [[LYCalendarPickerMenu alloc] initRelyOnView:self.view];
     menu.showMaskView = NO;
     menu.didSelected  = ^(NSDate * _Nonnull didSelectDate) {
-        weakSelf.headerView.title       = [didSelectDate stringWithFormat:kHEADERTITLEDATEFORMAT];
-        weakSelf.headerView.detailTitle = [didSelectDate stringWithFormat:kHEADERDETAILTITLEDATEFORMAT];
+        weakSelf.headerView.title       = [didSelectDate tableHeaderTitle];
+        weakSelf.headerView.detailTitle = [didSelectDate tableHeaderDetailTitle];
+        
         weakSelf.currentDate = didSelectDate;
+        weakSelf.title = [self.currentDate navigationTitle];
         [weakSelf loadNewData];
     };
     [menu show];

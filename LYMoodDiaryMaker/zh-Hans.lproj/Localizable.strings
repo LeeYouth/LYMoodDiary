@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  LYMoodDiaryMaker
-
-  Created by CNFOL_iOS on 2019/5/19.
-  Copyright © 2019 LYoung_iOS. All rights reserved.
-*/
+/*
+ Localizable.strings
+ LYMoodDiaryMaker
+ 
+ Created by CNFOL_iOS on 2019/5/19.
+ Copyright © 2019 LYoung_iOS. All rights reserved.
+ */
 
 kLYEmptyDataMessage     = "无心情或文字";
 kLYButtonEnsureTitle    = "确定";
@@ -13,6 +13,9 @@ kLYMoodYesterday        = "昨天";
 kLYSheetPreview         = "预览";
 kLYSheetDelete          = "删除";
 kLYSheetCancel          = "取消";
+kLYSheetEdit            = "编辑";
+kLYSheetLongPicture     = "生成长图";
+
 kLYEditMoodTitle        = "编辑心情";
 kLYRecordMoodTitle      = "记录心情";
 kLYNavigationMoodSave   = "保存";
@@ -20,6 +23,9 @@ kLYMoodSaveSuccess      = "保存成功";
 kLYEditMoodDetail       = "在这里，您可以重新编辑您的心情和文字。";
 kLYRecordMoodDetail     = "选择当前心情，输入当前的心理状态，这样就可以记录您的心情历程了。";
 kLYRecordMoodAlertTitle = "添加一段文字记录心里历程吧~";
+
+kLYDeleteMoodAlertTitle = "心情删除后不可以恢复，确认删除吗？";
+kLYMoodDeleteSuccess    = "删除成功";
 
 kLYSettingTitle         = "功能";
 kLYSettingCellHistory   = "心情史";

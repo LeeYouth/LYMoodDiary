@@ -10,12 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^LYMoodDiaryHomePageControllerBlock)(LYMoodDiaryModel *model);
-
 @interface LYMoodDiaryHomePageController : LYBaseTableViewController
-
-/** 刷新下数据 */
-- (void)reloadTableData;
 
 @end
 

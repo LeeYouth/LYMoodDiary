@@ -16,5 +16,6 @@ target 'LYMoodDiaryMaker' do
     pod 'FSCalendar'
 
     pod 'CYLTabBarController', '~> 1.24.0'
+    pod 'FFRouter'
 
 end

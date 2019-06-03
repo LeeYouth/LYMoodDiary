@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  LYMoodDiaryMaker
-
-  Created by CNFOL_iOS on 2019/5/19.
-  Copyright © 2019 LYoung_iOS. All rights reserved.
-*/
+/*
+ Localizable.strings
+ LYMoodDiaryMaker
+ 
+ Created by CNFOL_iOS on 2019/5/19.
+ Copyright © 2019 LYoung_iOS. All rights reserved.
+ */
 
 kLYEmptyDataMessage     = "気分や言葉なし";
 kLYButtonEnsureTitle    = "決定する";
@@ -13,6 +13,9 @@ kLYMoodYesterday        = "昨日";
 kLYSheetPreview         = "プレビュー";
 kLYSheetDelete          = "削除する";
 kLYSheetCancel          = "キャンセル";
+kLYSheetEdit            = "編集する";
+kLYSheetLongPicture     = "長い画像を生成する";
+
 kLYEditMoodTitle        = "気分を編集";
 kLYRecordMoodTitle      = "レコードムード";
 kLYNavigationMoodSave   = "保存する";
@@ -20,6 +23,9 @@ kLYMoodSaveSuccess      = "保存しました";
 kLYEditMoodDetail       = "ここであなたはあなたの気分とテキストを再編集することができます。";
 kLYRecordMoodDetail     = "あなたの現在の気分を選択し、あなたの気分履歴を記録できるようにあなたの現在の精神状態を入力してください。";
 kLYRecordMoodAlertTitle = "あなたの心の歴史を記録するために段落を追加する";
+
+kLYDeleteMoodAlertTitle = "気分が削除された後に回復することはできません、削除を確認しますか？";
+kLYMoodDeleteSuccess    = "削除しました";
 
 kLYSettingTitle         = "機能";
 kLYSettingCellHistory   = "歴史";

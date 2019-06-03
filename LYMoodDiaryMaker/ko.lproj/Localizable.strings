@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  LYMoodDiaryMaker
-
-  Created by CNFOL_iOS on 2019/5/19.
-  Copyright © 2019 LYoung_iOS. All rights reserved.
-*/
+/*
+ Localizable.strings
+ LYMoodDiaryMaker
+ 
+ Created by CNFOL_iOS on 2019/5/19.
+ Copyright © 2019 LYoung_iOS. All rights reserved.
+ */
 
 kLYEmptyDataMessage     = "기분이나 말투 없음";
 kLYButtonEnsureTitle    = "결정";
@@ -13,6 +13,9 @@ kLYMoodYesterday        = "어제";
 kLYSheetPreview         = "미리보기";
 kLYSheetDelete          = "삭제";
 kLYSheetCancel          = "취소";
+kLYSheetEdit            = "수정";
+kLYSheetLongPicture     = "긴 이미지 생성";
+
 kLYEditMoodTitle        = "기분 편집";
 kLYRecordMoodTitle      = "기분 전환";
 kLYNavigationMoodSave   = "저장";
@@ -20,6 +23,9 @@ kLYMoodSaveSuccess      = "성공적으로 저장되었습니다.";
 kLYEditMoodDetail       = "여기에서 기분과 텍스트를 다시 편집 할 수 있습니다.";
 kLYRecordMoodDetail     = "현재의 분위기를 선택하고 현재의 정신 상태를 입력하여 기분 이력을 기록 할 수 있습니다.";
 kLYRecordMoodAlertTitle = "심장 박동을 기록하는 단락 추가 ~";
+
+kLYDeleteMoodAlertTitle = "기분이 삭제 된 후에는 복구 할 수 없으므로 삭제를 확인 하시겠습니까?";
+kLYMoodDeleteSuccess    = "성공적으로 삭제되었습니다.";
 
 kLYSettingTitle         = "기능";
 kLYSettingCellHistory   = "기분의 역사";

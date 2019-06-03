@@ -92,6 +92,10 @@
 		CF9DA40022A3CECA0097D6A4 /* UIViewController+TYSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DA3F922A3CECA0097D6A4 /* UIViewController+TYSnapshot.m */; };
 		CF9DA40322A4B2F00097D6A4 /* LYMoodDiaryDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DA40222A4B2F00097D6A4 /* LYMoodDiaryDBManager.m */; };
 		CF9DA40622A4BC130097D6A4 /* LYSnapshotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DA40522A4BC130097D6A4 /* LYSnapshotManager.m */; };
+		CF9DA40E22A4C0660097D6A4 /* LYRoutersRegister.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DA40D22A4C0660097D6A4 /* LYRoutersRegister.m */; };
+		CF9DA41122A4C07B0097D6A4 /* LYRouterConst.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DA41022A4C07B0097D6A4 /* LYRouterConst.m */; };
+		CF9DA41422A502FE0097D6A4 /* NSDate+LYFormatDate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9DA41322A502FE0097D6A4 /* NSDate+LYFormatDate.m */; };
+		CF9DA41722A51E1C0097D6A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF9DA41922A51E1C0097D6A4 /* Localizable.strings */; };
 		CFB6D8AA2289417700590286 /* LYBaseCustomTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D8A92289417600590286 /* LYBaseCustomTableHeaderView.m */; };
 		CFB6D8B122896F0300590286 /* LYWriteMoodDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D8B022896F0300590286 /* LYWriteMoodDiaryViewController.m */; };
 		CFB6D8B4228976F100590286 /* LYWriteMoodDiaryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D8B3228976F100590286 /* LYWriteMoodDiaryTableCell.m */; };
@@ -110,7 +114,6 @@
 		CFB9698A229047BF0027DEF8 /* LYExportMoodHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB96989229047BF0027DEF8 /* LYExportMoodHeaderView.m */; };
 		CFB9698D229047D20027DEF8 /* LYExportMoodBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB9698C229047D20027DEF8 /* LYExportMoodBottomView.m */; };
 		CFB9699722916F0D0027DEF8 /* LYLocalizedHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB9699622916F0D0027DEF8 /* LYLocalizedHelper.m */; };
-		CFB9699A229176BE0027DEF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFB9699C229176BE0027DEF8 /* Localizable.strings */; };
 		CFB969A322924CB30027DEF8 /* LYPrivacyAgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB969A222924CB30027DEF8 /* LYPrivacyAgreementViewController.m */; };
 		CFB969A622924CDA0027DEF8 /* LYPrivacyAgreementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB969A522924CDA0027DEF8 /* LYPrivacyAgreementTableViewCell.m */; };
 		CFB969A9229278B60027DEF8 /* LYAboutUsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB969A8229278B60027DEF8 /* LYAboutUsTableViewCell.m */; };
@@ -322,6 +325,17 @@
 		CF9DA40222A4B2F00097D6A4 /* LYMoodDiaryDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYMoodDiaryDBManager.m; sourceTree = "<group>"; };
 		CF9DA40422A4BC130097D6A4 /* LYSnapshotManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYSnapshotManager.h; sourceTree = "<group>"; };
 		CF9DA40522A4BC130097D6A4 /* LYSnapshotManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYSnapshotManager.m; sourceTree = "<group>"; };
+		CF9DA40C22A4C0660097D6A4 /* LYRoutersRegister.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYRoutersRegister.h; sourceTree = "<group>"; };
+		CF9DA40D22A4C0660097D6A4 /* LYRoutersRegister.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYRoutersRegister.m; sourceTree = "<group>"; };
+		CF9DA40F22A4C07B0097D6A4 /* LYRouterConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYRouterConst.h; sourceTree = "<group>"; };
+		CF9DA41022A4C07B0097D6A4 /* LYRouterConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYRouterConst.m; sourceTree = "<group>"; };
+		CF9DA41222A502FE0097D6A4 /* NSDate+LYFormatDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+LYFormatDate.h"; sourceTree = "<group>"; };
+		CF9DA41322A502FE0097D6A4 /* NSDate+LYFormatDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+LYFormatDate.m"; sourceTree = "<group>"; };
+		CF9DA41822A51E1C0097D6A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF9DA41A22A51E270097D6A4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CF9DA41B22A51E370097D6A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF9DA41C22A51E390097D6A4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CF9DA41D22A51E3E0097D6A4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFB6D8A82289417600590286 /* LYBaseCustomTableHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBaseCustomTableHeaderView.h; sourceTree = "<group>"; };
 		CFB6D8A92289417600590286 /* LYBaseCustomTableHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBaseCustomTableHeaderView.m; sourceTree = "<group>"; };
 		CFB6D8AF22896F0300590286 /* LYWriteMoodDiaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryViewController.h; sourceTree = "<group>"; };
@@ -359,11 +373,6 @@
 		CFB9698C229047D20027DEF8 /* LYExportMoodBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYExportMoodBottomView.m; sourceTree = "<group>"; };
 		CFB9699522916F0D0027DEF8 /* LYLocalizedHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYLocalizedHelper.h; sourceTree = "<group>"; };
 		CFB9699622916F0D0027DEF8 /* LYLocalizedHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYLocalizedHelper.m; sourceTree = "<group>"; };
-		CFB9699B229176BE0027DEF8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CFB9699D229176C20027DEF8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		CFB9699E229185870027DEF8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CFB9699F229185A10027DEF8 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CFB969A0229185C50027DEF8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFB969A122924CB30027DEF8 /* LYPrivacyAgreementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPrivacyAgreementViewController.h; sourceTree = "<group>"; };
 		CFB969A222924CB30027DEF8 /* LYPrivacyAgreementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYPrivacyAgreementViewController.m; sourceTree = "<group>"; };
 		CFB969A422924CDA0027DEF8 /* LYPrivacyAgreementTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYPrivacyAgreementTableViewCell.h; sourceTree = "<group>"; };
@@ -715,6 +724,8 @@
 				CF0BD6EB22856EE700A3EECD /* UIFont+LYMoodFont.m */,
 				CF432E7022A0D89D00ABD7E6 /* UIViewController+LYAlpha.h */,
 				CF432E7122A0D89D00ABD7E6 /* UIViewController+LYAlpha.m */,
+				CF9DA41222A502FE0097D6A4 /* NSDate+LYFormatDate.h */,
+				CF9DA41322A502FE0097D6A4 /* NSDate+LYFormatDate.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -865,6 +876,33 @@
 			path = TYSnapshotScroll;
 			sourceTree = "<group>";
 		};
+		CF9DA40922A4BFFA0097D6A4 /* LYRouters */ = {
+			isa = PBXGroup;
+			children = (
+				CF9DA40A22A4C0360097D6A4 /* Register */,
+				CF9DA40B22A4C0360097D6A4 /* RouterConst */,
+			);
+			path = LYRouters;
+			sourceTree = "<group>";
+		};
+		CF9DA40A22A4C0360097D6A4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				CF9DA40C22A4C0660097D6A4 /* LYRoutersRegister.h */,
+				CF9DA40D22A4C0660097D6A4 /* LYRoutersRegister.m */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		CF9DA40B22A4C0360097D6A4 /* RouterConst */ = {
+			isa = PBXGroup;
+			children = (
+				CF9DA40F22A4C07B0097D6A4 /* LYRouterConst.h */,
+				CF9DA41022A4C07B0097D6A4 /* LYRouterConst.m */,
+			);
+			path = RouterConst;
+			sourceTree = "<group>";
+		};
 		CFB6D8AB22896EE500590286 /* WriteMood */ = {
 			isa = PBXGroup;
 			children = (
@@ -918,14 +956,6 @@
 			path = LYEmptyView;
 			sourceTree = "<group>";
 		};
-		CFB9698E22916A390027DEF8 /* Language */ = {
-			isa = PBXGroup;
-			children = (
-				CFB9699C229176BE0027DEF8 /* Localizable.strings */,
-			);
-			path = Language;
-			sourceTree = "<group>";
-		};
 		CFDB564E2125172E00501905 = {
 			isa = PBXGroup;
 			children = (
@@ -954,6 +984,7 @@
 				CF6C430521AE4731002287F9 /* LYMoodDiaryMaker.entitlements */,
 				CFDB56972125210E00501905 /* Classes */,
 				CFDB56932125202600501905 /* LYMoodDiaryMakerPrefixHeader.pch */,
+				CF9DA41922A51E1C0097D6A4 /* Localizable.strings */,
 				CFDB56632125173200501905 /* Assets.xcassets */,
 				CFDB56682125173200501905 /* Info.plist */,
 				CFDB56692125173200501905 /* main.m */,
@@ -995,7 +1026,7 @@
 		CFDB569D2125210E00501905 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CFB9698E22916A390027DEF8 /* Language */,
+				CF9DA40922A4BFFA0097D6A4 /* LYRouters */,
 				CFFF0D8B21DF4EC700060A2B /* Lib */,
 				CF706F2E21B8CD0C00442D67 /* Fonts */,
 				CF6C430E21AE6AC0002287F9 /* LYTabbarControllerConfig */,
@@ -1261,9 +1292,9 @@
 				CF0BD6E622856D8800A3EECD /* Alibaba-PuHuiTi-Medium.otf in Resources */,
 				CFFF0D9B21DF4EC700060A2B /* SVProgressHUD.bundle in Resources */,
 				CF6C430D21AE69D6002287F9 /* LYResources.bundle in Resources */,
-				CFB9699A229176BE0027DEF8 /* Localizable.strings in Resources */,
 				CF0BD6E422856BBC00A3EECD /* Alibaba-PuHuiTi-Light.otf in Resources */,
 				CF0BD6E922856DB100A3EECD /* Alibaba-PuHuiTi-Bold.otf in Resources */,
+				CF9DA41722A51E1C0097D6A4 /* Localizable.strings in Resources */,
 				CFDB56642125173200501905 /* Assets.xcassets in Resources */,
 				CF0BD6E222856BB600A3EECD /* Alibaba-PuHuiTi-Regular.otf in Resources */,
 			);
@@ -1365,6 +1396,7 @@
 				CF432EA822A230CE00ABD7E6 /* LYGeneralPasscodeSectionHeader.m in Sources */,
 				CF6C430021AE433F002287F9 /* UIViewController+LYUMTrack.m in Sources */,
 				CF432E7822A16C4700ABD7E6 /* LYGeneraPasscodeViewController.m in Sources */,
+				CF9DA41122A4C07B0097D6A4 /* LYRouterConst.m in Sources */,
 				CF3DF01421F9AD68000B8853 /* LYHomePageMenuButton.m in Sources */,
 				CF6C9F23228B064600A003CF /* LYEmojiPopMenuItem.m in Sources */,
 				CF3DEFEF21F066DA000B8853 /* UIButton+SGImagePosition.m in Sources */,
@@ -1396,6 +1428,7 @@
 				CF6C9F29228BAC5D00A003CF /* LYRectConst.m in Sources */,
 				CFB9698A229047BF0027DEF8 /* LYExportMoodHeaderView.m in Sources */,
 				CF6C42F921AE36D9002287F9 /* LYURLConst.m in Sources */,
+				CF9DA41422A502FE0097D6A4 /* NSDate+LYFormatDate.m in Sources */,
 				CFB9690D228E51910027DEF8 /* LYCustomEmptyDataView.m in Sources */,
 				CF0BD6EF22857B6300A3EECD /* LYMoodDiaryHomePageHeaderView.m in Sources */,
 				CFB96978228FFBA70027DEF8 /* LYMoodDiaryPreviewViewController.m in Sources */,
@@ -1439,6 +1472,7 @@
 				CF432E9822A225D200ABD7E6 /* LYPasscodeField.m in Sources */,
 				CF432E8C22A2249A00ABD7E6 /* LYPasscodeDummyViewController.m in Sources */,
 				CFB96981229010FF0027DEF8 /* LYExportMoodViewController.m in Sources */,
+				CF9DA40E22A4C0660097D6A4 /* LYRoutersRegister.m in Sources */,
 				CFB96972228EAF2C0027DEF8 /* LYCustoomScrollView.m in Sources */,
 				CF3DEFF921F16725000B8853 /* LYNetworkHelper.m in Sources */,
 				CF3DEFF021F066DA000B8853 /* UIButton+SGEvent.m in Sources */,
@@ -1479,14 +1513,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CFB9699C229176BE0027DEF8 /* Localizable.strings */ = {
+		CF9DA41922A51E1C0097D6A4 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CFB9699B229176BE0027DEF8 /* en */,
-				CFB9699D229176C20027DEF8 /* zh-Hans */,
-				CFB9699E229185870027DEF8 /* ja */,
-				CFB9699F229185A10027DEF8 /* ko */,
-				CFB969A0229185C50027DEF8 /* fr */,
+				CF9DA41822A51E1C0097D6A4 /* en */,
+				CF9DA41A22A51E270097D6A4 /* zh-Hans */,
+				CF9DA41B22A51E370097D6A4 /* ja */,
+				CF9DA41C22A51E390097D6A4 /* fr */,
+				CF9DA41D22A51E3E0097D6A4 /* ko */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

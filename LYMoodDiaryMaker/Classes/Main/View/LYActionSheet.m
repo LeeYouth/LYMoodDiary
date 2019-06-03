@@ -199,7 +199,7 @@
         [_cancelButton setBackgroundImage:[UIImage createImageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
         [_cancelButton setTitleColor:LYColor(@"#444444") forState:UIControlStateNormal];
         [_cancelButton setTitle:LY_LocalizedString(@"kLYSheetCancel") forState:UIControlStateNormal];
-        _cancelButton.titleLabel.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:18];
+        _cancelButton.titleLabel.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:18];
         [_cancelButton addTarget:self action:@selector(closeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
@@ -300,7 +300,7 @@
         UILabel *view = [UILabel new];
         view.textColor = LYColor(LYBlackColorHex);
         view.textAlignment = NSTextAlignmentCenter;
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:18];
+        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:18];
         view;
     }));
 }

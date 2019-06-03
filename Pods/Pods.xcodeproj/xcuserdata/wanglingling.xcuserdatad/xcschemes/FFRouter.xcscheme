@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8802C2A3355230D6899D8909F28B4274"
-               BuildableName = "libPods-LYMoodDiaryMaker.a"
-               BlueprintName = "Pods-LYMoodDiaryMaker"
+               BlueprintIdentifier = "16ABBFC00068B9628E4642479BEE7F20"
+               BuildableName = "libFFRouter.a"
+               BlueprintName = "FFRouter"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

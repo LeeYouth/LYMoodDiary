@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LYMoodDiaryPreviewViewController : LYBaseTableViewController
 
 /** 预览心情 */
-@property(nonatomic, strong) LYMoodDiaryModel *previewModel;
+@property(nonatomic, strong) NSDate *creatDate;
 
 @end
 

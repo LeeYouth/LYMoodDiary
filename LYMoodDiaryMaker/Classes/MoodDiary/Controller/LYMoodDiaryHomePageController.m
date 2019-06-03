@@ -55,8 +55,9 @@
     NSDate *today   = [NSDate date];
     
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = LY_LocalizedString(@"kLYMoodToday");
-    headerView.detailTitle = [today stringWithFormat:kHEADERDETAILTITLEDATEFORMAT];
+    headerView.title       = [today tableHeaderTitle];
+    headerView.detailTitle = [today tableHeaderDetailTitle];
+//    [today stringWithFormat:kHEADERDETAILTITLEDATEFORMAT];
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
     
@@ -77,7 +78,6 @@
         [self.dataArray removeAllObjects];
     }
     NSDate *today   = [NSDate date];
-    NSDate *lastDay = [NSDate dateWithTimeInterval:-24*60*60 sinceDate:today];//前一天
     
     NSString* where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"saveFormatDate"),bg_sqlValue([today stringWithFormat:@"yyyy-MM-dd"])];
     
@@ -100,25 +100,14 @@
     WEAKSELF(weakSelf);
     LYMoodDiaryHomePageTableCell *cell = [LYMoodDiaryHomePageTableCell cellWithTableView:tableView];
     cell.model = self.dataArray[indexPath.row];
-    cell.didSelected = ^(NSInteger index) {
-        if (index == 0) {
-            //预览
-            LYMoodDiaryPreviewViewController *previewVC = [[LYMoodDiaryPreviewViewController alloc] init];
-            previewVC.previewModel = weakSelf.dataArray[indexPath.row];
-            [weakSelf presentViewController:previewVC animated:YES completion:nil];
-        }else if (index == 1){
-            //删除
-            [weakSelf deleteMoodWithModel:weakSelf.dataArray[indexPath.row]];
-        }else if (index == 10001){
-            //进入编辑
-            [weakSelf editMoodWithModel:weakSelf.dataArray[indexPath.row]];
-        }
-    };
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+    //进入预览
+    [FFRouter routeURL:kMoodDiaryPreviewRouter withParameters:@{kRouterParamKey:self.dataArray[indexPath.row]}];
 
 }
 
@@ -160,28 +149,6 @@
         tabBarController.tabBar.frame = CGRectMake(0, kScreenHeight - tabbarH, kScreenWidth, tabbarH);
     }];
 }
-
-#pragma makr - 跳转到编辑心情界面
-- (void)editMoodWithModel:(LYMoodDiaryModel *)model{
-    WEAKSELF(weakSelf);
-    LYWriteMoodDiaryViewController *vc = [[LYWriteMoodDiaryViewController alloc] init];
-    vc.editMoodArray = [NSMutableArray arrayWithObject:model];
-    vc.itemBlock = ^(NSInteger index) {
-        [weakSelf reloadTableData];
-    };
-    [self presentViewController:vc animated:YES completion:nil];
-}
-
-#pragma makr - 删除一条心情l记录
-- (void)deleteMoodWithModel:(LYMoodDiaryModel *)model{
-
-    if ([LYMoodDiaryDBManager deleteMoodDiaryWithModel:model]) {
-        [self reloadTableData];
-    }
-}
-
-
-
 
 - (void)rightBarItemClick{
     LYSettingViewController *settingVC = [[LYSettingViewController alloc] init];

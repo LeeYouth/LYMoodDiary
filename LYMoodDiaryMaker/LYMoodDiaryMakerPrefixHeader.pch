@@ -11,6 +11,7 @@
 //macro
 #import "LYConst.h"
 #import "LYMacro.h"
+#import "FFRouter.h"
 
 //third part
 #import <CYLTabBarController/CYLTabBarController.h>
@@ -64,8 +65,9 @@
 
 #import "LYMoodDiaryDBManager.h"
 #import "LYSnapshotManager.h"
-
-
+#import "LYRoutersRegister.h"
+#import "LYRouterConst.h"
+#import "NSDate+LYFormatDate.h"
 
 
 

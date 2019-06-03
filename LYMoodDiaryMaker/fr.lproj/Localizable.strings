@@ -1,46 +1,51 @@
-/* 
-  Localizable.strings
-  LYMoodDiaryMaker
+/*
+ Localizable.strings
+ LYMoodDiaryMaker
+ 
+ Created by CNFOL_iOS on 2019/5/19.
+ Copyright © 2019 LYoung_iOS. All rights reserved.
+ */
 
-  Created by CNFOL_iOS on 2019/5/19.
-  Copyright © 2019 LYoung_iOS. All rights reserved.
-*/
+kLYEmptyDataMessage     = "Pas d'humeur ou de mots";
+kLYButtonEnsureTitle    = "Déterminer";
+kLYMoodToday            = "Aujourd'hui";
+kLYMoodYesterday        = "Hier";
+kLYSheetPreview         = "Aperçu";
+kLYSheetDelete          = "Supprimer";
+kLYSheetCancel          = "Annuler";
+kLYSheetEdit            = "Éditer";
+kLYSheetLongPicture     = "Générer de longues images";
 
-kLYEmptyDataMessage     = "No mood or words";
-kLYButtonEnsureTitle    = "OK";
-kLYMoodToday            = "Today";
-kLYMoodYesterday        = "Yesterday";
-kLYSheetPreview         = "Preview";
-kLYSheetDelete          = "Delete";
-kLYSheetCancel          = "Cancel";
-kLYEditMoodTitle        = "Edit Mood";
-kLYRecordMoodTitle      = "Record Mood";
-kLYNavigationMoodSave   = "Save";
-kLYMoodSaveSuccess      = "Save Success!";
-kLYEditMoodDetail       = "Here you can re-edit your mood and text.";
-kLYRecordMoodDetail     = "Choose your current mood and enter your current mental state so you can record your mood history.";
-kLYRecordMoodAlertTitle = "Add a paragraph to record your heart history~";
+kLYEditMoodTitle        = "Modifier l'humeur";
+kLYRecordMoodTitle      = "Record d'humeur";
+kLYNavigationMoodSave   = "Enregistrer";
+kLYMoodSaveSuccess      = "Enregistré avec succès";
+kLYEditMoodDetail       = "Ici, vous pouvez modifier votre humeur et votre texte.";
+kLYRecordMoodDetail     = "Choisissez votre humeur actuelle et entrez votre état mental actuel afin de pouvoir enregistrer votre historique d'humeur.";
+kLYRecordMoodAlertTitle = "Ajouter un paragraphe pour enregistrer l'historique de votre coeur ~";
 
-kLYSettingTitle         = "General";
-kLYSettingCellHistory   = "History";
-kLYSettingCellExport    = "Export to CSV";
-kLYSettingCellNovice    = "Help";
-kLYSettingCellRate      = "Rate us on App Store";
-kLYSettingCellPrivacy   = "Privacy Policy";
-kLYSettingCellAbout     = "About";
-kLYSettingCellVersion   = "Version";
-kLYSettingCellPasscode  = "Passcode";
-kLYSettingCellSupport   = "Support";
-kLYSettingCurrentVersion= "Current Version ";
+kLYDeleteMoodAlertTitle = "Impossible de récupérer une fois l'humeur supprimée, confirmez-vous la suppression?";
+kLYMoodDeleteSuccess    = "Supprimé avec succès";
 
-kLYGeneralPasscodeset     = "Set Passcode";
-kLYGeneralPasscodeChange  = "Change Passcode";
+kLYSettingTitle         = "Fonction";
+kLYSettingCellHistory   = "Histoire de l'humeur";
+kLYSettingCellExport    = "Exportation CSV";
+kLYSettingCellNovice    = "Guide du débutant";
+kLYSettingCellRate      = "Aller au score";
+kLYSettingCellPrivacy   = "Accord de confidentialité";
+kLYSettingCellAbout     = "À propos de";
+kLYSettingCellVersion   = "Numéro de version";
+kLYSettingCellPasscode  = "Mot de passe";
+kLYSettingCellSupport   = "Soutien";
+kLYSettingCurrentVersion= "Numéro de version actuel";
+
+kLYGeneralPasscodeset     = "Définir le mot de passe";
+kLYGeneralPasscodeChange  = "Changer le mot de passe";
 kLYGeneralPasscodeTouchID = "Touch ID";
-
-kLYGeneralPasscodeRemind  = "Remind";
-kLYGeneralPasscodeRemindDetail  = "After opening the password settings, you will need password verification every time you start to ensure your privacy.";
 kLYGeneralPasscodeYourTouchID  = "Your Touch ID";
 
+kLYGeneralPasscodeRemind  = "Rappel";
+kLYGeneralPasscodeRemindDetail  = "Après avoir ouvert les paramètres de mot de passe, vous aurez besoin d'une vérification de mot de passe à chaque démarrage pour garantir votre confidentialité.";
 
 kLYInputViewOldPasscode      = "Enter your old passcode";
 kLYInputViewInputPasscode    = "Enter your passcode";
@@ -58,9 +63,9 @@ kLYCantUserTouchID             = "Enable Touch ID";
 kLYUseTouchIDToHome            = "Verify existing phone fingerprints with the Home button";
 
 
-kLYExportBegin          = "Begin";
-kLYExportEnd            = "End";
-kLYExportTime           = "Time";
+kLYExportBegin          = "Début";
+kLYExportEnd            = "Fin";
+kLYExportTime           = "Le temps";
 
 kLYMoodNameHappy        = "Happy";
 kLYMoodNameInLove       = "Inove";
@@ -71,13 +76,11 @@ kLYMoodNameCry          = "Cry";
 kLYMoodNameSleep        = "Sleep";
 kLYMoodNameHungry       = "Hungry";
 
-kLYExportEmptyData      = "This time period is not recorded.";
-kLYExportErrorDate      = "Please select the start and end dates before exporting.";
+kLYExportEmptyData      = "Cette période n'est pas enregistrée.";
+kLYExportErrorDate      = "Veuillez sélectionner les dates de début et de fin avant l'exportation.";
 
-kLYHomePageGuideTitle    = "Swipe right to see yesterday's record, swipe left to add a new mood.";
+kLYHomePageGuideTitle    = "Balayez à droite pour voir le record d'hier, balayez à gauche pour ajouter une nouvelle ambiance.";
 kLYHomePageGuideOK       = "OK";
-
-
 
 
 
