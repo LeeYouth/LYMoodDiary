@@ -28,6 +28,7 @@
 #import "LYToastTool.h"
 #import "LYAppTool.h"
 #import "LYPasscodeMacro.h"
+#import "TYSnapshotScroll.h"
 
 //category
 #import "UIFont+LYMoodFont.h"
@@ -40,6 +41,7 @@
 #import "MBProgressHUD+LYHUD.h"
 #import "UIViewController+LYUMTrack.h"
 #import "UIViewController+LYAlpha.h"
+#import "TYSnapshotScroll.h"
 
 //base
 #import "LYMoodDiaryModel.h"
@@ -60,6 +62,8 @@
 #import "LYActionSheet.h"
 #import "LYBaseTableViewCell.h"
 
+#import "LYMoodDiaryDBManager.h"
+#import "LYSnapshotManager.h"
 
 
 

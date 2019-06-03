@@ -112,7 +112,44 @@
     
 }
 
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGPoint point = [scrollView.panGestureRecognizer translationInView:scrollView];
+    CGFloat offsetY = point.y;
+    CGFloat tabbarH = TABBAR_HEIGHT;
+    
+    if (offsetY < 0) {
+        /// 上滑
+        CYLTabBarController *tabBarController = [self cyl_tabBarController];
+        [UIView animateWithDuration:0.35 animations:^{
+            tabBarController.tabBar.frame = CGRectMake(0, kScreenHeight, kScreenWidth, tabbarH);
+        }];
+    } else {
+        /// 下滑
+        CYLTabBarController *tabBarController = [self cyl_tabBarController];
+        [UIView animateWithDuration:0.35 animations:^{
+            tabBarController.tabBar.frame = CGRectMake(0, kScreenHeight - tabbarH, kScreenWidth, tabbarH);
+        }];
+    }
+    CGFloat offset = scrollView.contentOffset.y;
+    
+    if (offset >= NAVBAR_HEIGHT) {
+        self.navBarView.navBarTitle = self.title;
+        self.navBarView.showShadow  = YES;
+    }else{
+        self.navBarView.navBarTitle = @"";
+        self.navBarView.showShadow  = NO;
+    }
+}
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    CYLTabBarController *tabBarController = [self cyl_tabBarController];
+    CGFloat tabbarH = TABBAR_HEIGHT;
+    
+    [UIView animateWithDuration:0.35 animations:^{
+        tabBarController.tabBar.frame = CGRectMake(0, kScreenHeight - tabbarH, kScreenWidth, tabbarH);
+    }];
+}
 
 
 #pragma mark - lazy loadig

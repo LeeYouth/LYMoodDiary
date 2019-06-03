@@ -36,6 +36,10 @@ kLYSettingCurrentVersion= "Numéro de version actuel";
 kLYGeneralPasscodeset     = "Définir le mot de passe";
 kLYGeneralPasscodeChange  = "Changer le mot de passe";
 kLYGeneralPasscodeTouchID = "Touch ID";
+kLYGeneralPasscodeYourTouchID  = "Your Touch ID";
+
+kLYGeneralPasscodeRemind  = "Rappel";
+kLYGeneralPasscodeRemindDetail  = "Après avoir ouvert les paramètres de mot de passe, vous aurez besoin d'une vérification de mot de passe à chaque démarrage pour garantir votre confidentialité.";
 
 kLYInputViewOldPasscode      = "Enter your old passcode";
 kLYInputViewInputPasscode    = "Enter your passcode";

@@ -58,19 +58,27 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return section == 0?100:60;
+    LYGeneralPasscodeSectionHeader *headView = [[LYGeneralPasscodeSectionHeader alloc] init];
+    if (section == 0) {
+        headView.title = LY_LocalizedString(@"kLYGeneralPasscodeRemind");
+        headView.detailTitle = LY_LocalizedString(@"kLYGeneralPasscodeRemindDetail");
+    }else{
+        headView.title = @"";
+        headView.detailTitle = LY_LocalizedString(@"kLYGeneralPasscodeYourTouchID");
+    }
+    return headView.height;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 0.0000001;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    LYGeneralPasscodeSectionHeader *headView = [[LYGeneralPasscodeSectionHeader alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, section == 0?100:60)];
+    LYGeneralPasscodeSectionHeader *headView = [[LYGeneralPasscodeSectionHeader alloc] init];
     if (section == 0) {
-        headView.title = @"提醒";
-        headView.detailTitle = @"打开密码后，您每次启动需要密码验证，以保证您的隐私安全。";
+        headView.title = LY_LocalizedString(@"kLYGeneralPasscodeRemind");
+        headView.detailTitle = LY_LocalizedString(@"kLYGeneralPasscodeRemindDetail");
     }else{
         headView.title = @"";
-        headView.detailTitle = @"您的Touch ID";
+        headView.detailTitle = LY_LocalizedString(@"kLYGeneralPasscodeYourTouchID");
     }
     return headView;
 }

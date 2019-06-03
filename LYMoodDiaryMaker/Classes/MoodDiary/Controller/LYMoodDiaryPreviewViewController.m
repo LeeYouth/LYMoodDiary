@@ -21,15 +21,17 @@
     
     WEAKSELF(weakSelf);
     self.navBarView.leftBarItemImage  = [UIImage imageNamed:@"navBar_closeicon"];
+    self.navBarView.rightBarItemImage = [UIImage imageNamed:@"homepage_rightBarItem"];
     self.navBarView.navColor = [UIColor whiteColor];
-    self.navBarView.rightBarItemImage = nil;
     self.navBarView.btnBlock = ^(UIButton *sender) {
         if (sender.tag == 0) {
             //返回
             [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        }else if (sender.tag == 1){
+            //功能
+            [weakSelf rightBarItemAction];
         }
     };
-    
     self.tableView.backgroundColor = LYHomePageColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -71,6 +73,25 @@
     
 }
 
+
+- (void)rightBarItemAction{
+    
+    WEAKSELF(weakSelf);
+    [LYSnapshotManager screenShotForTableView:self.tableView finishBlock:^(UIImage * _Nonnull snapShotImage) {
+        UIImageWriteToSavedPhotosAlbum(snapShotImage, weakSelf, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+    }];
+}
+
+- (void)saveImage{
+    //save to photosAlbum
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    NSString *barItemTitle = @"保存成功";
+    if (error != nil) {
+        barItemTitle = @"保存失败";
+    }
+}
 #pragma mark - lazy loading
 
 @end

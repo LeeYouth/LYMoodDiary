@@ -8,7 +8,7 @@
 
 #import "LYGeneralPasscodeSectionHeader.h"
 
-@interface LYGeneralPasscodeSectionHeader ()
+@interface LYGeneralPasscodeSectionHeader()
 
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *detailLabel;
@@ -17,57 +17,75 @@
 
 @implementation LYGeneralPasscodeSectionHeader
 
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+- (instancetype)init{
+    if ([super init]) {
+        self.userInteractionEnabled = YES;
         
-        [self setupSubViews];
+        self.backgroundColor = LYColor(LYWhiteColorHex);
+        [self addSubview:self.titleLabel];
+        [self addSubview:self.detailLabel];
+        
+        [self updateUI];
     }
     return self;
 }
 
-- (void)setupSubViews{
-    [self addSubview:self.titleLabel];
-    [self addSubview:self.detailLabel];
-    
-    CGFloat leftM = kLYContentLeftMargin - 2;
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top).offset(leftM);
-        make.left.equalTo(self.mas_left).offset(leftM);
-        make.right.equalTo(self.mas_right).offset(-leftM);
-        make.height.mas_equalTo(@30);
-    }];
-
-    [self.detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
-        make.left.equalTo(self.mas_left).offset(kLYContentLeftMargin);
-        make.right.equalTo(self.mas_right).offset(-kLYContentLeftMargin);
-    }];
-    
-    
-}
 
 - (void)setTitle:(NSString *)title{
     _title = title;
-    self.titleLabel.text  = title;
-    
-    if (!title.length) {
-        [self.detailLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.titleLabel.mas_bottom).offset(-20);
-            make.left.equalTo(self.mas_left).offset(kLYContentLeftMargin);
-            make.right.equalTo(self.mas_right).offset(-kLYContentLeftMargin);
-        }];
-    }
-    
+    [self updateUI];
 }
 
 - (void)setDetailTitle:(NSString *)detailTitle{
     _detailTitle = detailTitle;
-    
-    self.detailLabel.text = detailTitle;
+    [self updateUI];
 }
 
-#pragma mark - lazyloading
+- (void)updateUI{
+    CGFloat leftMargin = kLYContentLeftMargin - 4;
+    CGFloat leftMargin1 = kLYContentLeftMargin;
+    CGFloat topMargin  = 15;
+    CGFloat tempMargin = 10;
+    CGFloat titleH = 0;
+    CGFloat detailH = 0;
+    
+    CGFloat view1H = 0;
+    CGFloat view2H = 0;
+    
+    CGSize titleMaxSize  = CGSizeMake(kScreenWidth - 2*leftMargin, MAXFLOAT);
+    CGSize detailMaxSize = CGSizeMake(kScreenWidth - 2*leftMargin1, MAXFLOAT);
+    
+    if (self.title.length) {
+        titleH = [self.title sizeForFont:[UIFont fontAliWithName:AlibabaPuHuiTiR size:18] size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
+        
+        view1H = titleH + topMargin;
+        self.titleLabel.text = self.title;
+    }
+    
+    if (self.detailTitle.length) {
+        detailH = [self.detailTitle sizeForFont:[UIFont fontAliWithName:AlibabaPuHuiTiL size:15] size:detailMaxSize mode:NSLineBreakByWordWrapping].height;
+        view2H = detailH + tempMargin;
+        self.detailLabel.text = self.detailTitle;
+    }
+    
+    CGFloat bottomH = 15;
+    if (self.title.length && self.detailTitle.length) {
+        bottomH = 15;
+    }
+    
+    
+    self.titleLabel.hidden  = !self.title.length;
+    self.detailLabel.hidden = !self.detailTitle.length;
+    
+    self.frame = CGRectMake(0, 0, kScreenWidth, view1H + view2H + bottomH);
+    
+    [self setNeedsDisplay];
+    
+    self.titleLabel.frame  = CGRectMake(leftMargin, topMargin, titleMaxSize.width, titleH);
+    self.detailLabel.frame = CGRectMake(leftMargin1, view1H + tempMargin, detailMaxSize.width, detailH);
+}
+
+#pragma mark - lazy
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
@@ -85,6 +103,5 @@
         view;
     }));
 }
-
 @end
 

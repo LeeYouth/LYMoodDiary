@@ -33,19 +33,11 @@
     [super viewDidLoad];
     
     
-    [self.view addSubview:self.tableView];
-    [self.view addSubview:self.sloganView];
-    
-    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top).offset(NAVBAR_HEIGHT);
         make.left.right.bottom.equalTo(self.view);
-    }];
-    
-    [self.sloganView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view.mas_centerX);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-TABBAR_HEIGHT);
-        make.size.mas_equalTo(CGSizeMake(86, 86));
     }];
     
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
@@ -114,16 +106,6 @@
     
 }
 #pragma mark - lazy loadig
-- (UITableView *)tableView{
-    return LY_LAZY(_tableView, ({
-        UITableView *view = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        view.delegate = self;
-        view.dataSource = self;
-        view.separatorStyle = UITableViewCellSeparatorStyleNone;
-        view;
-    }));
-}
-
 - (NSMutableArray *)typeArray{
     if (!_typeArray) {
         _typeArray = [NSMutableArray array];

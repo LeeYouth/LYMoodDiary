@@ -30,12 +30,17 @@ kLYSettingCellPrivacy   = "隐私协议";
 kLYSettingCellAbout     = "关于";
 kLYSettingCellVersion   = "版本号";
 kLYSettingCellPasscode  = "密码";
-kLYSettingCellAbout     = "支持";
+kLYSettingCellSupport   = "支持";
 kLYSettingCurrentVersion= "当前版本号";
 
 kLYGeneralPasscodeset     = "设置密码";
 kLYGeneralPasscodeChange  = "更改密码";
-kLYGeneralPasscodeTouchID = "Touch ID";
+kLYGeneralPasscodeTouchID = "触控 ID";
+
+kLYGeneralPasscodeRemind  = "提醒";
+kLYGeneralPasscodeRemindDetail  = "打开密码设置后，您每次启动需要密码验证，以保证您的隐私安全。";
+kLYGeneralPasscodeYourTouchID  = "您的触控 ID";
+
 
 kLYInputViewOldPasscode      = "请输入旧密码";
 kLYInputViewInputPasscode    = "请输入密码";
@@ -47,10 +52,12 @@ kLYInputViewInvalidPasscode    = "无效的密码";
 kLYInputViewDontSamePasscode   = "请输入不同的密码，无法重复使用相同的密码。";
 kLYInputViewNotMatchPasscode   = "输入密码不匹配，请重新输入。";
 kLYInputViewAttemptPasscode    = "次密码尝试失败。";
-kLYDoYouWantTouchID            = "您想使用Touch ID进行身份验证吗？";
-kLYCantUserTouchID             = "使用Touch ID";
+kLYDoYouWantTouchID            = "您想使用触控 ID进行身份验证吗？";
+kLYCantUserTouchID             = "使用触控 ID";
 
 kLYUseTouchIDToHome            = "通过Home键验证已有手机指纹";
+
+
 
 
 

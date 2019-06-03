@@ -9,6 +9,7 @@
 #import "LYCalendarPickerMenu.h"
 #import "FSCalendar.h"
 
+#define LYCalendarPickerTitleColor [UIColor whiteColor]
 
 #define LYCalendarPickerMenuButtonH 80.f
 #define LYCalendarPickerMenuHeight (LYCalendarPickerMenuButtonH + kNavBarExtra + kLYCalendarHeight)
@@ -218,11 +219,11 @@
         _calendar.headerHeight = 0;
         _calendar.placeholderType = FSCalendarPlaceholderTypeNone;
 
-        _calendar.appearance.headerTitleColor = [UIColor whiteColor];
+        _calendar.appearance.headerTitleColor = LYCalendarPickerTitleColor;
         _calendar.appearance.headerTitleFont = [UIFont fontAliWithName:AlibabaPuHuiTiR size:24.f];
-        _calendar.appearance.weekdayTextColor = [UIColor whiteColor];
+        _calendar.appearance.weekdayTextColor = LYCalendarPickerTitleColor;
         _calendar.appearance.weekdayFont = [UIFont fontAliWithName:AlibabaPuHuiTiB size:16.f];
-        _calendar.appearance.titleDefaultColor = [UIColor whiteColor];
+        _calendar.appearance.titleDefaultColor = LYCalendarPickerTitleColor;
         _calendar.appearance.titleFont = [UIFont fontAliWithName:AlibabaPuHuiTiL size:16.f];
         
         _calendar.appearance.todayColor = [UIColor themeButtonColor];
@@ -234,7 +235,7 @@
 
         _calendar.calendarHeaderView.backgroundColor = [UIColor clearColor];
         _calendar.calendarWeekdayView.backgroundColor = [UIColor clearColor];
-        _calendar.appearance.eventSelectionColor = [UIColor whiteColor];
+        _calendar.appearance.eventSelectionColor = LYCalendarPickerTitleColor;
         _calendar.appearance.eventOffset = CGPointMake(0, -7);
         _calendar.today = [NSDate date]; // Hide the today circle
         
@@ -246,7 +247,7 @@
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
         view.font =  [UIFont fontAliWithName:AlibabaPuHuiTiR size:26];
-        view.textColor = LYColor(LYWhiteColorHex);
+        view.textColor = LYCalendarPickerTitleColor;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"yyyy/MM";
         view.text = [dateFormatter stringFromDate:[NSDate date]];

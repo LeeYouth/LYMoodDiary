@@ -37,6 +37,11 @@ kLYGeneralPasscodeset     = "パスワードを設定";
 kLYGeneralPasscodeChange  = "パスワード変更";
 kLYGeneralPasscodeTouchID = "Touch ID";
 
+kLYGeneralPasscodeRemind  = "催促状";
+kLYGeneralPasscodeRemindDetail  = "パスワード設定を開いた後は、プライバシーを保護するためにパスワードを確認するたびにパスワードの確認が必要になります。";
+kLYGeneralPasscodeYourTouchID  = "あなたのタッチID";
+
+
 kLYInputViewOldPasscode      = "古いパスワードを入力してください";
 kLYInputViewInputPasscode    = "パスコードを入力してください";
 kLYInputViewInputNewPasscode = "新しいパスコードを入力してください";

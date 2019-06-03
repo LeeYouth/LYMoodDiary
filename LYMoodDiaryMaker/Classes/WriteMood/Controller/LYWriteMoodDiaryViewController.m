@@ -45,17 +45,8 @@
         [weakSelf.view endEditing:YES];
         if (sender.tag == 0) {
             //返回
-            if ([weakSelf.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]){
-                [weakSelf.navigationController popViewControllerAnimated:YES];
-                return;
-            }
-            
-            if([weakSelf respondsToSelector:@selector(dismissModalViewControllerAnimated:)]) {
-                [weakSelf dismissViewControllerAnimated:YES completion:nil];
-                return;
-            }
-            
-            
+            [weakSelf backAction];
+
         }else if (sender.tag == 1){
             
             if (weakSelf.editMoodArray.count) {
@@ -93,30 +84,17 @@
     LYMoodDiaryModel *orgModel = (LYMoodDiaryModel *)self.editMoodArray[0];
     //保存操作
     LYMoodDiaryModel *model = [[LYMoodDiaryModel alloc] init];
-    model.bg_tableName  = kLYMOODTABLENAME;
     model.editDate      = [NSDate date];
     model.moodType      = emojiCell.emojiType.length?[LYMoodDiaryModel matchTypeWithEmojiType:emojiCell.emojiType]:orgModel.moodType;
     model.moodDiaryText = textCell.textView.text;
     
-    NSString *where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"enterDate"),bg_sqlValue(orgModel.enterDate)];
-
-    if ([model bg_updateWhere:where]) {
+    if ([LYMoodDiaryDBManager updateMoodDiaryWithOrgModel:orgModel updateModel:model]) {
         [LYToastTool bottomShowWithText:LY_LocalizedString(@"kLYMoodSaveSuccess") delay:1.f];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (self.itemBlock) {
                 self.itemBlock(1);
             }
-            
-            if ([self.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]){
-                [self.navigationController popViewControllerAnimated:YES];
-                return;
-            }
-            
-            if([self respondsToSelector:@selector(dismissModalViewControllerAnimated:)]) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-                return;
-            }
-            
+            [self backAction];
         });
     }
 }
@@ -135,19 +113,18 @@
 
     //保存操作
     LYMoodDiaryModel *model = [[LYMoodDiaryModel alloc] init];
-    model.bg_tableName   = kLYMOODTABLENAME;
-
     model.enterDate     = self.defultModel.enterDate;
     model.uploadDate    = [NSDate date];
     model.moodType      = self.defultModel.moodType;
     model.moodDiaryText = textCell.textView.text;
 
-    if ([model bg_save]) {
+    if ([LYMoodDiaryDBManager saveMoodDiaryWithModel:model]) {
         [LYToastTool bottomShowWithText:LY_LocalizedString(@"kLYMoodSaveSuccess") delay:1.f];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             if (self.itemBlock) {
                 self.itemBlock(1);
             }
+            [self backAction];
 
             self.defultModel.moodType = LYMoodDiaryHappy;
             textCell.textView.text = @"";
@@ -193,6 +170,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
+}
+
+#pragma mark - 返回操作
+- (void)backAction{
+    if ([self.navigationController respondsToSelector:@selector(popViewControllerAnimated:)]){
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+    
+    if([self respondsToSelector:@selector(dismissModalViewControllerAnimated:)]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        return;
+    }
 }
 
 #pragma mark - 设置列表头部

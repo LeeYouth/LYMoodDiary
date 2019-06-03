@@ -175,8 +175,7 @@
 #pragma makr - 删除一条心情l记录
 - (void)deleteMoodWithModel:(LYMoodDiaryModel *)model{
 
-    NSString *where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"enterDate"),bg_sqlValue(model.enterDate)];
-    if ([LYMoodDiaryModel bg_delete:kLYMOODTABLENAME where:where]) {
+    if ([LYMoodDiaryDBManager deleteMoodDiaryWithModel:model]) {
         [self reloadTableData];
     }
 }

@@ -37,6 +37,11 @@ kLYGeneralPasscodeset     = "Set Passcode";
 kLYGeneralPasscodeChange  = "Change Passcode";
 kLYGeneralPasscodeTouchID = "Touch ID";
 
+kLYGeneralPasscodeRemind  = "Remind";
+kLYGeneralPasscodeRemindDetail  = "After opening the password settings, you will need password verification every time you start to ensure your privacy.";
+kLYGeneralPasscodeYourTouchID  = "Your Touch ID";
+
+
 kLYInputViewOldPasscode      = "Enter your old passcode";
 kLYInputViewInputPasscode    = "Enter your passcode";
 kLYInputViewInputNewPasscode = "Enter your new passcode";
