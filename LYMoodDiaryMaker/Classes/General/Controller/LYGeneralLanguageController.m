@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     
-    self.defultLanguage = [NSBundle currentLanguage];
+    self.defultLanguage = [LYLocalizedConfig userLanguage] ? :@"defult";
     
     self.title = LY_LocalizedString(@"kLYSettingCellLanguage");
     self.navBarView.rightBarItemImage = nil;
