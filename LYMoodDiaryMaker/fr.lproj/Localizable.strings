@@ -28,6 +28,8 @@ kLYDeleteMoodAlertTitle = "Impossible de récupérer une fois l'humeur supprimé
 kLYMoodDeleteSuccess    = "Supprimé avec succès";
 
 kLYSettingTitle         = "Fonction";
+kLYSettingCellLanguage  = "Langue";
+kLYSettingCellSearch    = "Recherche";
 kLYSettingCellHistory   = "Histoire de l'humeur";
 kLYSettingCellExport    = "Exportation CSV";
 kLYSettingCellNovice    = "Guide du débutant";
@@ -43,6 +45,14 @@ kLYGeneralPasscodeset     = "Définir le mot de passe";
 kLYGeneralPasscodeChange  = "Changer le mot de passe";
 kLYGeneralPasscodeTouchID = "Touch ID";
 kLYGeneralPasscodeYourTouchID  = "Your Touch ID";
+
+kLYGeneralLanguageDefult  = "Suivre le système";
+kLYGeneralLanguageChina   = "简体中文";
+kLYGeneralLanguageEnglish = "English";
+kLYGeneralLanguageJapan   = "日本語";
+kLYGeneralLanguageFrench  = "Français";
+kLYGeneralLanguageKorean  = "일본어";
+
 
 kLYGeneralPasscodeRemind  = "Rappel";
 kLYGeneralPasscodeRemindDetail  = "Après avoir ouvert les paramètres de mot de passe, vous aurez besoin d'une vérification de mot de passe à chaque démarrage pour garantir votre confidentialité.";

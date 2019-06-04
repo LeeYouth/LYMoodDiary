@@ -28,6 +28,8 @@ kLYDeleteMoodAlertTitle = "기분이 삭제 된 후에는 복구 할 수 없으�
 kLYMoodDeleteSuccess    = "성공적으로 삭제되었습니다.";
 
 kLYSettingTitle         = "기능";
+kLYSettingCellLanguage  = "언어";
+kLYSettingCellSearch    = "검색";
 kLYSettingCellHistory   = "기분의 역사";
 kLYSettingCellExport    = "수출CSV";
 kLYSettingCellNovice    = "초보자 가이드";
@@ -46,6 +48,14 @@ kLYGeneralPasscodeTouchID = "Touch ID";
 kLYGeneralPasscodeRemind  = "알림";
 kLYGeneralPasscodeRemindDetail  = "비밀번호 설정을 연 후 개인 정보 보호를 시작할 때마다 비밀번호 확인이 필요합니다.";
 kLYGeneralPasscodeYourTouchID  = "내 터치 ID";
+
+kLYGeneralLanguageDefult  = "시스템 따르기";
+kLYGeneralLanguageChina   = "简体中文";
+kLYGeneralLanguageEnglish = "English";
+kLYGeneralLanguageJapan   = "日本語";
+kLYGeneralLanguageFrench  = "Français";
+kLYGeneralLanguageKorean  = "일본어";
+
 
 kLYInputViewOldPasscode      = "이전 패스 코드를 입력하십시오.";
 kLYInputViewInputPasscode    = "패스 코드를 입력하십시오.";

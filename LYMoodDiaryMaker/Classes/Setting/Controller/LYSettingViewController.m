@@ -74,7 +74,6 @@
     if ([typeName isEqualToString:@"history"]) {
         //历史心情
         LYCalendarMoodViewController *historyVC = [[LYCalendarMoodViewController alloc] init];
-        historyVC.leftItemImage = @"navBar_backItemIcon";
         [self.navigationController pushViewController:historyVC animated:YES];
 
     }else if ([typeName isEqualToString:@"export"]){

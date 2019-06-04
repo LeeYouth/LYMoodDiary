@@ -38,6 +38,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)CNCurrentMonth;
 
 /**
+  *  中文当前周(一 ~ 日)
+  */
+- (NSString *)CNCurrentWeekday;
+
+
+/**
  *  导航栏的顶部标题
  */
 - (NSString *)navigationTitle;

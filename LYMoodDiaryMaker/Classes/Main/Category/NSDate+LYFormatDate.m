@@ -92,10 +92,20 @@
     }
     return monthStr;
 }
+- (NSString *)CNCurrentWeekday{
+    NSArray *titleArray = @[@"周一",@"周二",@"周三",@"周四",@"周五",@"周六",@"周日"];
+    NSInteger weekday = [self weekday];
+    NSString *weekdayStr = @"";
+    if (weekday >= 1 && weekday <= 7) {
+        weekdayStr = titleArray[weekday-1];
+    }
+    return weekdayStr;
+}
+
+
 
 - (NSString *)navigationTitle{
-    NSString *currentLanguage = [LYLocalizedHelper standardHelper].currentLanguage;
-    if ([currentLanguage isEqualToString:@"zh-Hant"]) {
+    if ([NSBundle isChineseLanguage]) {
         return [self stringWithFormat:@"yyyy年MM月dd日"];
     }
     return [NSString stringWithFormat:@"%@ %@ %@",[self ENCutCurrentMonth],[self ENCurrentDay],[self stringWithFormat:@"yyyy"]];
@@ -103,11 +113,10 @@
 
 
 - (NSString *)tableHeaderTitle{
-    
+
     if ([self isThisYear]) {
         //今年（中：5月 英：May）
-        NSString *currentLanguage = [LYLocalizedHelper standardHelper].currentLanguage;
-        if ([currentLanguage isEqualToString:@"zh-Hant"]) {
+        if ([NSBundle isChineseLanguage]) {
             return [self CNCurrentMonth];
         }
         return [self ENCurrentMonth];
@@ -118,17 +127,15 @@
 - (NSString *)tableHeaderDetailTitle{
     if ([self isThisYear]) {
         //今年（16）
-        NSString *currentLanguage = [LYLocalizedHelper standardHelper].currentLanguage;
-        if ([currentLanguage isEqualToString:@"zh-Hant"]) {
-            return [[self stringWithFormat:@"dd"] stringByAppendingString:@"号"];
+        if ([NSBundle isChineseLanguage]) {
+            return [NSString stringWithFormat:@"%@日 %@",[self stringWithFormat:@"d"],[self CNCurrentWeekday]];
         }else{
             return [self ENCurrentDay];
         }
     }else{
-        NSString *currentLanguage = [LYLocalizedHelper standardHelper].currentLanguage;
-        if ([currentLanguage isEqualToString:@"zh-Hant"]) {
+        if ([NSBundle isChineseLanguage]) {
             
-            return [NSString stringWithFormat:@"%@号%@日",[self stringWithFormat:@"MM"],[self stringWithFormat:@"dd"]];
+            return [NSString stringWithFormat:@"%@ %@",[self stringWithFormat:@"MM月dd日"],[self CNCurrentWeekday]];
         }
         return [NSString stringWithFormat:@"%@ %@",[self ENCutCurrentMonth],[self ENCurrentDay]];
     }

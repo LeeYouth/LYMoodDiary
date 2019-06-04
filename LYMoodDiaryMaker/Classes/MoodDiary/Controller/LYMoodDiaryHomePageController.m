@@ -7,69 +7,51 @@
 //
 
 #import "LYMoodDiaryHomePageController.h"
-#import "LYMoodDiaryHomePageTableCell.h"
 #import "LYMoodDiaryHomePageHeaderView.h"
-#import "LYHomePageMenuButton.h"
-#import "LYSettingViewController.h"
-#import "LYMoodDiaryHomePageToolBar.h"
+#import "LYMoodDiaryHomePageTableCell.h"
+#import "LYCalendarPickerMenu.h"
 
-@interface LYMoodDiaryHomePageController ()
+@interface LYMoodDiaryHomePageController()
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) LYBaseCustomTableHeaderView *headerView;
+@property (nonatomic, strong) NSDate *currentDate;
 
 @end
 
 @implementation LYMoodDiaryHomePageController
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self reloadTableData];
-}
-
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
-
-    [self setupSubViews];
-
-    [self loadNewData];
     
-}
-- (void)setupSubViews{
-    
-    if (![kUserDefault boolForKey:kHOMEPAGEGUIDEINDENTIFER]) {
-        LYHomepageGuideView *guidView = [[LYHomepageGuideView alloc] initWithGuideType:kHOMEPAGEGUIDEINDENTIFER];
-        guidView.title = LY_LocalizedString(@"kLYHomePageGuideTitle");
-        guidView.iconImage = [UIImage imageWithContentsOfFile:LYLOADBUDLEIMAGE(@"LYResources.bundle", @"homepage_guide_icon")];
-        [guidView show];
-    }
-    
+    WEAKSELF(weakSelf);
     self.navBarView.leftBarItemImage = nil;
-    self.navBarView.navColor = [UIColor whiteColor];
-    self.navBarView.rightBarItemImage = nil;
-    self.title = LY_LocalizedString(@"kLYMoodToday");
+    self.navBarView.rightBarItemImage = [UIImage imageNamed:@"homepage_addMoodDiary_calendar"];
+    self.navBarView.btnBlock = ^(UIButton *sender) {
+        if (sender.tag == 0) {
+            //返回
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        }else if (sender.tag == 1){
+            //日历
+            [weakSelf calendarPickerDate];
+        }
+    };
     
     self.tableView.backgroundColor = LYHomePageColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-    NSDate *today   = [NSDate date];
+    
     
     LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = [today tableHeaderTitle];
-    headerView.detailTitle = [today tableHeaderDetailTitle];
-//    [today stringWithFormat:kHEADERDETAILTITLEDATEFORMAT];
+    headerView.title       = [self.currentDate tableHeaderTitle];
+    headerView.detailTitle = [self.currentDate tableHeaderDetailTitle];
     self.tableView.tableHeaderView = headerView;
     self.headerView = headerView;
+    self.title = [self.currentDate navigationTitle];
     
     LYCustomEmptyDataView *customView = [[LYCustomEmptyDataView alloc] init];
     customView.title = LY_LocalizedString(@"kLYEmptyDataMessage");
-//    customView.detailTitle = @"您可以在首页点击添加，选择您当前的心情，并用文字记录。";
-//    customView.detailTitle = LY_NSLocalizedString(@"kLYMainEmptyDataMessage", nil);
     self.tableView.ly_emptyView  = [LYEmptyView emptyViewWithCustomView:customView];
-
-}
-
-- (void)reloadTableData{
+    
     [self loadNewData];
 }
 
@@ -77,16 +59,15 @@
     if (self.dataArray.count) {
         [self.dataArray removeAllObjects];
     }
-    NSDate *today   = [NSDate date];
-    
-    NSString* where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"saveFormatDate"),bg_sqlValue([today stringWithFormat:@"yyyy-MM-dd"])];
+    NSDate *today   = self.currentDate;
+    NSString* where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"saveFormatDate"),bg_sqlValue([today stringWithFormat:kSEARCHDATEFORMAT])];
     
     NSArray *resultArray = [LYMoodDiaryModel bg_find:kLYMOODTABLENAME where:where];
     [self.dataArray addObjectsFromArray:resultArray];
     
     [self.tableView reloadData];
-    
 }
+
 #pragma mark - UITableViewDataSource & UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count;
@@ -97,7 +78,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WEAKSELF(weakSelf);
     LYMoodDiaryHomePageTableCell *cell = [LYMoodDiaryHomePageTableCell cellWithTableView:tableView];
     cell.model = self.dataArray[indexPath.row];
     return cell;
@@ -105,10 +85,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-
     //进入预览
     [FFRouter routeURL:kMoodDiaryPreviewRouter withParameters:@{kRouterParamKey:self.dataArray[indexPath.row]}];
-
+    
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -116,7 +95,7 @@
     CGPoint point = [scrollView.panGestureRecognizer translationInView:scrollView];
     CGFloat offsetY = point.y;
     CGFloat tabbarH = TABBAR_HEIGHT;
-
+    
     if (offsetY < 0) {
         /// 上滑
         CYLTabBarController *tabBarController = [self cyl_tabBarController];
@@ -131,7 +110,7 @@
         }];
     }
     CGFloat offset = scrollView.contentOffset.y;
-
+    
     if (offset >= NAVBAR_HEIGHT) {
         self.navBarView.navBarTitle = self.title;
         self.navBarView.showShadow  = YES;
@@ -144,16 +123,28 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CYLTabBarController *tabBarController = [self cyl_tabBarController];
     CGFloat tabbarH = TABBAR_HEIGHT;
-
+    
     [UIView animateWithDuration:0.35 animations:^{
         tabBarController.tabBar.frame = CGRectMake(0, kScreenHeight - tabbarH, kScreenWidth, tabbarH);
     }];
 }
 
-- (void)rightBarItemClick{
-    LYSettingViewController *settingVC = [[LYSettingViewController alloc] init];
-    [self.navigationController pushViewController:settingVC animated:YES];
+#pragma mark - 选择日期
+- (void)calendarPickerDate{
+    WEAKSELF(weakSelf);
+    LYCalendarPickerMenu *menu = [[LYCalendarPickerMenu alloc] initRelyOnView:self.view];
+    menu.showMaskView = NO;
+    menu.didSelected  = ^(NSDate * _Nonnull didSelectDate) {
+        weakSelf.headerView.title       = [didSelectDate tableHeaderTitle];
+        weakSelf.headerView.detailTitle = [didSelectDate tableHeaderDetailTitle];
+        
+        weakSelf.currentDate = didSelectDate;
+        weakSelf.title = [self.currentDate navigationTitle];
+        [weakSelf loadNewData];
+    };
+    [menu show];
 }
+
 
 #pragma mark - lazy loading
 - (NSMutableArray *)dataArray{
@@ -162,4 +153,12 @@
     }
     return _dataArray;
 }
+- (NSDate *)currentDate{
+    if (!_currentDate) {
+        _currentDate = [NSDate date];
+    }
+    return _currentDate;
+}
+
 @end
+

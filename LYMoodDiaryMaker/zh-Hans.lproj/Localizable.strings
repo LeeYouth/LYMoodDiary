@@ -28,6 +28,8 @@ kLYDeleteMoodAlertTitle = "心情删除后不可以恢复，确认删除吗？";
 kLYMoodDeleteSuccess    = "删除成功";
 
 kLYSettingTitle         = "功能";
+kLYSettingCellLanguage  = "多语言";
+kLYSettingCellSearch    = "搜索";
 kLYSettingCellHistory   = "心情史";
 kLYSettingCellExport    = "导出CSV";
 kLYSettingCellNovice    = "新手指南";
@@ -46,6 +48,13 @@ kLYGeneralPasscodeTouchID = "触控 ID";
 kLYGeneralPasscodeRemind  = "提醒";
 kLYGeneralPasscodeRemindDetail  = "打开密码设置后，您每次启动需要密码验证，以保证您的隐私安全。";
 kLYGeneralPasscodeYourTouchID  = "您的触控 ID";
+
+kLYGeneralLanguageDefult  = "跟随系统";
+kLYGeneralLanguageChina   = "简体中文";
+kLYGeneralLanguageEnglish = "English";
+kLYGeneralLanguageJapan   = "日本語";
+kLYGeneralLanguageFrench  = "Français";
+kLYGeneralLanguageKorean  = "일본어";
 
 
 kLYInputViewOldPasscode      = "请输入旧密码";

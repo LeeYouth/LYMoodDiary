@@ -28,6 +28,8 @@ kLYDeleteMoodAlertTitle = "Can't recover after the mood is deleted, confirm the 
 kLYMoodDeleteSuccess    = "Successfully deleted";
 
 kLYSettingTitle         = "General";
+kLYSettingCellLanguage  = "Language";
+kLYSettingCellSearch    = "Search";
 kLYSettingCellHistory   = "History";
 kLYSettingCellExport    = "Export to CSV";
 kLYSettingCellNovice    = "Help";
@@ -46,6 +48,13 @@ kLYGeneralPasscodeTouchID = "Touch ID";
 kLYGeneralPasscodeRemind  = "Remind";
 kLYGeneralPasscodeRemindDetail  = "After opening the password settings, you will need password verification every time you start to ensure your privacy.";
 kLYGeneralPasscodeYourTouchID  = "Your Touch ID";
+
+kLYGeneralLanguageDefult  = "System";
+kLYGeneralLanguageChina   = "简体中文";
+kLYGeneralLanguageEnglish = "English";
+kLYGeneralLanguageJapan   = "日本語";
+kLYGeneralLanguageFrench  = "Français";
+kLYGeneralLanguageKorean  = "일본어";
 
 
 kLYInputViewOldPasscode      = "Enter your old passcode";

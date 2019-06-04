@@ -7,10 +7,14 @@
 //
 
 #import "LYBaseNavigationController.h"
+#import "LYTabbarPlusButton.h"
+#import "LYTabbarViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LYMainRootViewController : LYBaseNavigationController
+
+@property (nonatomic, strong) LYTabbarViewController *tabBarController;
 
 @end
 

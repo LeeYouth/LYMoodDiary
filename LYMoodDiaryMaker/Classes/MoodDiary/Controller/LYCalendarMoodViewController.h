@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LYCalendarMoodViewController : LYBaseTableViewController
 
-@property(nonatomic, copy) NSString *leftItemImage;
-
 @end
 
 NS_ASSUME_NONNULL_END

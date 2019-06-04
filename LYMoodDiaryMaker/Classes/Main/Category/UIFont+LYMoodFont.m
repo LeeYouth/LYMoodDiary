@@ -65,7 +65,7 @@
 }
 /** 列表标题字号 */
 + (UIFont *)headerTitleFont{
-    return [UIFont fontAliWithName:AlibabaPuHuiTiR size:28.f];
+    return [UIFont fontAliWithName:AlibabaPuHuiTiR size:36.f];
 }
 /** 列表副标题字号 */
 + (UIFont *)headerDetailFont{

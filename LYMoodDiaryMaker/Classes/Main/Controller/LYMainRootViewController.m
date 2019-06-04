@@ -7,12 +7,10 @@
 //
 
 #import "LYMainRootViewController.h"
-#import "LYTabbarPlusButton.h"
-#import "LYTabbarViewController.h"
+
 
 @interface LYMainRootViewController ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate>
 
-@property (nonatomic, strong) LYTabbarViewController *tabBarController;
 
 @end
 
@@ -32,6 +30,7 @@
     self.viewControllers = @[tabBarController];
     [tabBarController setViewDidLayoutSubViewsBlockInvokeOnce:YES block:^(CYLTabBarController *tabBarController) {
     }];
+    self.tabBarController = tabBarController;
     return tabBarController;
 }
 
@@ -80,7 +79,7 @@
         }
     }
     
-    if ([self cyl_tabBarController].selectedIndex == 0 || [self cyl_tabBarController].selectedIndex == 1) {
+    if ([self cyl_tabBarController].selectedIndex == 0) {
         [self addScaleAnimationOnView:animationView repeatCount:1];
     }
 }

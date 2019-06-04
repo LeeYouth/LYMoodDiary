@@ -58,7 +58,7 @@
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.mas_left).offset(leftMargin);
         make.right.equalTo(self.mas_right).offset(-leftMargin);
-        make.right.bottom.equalTo(self);
+        make.bottom.equalTo(self);
         make.height.mas_equalTo(@0.8);
     }];
     self.titleLabel.text  = @"去评分";
@@ -73,7 +73,15 @@
 
     
     NSString *title = @"";
-    if ([typeName isEqualToString:@"history"]) {
+    if ([typeName isEqualToString:@"language"]) {
+        
+        title = LY_LocalizedString(@"kLYSettingCellLanguage");
+        
+    }else if ([typeName isEqualToString:@"search"]){
+        
+        title = LY_LocalizedString(@"kLYSettingCellSearch");
+        
+    }else if ([typeName isEqualToString:@"history"]) {
         
         title = LY_LocalizedString(@"kLYSettingCellHistory");
         

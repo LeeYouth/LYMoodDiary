@@ -25,8 +25,6 @@
     [super viewDidLoad];
     
     WEAKSELF(weakSelf);
-    self.navBarView.leftBarItemImage  = [UIImage imageNamed:self.leftItemImage.length?self.leftItemImage:@"navBar_closeicon"];
-    self.navBarView.navColor = [UIColor whiteColor];
     self.navBarView.rightBarItemImage = [UIImage imageNamed:@"homepage_addMoodDiary_calendar"];
     self.navBarView.btnBlock = ^(UIButton *sender) {
         if (sender.tag == 0) {

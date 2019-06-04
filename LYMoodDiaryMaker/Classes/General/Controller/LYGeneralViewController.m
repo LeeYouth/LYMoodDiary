@@ -18,6 +18,7 @@
 #import "LYPrivacyAgreementViewController.h"
 #import "LYSettingViewController.h"
 #import "LYGeneraPasscodeViewController.h"
+#import "LYGeneralLanguageController.h"
 
 @interface LYGeneralViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -73,10 +74,17 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *typeName = self.typeArray[indexPath.row];
-    if ([typeName isEqualToString:@"history"]) {
+    if ([typeName isEqualToString:@"language"]) {
+        //多语言
+        LYGeneralLanguageController *languageVC = [[LYGeneralLanguageController alloc] init];
+        [self.navigationController pushViewController:languageVC animated:YES];
+
+    }else if ([typeName isEqualToString:@"search"]){
+        //搜索
+        
+    }else if ([typeName isEqualToString:@"history"]) {
         //历史心情
         LYCalendarMoodViewController *historyVC = [[LYCalendarMoodViewController alloc] init];
-        historyVC.leftItemImage = @"navBar_backItemIcon";
         [self.navigationController pushViewController:historyVC animated:YES];
         
     }else if ([typeName isEqualToString:@"export"]){
@@ -157,10 +165,7 @@
 - (NSMutableArray *)typeArray{
     if (!_typeArray) {
         _typeArray = [NSMutableArray array];
-        //noviceManual、star、protocol
-        //@"history",@"export",@"passcode",@"aboutUs",@"Get help"
-        //noviceManual、star、protocol
-        [_typeArray addObjectsFromArray:@[@"history",@"export",@"passcode",@"protocol",@"noviceManual",@"aboutUs"]];
+        [_typeArray addObjectsFromArray:@[@"language",@"search",@"export",@"passcode",@"protocol",@"noviceManual",@"aboutUs"]];
     }
     return _typeArray;
 }

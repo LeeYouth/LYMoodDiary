@@ -25,7 +25,6 @@
 
 //const & tool
 #import "LYServerConfig.h"
-#import "LYLocalizedHelper.h"
 #import "LYToastTool.h"
 #import "LYAppTool.h"
 #import "LYPasscodeMacro.h"
@@ -68,8 +67,9 @@
 #import "LYRoutersRegister.h"
 #import "LYRouterConst.h"
 #import "NSDate+LYFormatDate.h"
-
-
+#import "LYLocalizedConfig.h"
+#import "LYLocalizedConfig.h"
+#import "NSBundle+LYUtils.h"
 
 
 
