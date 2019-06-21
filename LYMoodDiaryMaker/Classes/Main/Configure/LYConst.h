@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 // 友盟AppKey
 UIKIT_EXTERN NSString *const UM_APPKEY;
 

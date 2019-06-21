@@ -127,6 +127,7 @@
 		CFDB56AA2125212D00501905 /* LYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDB56A82125212D00501905 /* LYBaseViewController.m */; };
 		CFDB56AD212521A300501905 /* LYTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDB56AC212521A300501905 /* LYTabbarViewController.m */; };
 		CFDB56B0212521BA00501905 /* LYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDB56AF212521BA00501905 /* LYBaseModel.m */; };
+		CFF16FF822BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF16FF722BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m */; };
 		CFFF0D6A21D75B3100060A2B /* LYStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D6921D75B3100060A2B /* LYStickerView.m */; };
 		CFFF0D7621DEEDE300060A2B /* LYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D7521DEEDE300060A2B /* LYBaseTableViewController.m */; };
 		CFFF0D7C21DEF10200060A2B /* LYEmoticonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D7B21DEF10200060A2B /* LYEmoticonModel.m */; };
@@ -407,6 +408,10 @@
 		CFDB56AC212521A300501905 /* LYTabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYTabbarViewController.m; sourceTree = "<group>"; };
 		CFDB56AE212521BA00501905 /* LYBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBaseModel.h; sourceTree = "<group>"; };
 		CFDB56AF212521BA00501905 /* LYBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBaseModel.m; sourceTree = "<group>"; };
+		CFF16FEB22BCBD2A00916DBE /* LYService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYService.h; sourceTree = "<group>"; };
+		CFF16FF422BCBF4700916DBE /* LYWriteMoodDiaryViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryViewProtocol.h; sourceTree = "<group>"; };
+		CFF16FF622BCBFD000916DBE /* LYWriteMoodDiaryMoudule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryMoudule.h; sourceTree = "<group>"; };
+		CFF16FF722BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWriteMoodDiaryMoudule.m; sourceTree = "<group>"; };
 		CFFF0D6821D75B3100060A2B /* LYStickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYStickerView.h; sourceTree = "<group>"; };
 		CFFF0D6921D75B3100060A2B /* LYStickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYStickerView.m; sourceTree = "<group>"; };
 		CFFF0D7421DEEDE300060A2B /* LYBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBaseTableViewController.h; sourceTree = "<group>"; };
@@ -921,6 +926,7 @@
 		CFB6D8AB22896EE500590286 /* WriteMood */ = {
 			isa = PBXGroup;
 			children = (
+				CFF16FF522BCBFB300916DBE /* Module */,
 				CFB6D8AC22896EE500590286 /* Controller */,
 				CFB6D8AD22896EE500590286 /* Model */,
 				CFB6D8AE22896EE500590286 /* View */,
@@ -1041,6 +1047,7 @@
 		CFDB569D2125210E00501905 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				CFF16FEA22BCBCF400916DBE /* Services */,
 				CF9DA40922A4BFFA0097D6A4 /* LYRouters */,
 				CFFF0D8B21DF4EC700060A2B /* Lib */,
 				CF706F2E21B8CD0C00442D67 /* Fonts */,
@@ -1050,7 +1057,6 @@
 				CFDB569E2125210E00501905 /* Controller */,
 				CFDB569F2125210E00501905 /* Model */,
 				CFDB56A02125210E00501905 /* View */,
-				CFDB56A12125210E00501905 /* Service */,
 				CFDB56A22125210E00501905 /* Tool */,
 			);
 			path = Main;
@@ -1126,13 +1132,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CFDB56A12125210E00501905 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		CFDB56A22125210E00501905 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1158,6 +1157,24 @@
 				CF9DA42222A53F520097D6A4 /* LYLocalizedConfig.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		CFF16FEA22BCBCF400916DBE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CFF16FEB22BCBD2A00916DBE /* LYService.h */,
+				CFF16FF422BCBF4700916DBE /* LYWriteMoodDiaryViewProtocol.h */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CFF16FF522BCBFB300916DBE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CFF16FF622BCBFD000916DBE /* LYWriteMoodDiaryMoudule.h */,
+				CFF16FF722BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m */,
+			);
+			path = Module;
 			sourceTree = "<group>";
 		};
 		CFFF0D8B21DF4EC700060A2B /* Lib */ = {
@@ -1357,11 +1374,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LYMoodDiaryMaker/Pods-LYMoodDiaryMaker-resources.sh",
+				"${PODS_ROOT}/BeeHive/BeeHive/BeeHive.bundle",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD/JGProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BeeHive.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JGProgressHUD.bundle",
 			);
@@ -1498,6 +1517,7 @@
 				CF706F2A21B7C79C00442D67 /* LYNoviceManualViewController.m in Sources */,
 				CF3DEFF321F078CD000B8853 /* UIView+LYCorners.m in Sources */,
 				CFFF0D9721DF4EC700060A2B /* SVRadialGradientLayer.m in Sources */,
+				CFF16FF822BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,14 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^LYWriteMoodDiaryViewControllerItemBlock)(NSInteger index);
 
-@interface LYWriteMoodDiaryViewController : LYBaseTableViewController
-
-/** 需要编辑的心情 */
-@property(nonatomic, strong) NSMutableArray *editMoodArray;
-/** 回调 */
-@property(nonatomic, copy) LYWriteMoodDiaryViewControllerItemBlock itemBlock;
+@interface LYWriteMoodDiaryViewController : LYBaseTableViewController<LYWriteMoodDiaryViewProtocol>
 
 @end
 

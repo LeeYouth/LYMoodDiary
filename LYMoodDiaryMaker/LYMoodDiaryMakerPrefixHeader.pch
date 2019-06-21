@@ -13,6 +13,18 @@
 #import "LYMacro.h"
 #import "FFRouter.h"
 
+
+//BeeHive
+#import "BeeHive.h"
+#import "BHTimeProfiler.h"
+#import <mach-o/dyld.h>
+#import "BHModuleManager.h"
+#import "BHServiceManager.h"
+#import "BHServiceProtocol.h"
+#import "LYService.h"
+
+
+
 //third part
 #import <CYLTabBarController/CYLTabBarController.h>
 #import <Masonry.h>
@@ -70,9 +82,6 @@
 #import "LYLocalizedConfig.h"
 #import "LYLocalizedConfig.h"
 #import "NSBundle+LYUtils.h"
-
-
-
 
 
 #endif

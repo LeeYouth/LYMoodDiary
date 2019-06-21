@@ -10,6 +10,7 @@
 #import "LYWriteMoodDiaryTableCell.h"
 #import "LYWriteMoodDiaryAddEmojiCell.h"
 
+
 @interface LYWriteMoodDiaryViewController ()
 
 @property (nonatomic, strong) NSMutableArray *emojiArray;
@@ -19,6 +20,10 @@
 @end
 
 @implementation LYWriteMoodDiaryViewController
+
+@synthesize editMoodArray =_editMoodArray;
+@synthesize itemBlock = _itemBlock;
+
 
 - (void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
