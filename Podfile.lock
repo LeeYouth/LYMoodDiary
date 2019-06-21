@@ -20,6 +20,7 @@ PODS:
   - BGFMDB/BG (2.0.13):
     - BGFMDB/FMDB
   - BGFMDB/FMDB (2.0.13)
+  - CTMediator (25)
   - CYLTabBarController (1.24.1):
     - CYLTabBarController/Core (= 1.24.1)
   - CYLTabBarController/Core (1.24.1)
@@ -40,6 +41,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (= 3.1.0)
   - BGFMDB (~> 2.0.9)
+  - CTMediator
   - CYLTabBarController (~> 1.24.0)
   - FFRouter
   - FSCalendar
@@ -55,6 +57,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - BGFMDB
+    - CTMediator
     - CYLTabBarController
     - FFRouter
     - FSCalendar
@@ -69,6 +72,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   BGFMDB: 48e6823027232402a678acc7f71484b1fc9171d0
+  CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   CYLTabBarController: 46fa053a2fb165095e04792431ad91a759bb7f9f
   FFRouter: dfda137b8f6817ca92dc9a1151727449548abfd3
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
@@ -80,6 +84,6 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f3d386cfc45eeebb9bba42edf3640d058da42d06
+PODFILE CHECKSUM: 59055a87e36c8fd5e7648b9f12234ea3e3aa665b
 
 COCOAPODS: 1.6.1

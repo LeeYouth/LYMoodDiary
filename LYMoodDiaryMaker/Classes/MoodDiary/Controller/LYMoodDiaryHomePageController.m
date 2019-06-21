@@ -21,6 +21,11 @@
 
 @implementation LYMoodDiaryHomePageController
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadNewData];
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     
