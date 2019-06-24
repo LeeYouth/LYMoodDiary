@@ -50,9 +50,11 @@
         make.left.right.bottom.equalTo(self.view);
     }];
     
-    LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = LY_LocalizedString(@"kLYSettingCellLanguage");
-    self.tableView.tableHeaderView = headerView;
+    id <LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
+    if ([obj isKindOfClass:[UIView class]]) {
+        obj.title = LY_LocalizedString(@"kLYSettingCellLanguage");
+        self.tableView.tableHeaderView = (UIView *)obj;
+    }
     
     [self.tableView reloadData];
     

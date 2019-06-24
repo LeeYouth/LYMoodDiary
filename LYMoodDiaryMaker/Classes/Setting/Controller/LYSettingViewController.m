@@ -9,7 +9,6 @@
 #import "LYSettingViewController.h"
 #import "LYAboutUsViewController.h"
 #import "LYWKWebViewController.h"
-#import "LYCustomNavgationBarView.h"
 #import "LYSettingTableViewCell.h"
 
 #import "LYNoviceManualViewController.h"
@@ -19,7 +18,6 @@
 
 @interface LYSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIImageView *sloganView;
 @property (nonatomic, strong) NSMutableArray *typeArray;
 
@@ -40,9 +38,12 @@
         make.left.right.bottom.equalTo(self.view);
     }];
     
-    LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = LY_LocalizedString(@"kLYSettingCellAbout");
-    self.tableView.tableHeaderView = headerView;
+    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
+    if ([obj isKindOfClass:[UIView class]]) {
+        obj.title       = LY_LocalizedString(@"kLYSettingCellAbout");
+        self.tableView.tableHeaderView = (UIView *)obj;
+    }
+    
     self.title = LY_LocalizedString(@"kLYSettingCellAbout");
     
     [self.tableView reloadData];

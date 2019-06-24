@@ -88,6 +88,7 @@ kLYMoodNameHungry       = "Hungry";
 kLYExportEmptyData      = "この期間は記録されていません。";
 kLYExportErrorDate      = "エクスポートする前に開始日と終了日を選択してください。";
 
+kLYWriteMoodGuideTitle   = "絵文字ボタンをクリックして別の絵文字を選択します。";
 kLYHomePageGuideTitle    = "昨日の記録を見るには右にスワイプし、新しいムードを追加するには左にスワイプします。";
 kLYHomePageGuideOK       = "OK";
 

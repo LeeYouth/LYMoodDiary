@@ -25,9 +25,11 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.title = LY_LocalizedString(@"kLYSettingCellNovice");
     
-    LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = LY_LocalizedString(@"kLYSettingCellNovice");
-    self.tableView.tableHeaderView = headerView;
+    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
+    if ([obj isKindOfClass:[UIView class]]) {
+        obj.title       = LY_LocalizedString(@"kLYSettingCellNovice");
+        self.tableView.tableHeaderView = (UIView *)obj;
+    }
     
     [self.tableView reloadData];
     

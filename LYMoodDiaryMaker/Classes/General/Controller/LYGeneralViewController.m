@@ -9,7 +9,6 @@
 #import "LYGeneralViewController.h"
 #import "LYAboutUsViewController.h"
 #import "LYWKWebViewController.h"
-#import "LYCustomNavgationBarView.h"
 #import "LYSettingTableViewCell.h"
 
 #import "LYNoviceManualViewController.h"
@@ -19,6 +18,7 @@
 #import "LYSettingViewController.h"
 #import "LYGeneraPasscodeViewController.h"
 #import "LYGeneralLanguageController.h"
+#import "LYGenneralSearchViewController.h"
 
 @interface LYGeneralViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -42,11 +42,12 @@
         make.top.equalTo(self.view.mas_top).offset(NAVBAR_HEIGHT);
         make.left.right.bottom.equalTo(self.view);
     }];
-
-    LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = LY_LocalizedString(@"kLYSettingTitle");
-    self.tableView.tableHeaderView = headerView;
     
+    id <LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
+    if ([obj isKindOfClass:[UIView class]]) {
+        obj.title = LY_LocalizedString(@"kLYSettingTitle");
+        self.tableView.tableHeaderView = (UIView *)obj;
+    }
     [self.tableView reloadData];
     
 }
@@ -81,6 +82,15 @@
 
     }else if ([typeName isEqualToString:@"search"]){
         //搜索
+//        id <LYGenneralSearchViewControllerProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYGenneralSearchViewControllerProtocol)];
+//        if ([obj isKindOfClass:[UIViewController class]]) {
+//
+//            LYGenneralSearchViewController *historyVC = [[LYGenneralSearchViewController alloc] init];
+//            [self.navigationController pushViewController:(UIViewController *)obj animated:YES];
+//        }
+        
+        LYGenneralSearchViewController *searchVC = [[LYGenneralSearchViewController alloc] init];
+        [self.navigationController pushViewController:searchVC animated:YES];
         
     }else if ([typeName isEqualToString:@"history"]) {
         //历史心情
@@ -165,7 +175,8 @@
 - (NSMutableArray *)typeArray{
     if (!_typeArray) {
         _typeArray = [NSMutableArray array];
-        [_typeArray addObjectsFromArray:@[@"language",@"search",@"export",@"passcode",@"protocol",@"noviceManual",@"aboutUs"]];
+        //,@"search"
+        [_typeArray addObjectsFromArray:@[@"language",@"export",@"passcode",@"protocol",@"noviceManual",@"aboutUs"]];
     }
     return _typeArray;
 }

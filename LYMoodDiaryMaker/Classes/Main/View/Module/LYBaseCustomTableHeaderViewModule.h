@@ -1,5 +1,5 @@
 //
-//  LYWriteMoodDiaryMoudule.h
+//  LYBaseCustomTableHeaderViewModule.h
 //  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2019/6/21.
@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LYWriteMoodDiaryMoudule : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
+@interface LYBaseCustomTableHeaderViewModule : NSObject
 
 @end
+
+NS_ASSUME_NONNULL_END

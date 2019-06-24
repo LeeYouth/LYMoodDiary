@@ -89,6 +89,7 @@ kLYMoodNameHungry       = "Hungry";
 kLYExportEmptyData      = "이 기간은 기록되지 않습니다.";
 kLYExportErrorDate      = "내보내기 전에 시작일과 종료일을 선택하십시오.";
 
+kLYWriteMoodGuideTitle   = "이모티콘 버튼을 클릭하여 다른 이모티콘을 선택하십시오.";
 kLYHomePageGuideTitle    = "어제의 기록을 보려면 오른쪽으로 스 와이프하고 왼쪽으로 스 와이프하여 새로운 분위기를 추가하십시오.";
 kLYHomePageGuideOK       = "OK";
 

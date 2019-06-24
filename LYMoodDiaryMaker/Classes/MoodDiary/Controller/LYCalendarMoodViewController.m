@@ -14,8 +14,8 @@
 @interface LYCalendarMoodViewController()
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) LYBaseCustomTableHeaderView *headerView;
 @property (nonatomic, strong) NSDate *currentDate;
+@property (nonatomic, weak) id <LYBaseCustomTableHeaderViewProtocol> headProtocol;
 
 @end
 
@@ -40,11 +40,16 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     
-    LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = [self.currentDate tableHeaderTitle];
-    headerView.detailTitle = [self.currentDate tableHeaderDetailTitle];
-    self.tableView.tableHeaderView = headerView;
-    self.headerView = headerView;
+    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
+    self.headProtocol = obj;
+    if ([obj isKindOfClass:[UIView class]]) {
+        
+        obj.title       = [self.currentDate tableHeaderTitle];
+        obj.detailTitle = [self.currentDate tableHeaderDetailTitle];
+        
+        self.tableView.tableHeaderView = (UIView *)obj;
+    }
+    
     self.title = [self.currentDate navigationTitle];
     
     LYCustomEmptyDataView *customView = [[LYCustomEmptyDataView alloc] init];
@@ -94,8 +99,8 @@
     LYCalendarPickerMenu *menu = [[LYCalendarPickerMenu alloc] initRelyOnView:self.view];
     menu.showMaskView = NO;
     menu.didSelected  = ^(NSDate * _Nonnull didSelectDate) {
-        weakSelf.headerView.title       = [didSelectDate tableHeaderTitle];
-        weakSelf.headerView.detailTitle = [didSelectDate tableHeaderDetailTitle];
+        weakSelf.headProtocol.title       = [didSelectDate tableHeaderTitle];
+        weakSelf.headProtocol.detailTitle = [didSelectDate tableHeaderDetailTitle];
         
         weakSelf.currentDate = didSelectDate;
         weakSelf.title = [self.currentDate navigationTitle];

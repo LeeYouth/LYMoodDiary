@@ -93,6 +93,7 @@ kLYExportEmptyData      = "这个时间段没有记录哦";
 kLYExportErrorDate      = "请先选择好开始和结束日期再导出哦";
 
 
+kLYWriteMoodGuideTitle   = "点击表情按钮，可以选择不同的表情。";
 kLYHomePageGuideTitle    = "向右滑动可以查看昨天的记录，向左滑动可以添加新的心情。";
 kLYHomePageGuideOK       = "好的";
 

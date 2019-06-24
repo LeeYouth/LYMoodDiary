@@ -65,7 +65,6 @@
 #import "LYBaseNavigationController.h"
 
 #import "LYEnsureOrCancelAlertView.h"
-#import "LYBaseCustomTableHeaderView.h"
 #import "LYStickerView.h"
 #import "LYEmojiPopMenu.h"
 #import "LYEmptyViewHeader.h"

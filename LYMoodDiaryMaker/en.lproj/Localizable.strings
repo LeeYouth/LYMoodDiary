@@ -89,6 +89,7 @@ kLYMoodNameHungry       = "Hungry";
 kLYExportEmptyData      = "This time period is not recorded.";
 kLYExportErrorDate      = "Please select the start and end dates before exporting.";
 
+kLYWriteMoodGuideTitle   = "Click on the emoticon button to choose a different emoticon.";
 kLYHomePageGuideTitle    = "Swipe right to see yesterday's record, swipe left to add a new mood.";
 kLYHomePageGuideOK       = "OK";
 

@@ -17,6 +17,10 @@
 
 @implementation LYBaseCustomTableHeaderView
 
+@synthesize title = _title;
+@synthesize detailTitle = _detailTitle;
+
+
 - (instancetype)init{
     if ([super init]) {
         self.userInteractionEnabled = YES;

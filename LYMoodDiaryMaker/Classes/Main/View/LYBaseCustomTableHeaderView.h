@@ -8,16 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
 
-@interface LYBaseCustomTableHeaderView : UIView
+@interface LYBaseCustomTableHeaderView : UIView<LYBaseCustomTableHeaderViewProtocol>
 
-/** 标题 */
-@property(nonatomic, copy) NSString *title;
-
-/** 副标题 */
-@property(nonatomic, copy) NSString *detailTitle;
 
 @end
-
-NS_ASSUME_NONNULL_END

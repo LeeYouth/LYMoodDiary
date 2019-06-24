@@ -12,7 +12,7 @@
 
 @interface LYMoodDiaryPreviewViewController()
 
-@property (nonatomic, strong) LYBaseCustomTableHeaderView *headerView;
+@property (nonatomic, weak) id <LYBaseCustomTableHeaderViewProtocol> headProtocol;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
@@ -48,9 +48,12 @@
     
 
 
-    LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    self.tableView.tableHeaderView = headerView;
-    self.headerView = headerView;
+    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
+    self.headProtocol = obj;
+    if ([obj isKindOfClass:[UIView class]]) {
+        self.tableView.tableHeaderView = (UIView *)obj;
+    }
+    
     
 }
 
@@ -67,9 +70,9 @@
     
     if (self.dataArray.count) {
         LYMoodDiaryModel *model = (LYMoodDiaryModel *)self.dataArray[0];
-        self.headerView.title       = [model.enterDate tableHeaderTitle];
-        self.headerView.detailTitle = [model.enterDate tableHeaderDetailTitle];
-        self.tableView.tableHeaderView = self.headerView;
+        self.headProtocol.title       = [model.enterDate tableHeaderTitle];
+        self.headProtocol.detailTitle = [model.enterDate tableHeaderDetailTitle];
+        self.tableView.tableHeaderView = (UIView *)self.headProtocol;
         self.title = [model.enterDate navigationTitle];
         [self.tableView reloadData];
     }

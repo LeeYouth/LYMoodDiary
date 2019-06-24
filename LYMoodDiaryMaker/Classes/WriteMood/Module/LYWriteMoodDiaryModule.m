@@ -1,19 +1,19 @@
 //
-//  LYWriteMoodDiaryMoudule.m
+//  LYWriteMoodDiaryModule.m
 //  LYMoodDiaryMaker
 //
-//  Created by CNFOL_iOS on 2019/6/21.
+//  Created by CNFOL_iOS on 2019/6/24.
 //  Copyright © 2019 LYoung_iOS. All rights reserved.
 //
 
-#import "LYWriteMoodDiaryMoudule.h"
+#import "LYWriteMoodDiaryModule.h"
 #import "LYWriteMoodDiaryViewController.h"
 
-@interface LYWriteMoodDiaryMoudule()<BHModuleProtocol>
+@interface LYWriteMoodDiaryModule()<BHModuleProtocol>
 
 @end
 
-@implementation LYWriteMoodDiaryMoudule
+@implementation LYWriteMoodDiaryModule
 
 + (void)load
 {
@@ -23,7 +23,7 @@
 
 - (id) init {
     if ( self = [super init] ) {
-        LYLog(@"HBHPageModule init.");
+        LYLog(@"%@ init.", NSStringFromClass([self class]));
     }
     return self;
 }
@@ -37,9 +37,8 @@
 {
     [[BeeHive shareInstance]  registerService:@protocol(LYWriteMoodDiaryViewProtocol) service:[LYWriteMoodDiaryViewController class]];
     [BHServiceManager sharedManager];
-
-    LYLog(@"LYWriteMoodDiaryMoudule setup");
     
+    LYLog(@"%@ setup.", NSStringFromClass([self class]));
 }
 
 

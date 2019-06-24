@@ -9,12 +9,12 @@
 #import "LYWriteMoodDiaryViewController.h"
 #import "LYWriteMoodDiaryTableCell.h"
 #import "LYWriteMoodDiaryAddEmojiCell.h"
-
+#import "LYWriteMoodDiaryGuideView.h"
 
 @interface LYWriteMoodDiaryViewController ()
 
 @property (nonatomic, strong) NSMutableArray *emojiArray;
-@property (nonatomic, strong) LYBaseCustomTableHeaderView *headerView;
+@property (nonatomic, strong) UIView *headerView;
 @property (nonatomic, strong) LYMoodDiaryModel *defultModel;
 
 @end
@@ -32,10 +32,18 @@
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    if (![kUserDefault boolForKey:@"LYWriteMoodDiaryGuideView"]) {
+        [self.view endEditing:YES];
+        LYWriteMoodDiaryGuideView *guideView = [[LYWriteMoodDiaryGuideView alloc] initWithGuideType:@"LYWriteMoodDiaryGuideView"];
+        guideView.iconImage = [UIImage imageNamed:@"writeMood_guide"];
+        guideView.title     = LY_LocalizedString(@"kLYWriteMoodGuideTitle");
+        [guideView show];
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     [self setupSubViews];
     
@@ -168,7 +176,9 @@
     }
     LYWriteMoodDiaryTableCell *cell = [LYWriteMoodDiaryTableCell cellWithTableView:tableView];
     cell.model = model;
-    [cell.textView becomeFirstResponder];
+    if ([kUserDefault boolForKey:@"LYWriteMoodDiaryGuideView"]) {
+        [cell.textView becomeFirstResponder];
+    }
     return cell;
 }
 
@@ -194,12 +204,16 @@
 - (void)setupTableHeaderUI{
     BOOL isEditMood = self.editMoodArray.count;
     
-    LYBaseCustomTableHeaderView *headerView = [[LYBaseCustomTableHeaderView alloc] init];
-    headerView.title       = isEditMood?LY_LocalizedString(@"kLYEditMoodTitle"):LY_LocalizedString(@"kLYRecordMoodTitle");
-    headerView.detailTitle = isEditMood?LY_LocalizedString(@"kLYEditMoodDetail"):LY_LocalizedString(@"kLYRecordMoodDetail");
-    self.tableView.tableHeaderView = headerView;
-    self.headerView = headerView;
-    
+    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
+    if ([obj isKindOfClass:[UIView class]]) {
+        
+        obj.title = isEditMood?LY_LocalizedString(@"kLYEditMoodTitle"):LY_LocalizedString(@"kLYRecordMoodTitle");
+        obj.detailTitle = isEditMood?LY_LocalizedString(@"kLYEditMoodDetail"):LY_LocalizedString(@"kLYRecordMoodDetail");
+
+        self.tableView.tableHeaderView = (UIView *)obj;
+        self.headerView = (UIView *)obj;
+    }
+
 }
 
 #pragma method
@@ -213,18 +227,8 @@
     
 }
 - (void)textViewResignFirstResponder{
-    BOOL isEditMood = self.editMoodArray.count;
-
     LYWriteMoodDiaryTableCell *textCell = [self.tableView cellForRowAtIndexPath: [NSIndexPath indexPathForRow:1 inSection:0]];
-    if (!isEditMood) {
-        self.defultModel.moodDiaryText = textCell.textView.text;
-    }
     [textCell.textView resignFirstResponder];
-    
-    if (isEditMood) {
-        [self.editMoodArray removeAllObjects];
-        [self.tableView reloadData];
-    }
 }
 
 #pragma mark - 展示表情

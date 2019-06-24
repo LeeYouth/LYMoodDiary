@@ -89,6 +89,7 @@ kLYMoodNameHungry       = "Hungry";
 kLYExportEmptyData      = "Cette période n'est pas enregistrée.";
 kLYExportErrorDate      = "Veuillez sélectionner les dates de début et de fin avant l'exportation.";
 
+kLYWriteMoodGuideTitle   = "Cliquez sur le bouton émoticône pour choisir un émoticône différent.";
 kLYHomePageGuideTitle    = "Balayez à droite pour voir le record d'hier, balayez à gauche pour ajouter une nouvelle ambiance.";
 kLYHomePageGuideOK       = "OK";
 

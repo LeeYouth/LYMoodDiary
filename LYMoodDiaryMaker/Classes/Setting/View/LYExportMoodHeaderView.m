@@ -34,7 +34,7 @@
 }
 
 + (CGFloat)getViewHeight{
-    return 110;
+    return 120;
 }
 - (void)_setupSubViews{
     [self addSubview:self.beginTitleLabel];
@@ -47,7 +47,7 @@
         make.left.equalTo(self.mas_left).offset(kLYContentLeftMargin);
         make.top.equalTo(self.mas_top).offset(kLYContentLeftMargin);
         make.right.equalTo(self.mas_centerX);
-        make.height.mas_equalTo(@30);
+        make.height.mas_equalTo(@40);
     }];
     
     [self.beginDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,7 +60,7 @@
         make.right.equalTo(self.mas_right).offset(-kLYContentLeftMargin);
         make.top.equalTo(self.mas_top).offset(kLYContentLeftMargin);
         make.left.equalTo(self.mas_centerX);
-        make.height.mas_equalTo(@30);
+        make.height.mas_equalTo(@40);
     }];
     
     [self.endDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {

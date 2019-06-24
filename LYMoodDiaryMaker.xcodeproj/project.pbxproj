@@ -127,7 +127,12 @@
 		CFDB56AA2125212D00501905 /* LYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDB56A82125212D00501905 /* LYBaseViewController.m */; };
 		CFDB56AD212521A300501905 /* LYTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDB56AC212521A300501905 /* LYTabbarViewController.m */; };
 		CFDB56B0212521BA00501905 /* LYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFDB56AF212521BA00501905 /* LYBaseModel.m */; };
-		CFF16FF822BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF16FF722BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m */; };
+		CFF16FFD22BCD59B00916DBE /* LYBaseCustomTableHeaderViewModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF16FFC22BCD59B00916DBE /* LYBaseCustomTableHeaderViewModule.m */; };
+		CFF1700022C06B9800916DBE /* LYGenneralSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF16FFF22C06B9800916DBE /* LYGenneralSearchViewController.m */; };
+		CFF1700922C070AD00916DBE /* LYGenneralSearchViewControllerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1700822C070AD00916DBE /* LYGenneralSearchViewControllerModule.m */; };
+		CFF1700D22C0731600916DBE /* LYWriteMoodDiaryModule.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1700C22C0731600916DBE /* LYWriteMoodDiaryModule.m */; };
+		CFF1701022C0773200916DBE /* LYGenneralSearchNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1700F22C0773200916DBE /* LYGenneralSearchNavigationView.m */; };
+		CFF1701322C079A600916DBE /* LYWriteMoodDiaryGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF1701222C079A600916DBE /* LYWriteMoodDiaryGuideView.m */; };
 		CFFF0D6A21D75B3100060A2B /* LYStickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D6921D75B3100060A2B /* LYStickerView.m */; };
 		CFFF0D7621DEEDE300060A2B /* LYBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D7521DEEDE300060A2B /* LYBaseTableViewController.m */; };
 		CFFF0D7C21DEF10200060A2B /* LYEmoticonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D7B21DEF10200060A2B /* LYEmoticonModel.m */; };
@@ -410,8 +415,20 @@
 		CFDB56AF212521BA00501905 /* LYBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBaseModel.m; sourceTree = "<group>"; };
 		CFF16FEB22BCBD2A00916DBE /* LYService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYService.h; sourceTree = "<group>"; };
 		CFF16FF422BCBF4700916DBE /* LYWriteMoodDiaryViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryViewProtocol.h; sourceTree = "<group>"; };
-		CFF16FF622BCBFD000916DBE /* LYWriteMoodDiaryMoudule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryMoudule.h; sourceTree = "<group>"; };
-		CFF16FF722BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWriteMoodDiaryMoudule.m; sourceTree = "<group>"; };
+		CFF16FF922BCD52F00916DBE /* LYBaseCustomTableHeaderViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBaseCustomTableHeaderViewProtocol.h; sourceTree = "<group>"; };
+		CFF16FFB22BCD59B00916DBE /* LYBaseCustomTableHeaderViewModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBaseCustomTableHeaderViewModule.h; sourceTree = "<group>"; };
+		CFF16FFC22BCD59B00916DBE /* LYBaseCustomTableHeaderViewModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYBaseCustomTableHeaderViewModule.m; sourceTree = "<group>"; };
+		CFF16FFE22C06B9800916DBE /* LYGenneralSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGenneralSearchViewController.h; sourceTree = "<group>"; };
+		CFF16FFF22C06B9800916DBE /* LYGenneralSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYGenneralSearchViewController.m; sourceTree = "<group>"; };
+		CFF1700722C070AD00916DBE /* LYGenneralSearchViewControllerModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGenneralSearchViewControllerModule.h; sourceTree = "<group>"; };
+		CFF1700822C070AD00916DBE /* LYGenneralSearchViewControllerModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYGenneralSearchViewControllerModule.m; sourceTree = "<group>"; };
+		CFF1700A22C0712A00916DBE /* LYGenneralSearchViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGenneralSearchViewControllerProtocol.h; sourceTree = "<group>"; };
+		CFF1700B22C0731600916DBE /* LYWriteMoodDiaryModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryModule.h; sourceTree = "<group>"; };
+		CFF1700C22C0731600916DBE /* LYWriteMoodDiaryModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWriteMoodDiaryModule.m; sourceTree = "<group>"; };
+		CFF1700E22C0773200916DBE /* LYGenneralSearchNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGenneralSearchNavigationView.h; sourceTree = "<group>"; };
+		CFF1700F22C0773200916DBE /* LYGenneralSearchNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYGenneralSearchNavigationView.m; sourceTree = "<group>"; };
+		CFF1701122C079A600916DBE /* LYWriteMoodDiaryGuideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryGuideView.h; sourceTree = "<group>"; };
+		CFF1701222C079A600916DBE /* LYWriteMoodDiaryGuideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWriteMoodDiaryGuideView.m; sourceTree = "<group>"; };
 		CFFF0D6821D75B3100060A2B /* LYStickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYStickerView.h; sourceTree = "<group>"; };
 		CFFF0D6921D75B3100060A2B /* LYStickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYStickerView.m; sourceTree = "<group>"; };
 		CFFF0D7421DEEDE300060A2B /* LYBaseTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYBaseTableViewController.h; sourceTree = "<group>"; };
@@ -584,6 +601,7 @@
 		CF432E6622A0BB1500ABD7E6 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				CFF1700122C06D4B00916DBE /* Module */,
 				CF432E6722A0BB1500ABD7E6 /* Controller */,
 				CF432E6822A0BB1500ABD7E6 /* Model */,
 				CF432E6922A0BB1500ABD7E6 /* View */,
@@ -602,6 +620,8 @@
 				CF432EB022A2626500ABD7E6 /* LYCustomPasscodeViewController.m */,
 				CF9DA42422A605D20097D6A4 /* LYGeneralLanguageController.h */,
 				CF9DA42522A605D20097D6A4 /* LYGeneralLanguageController.m */,
+				CFF16FFE22C06B9800916DBE /* LYGenneralSearchViewController.h */,
+				CFF16FFF22C06B9800916DBE /* LYGenneralSearchViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -622,6 +642,8 @@
 				CF432EA722A230CE00ABD7E6 /* LYGeneralPasscodeSectionHeader.m */,
 				CF9DA42722A606960097D6A4 /* LYGeneralLanguageCell.h */,
 				CF9DA42822A606960097D6A4 /* LYGeneralLanguageCell.m */,
+				CFF1700E22C0773200916DBE /* LYGenneralSearchNavigationView.h */,
+				CFF1700F22C0773200916DBE /* LYGenneralSearchNavigationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -957,6 +979,8 @@
 				CF6C9F2B228BAEB300A003CF /* LYWriteMoodDiaryAddEmojiCell.m */,
 				CFB6D8B2228976F100590286 /* LYWriteMoodDiaryTableCell.h */,
 				CFB6D8B3228976F100590286 /* LYWriteMoodDiaryTableCell.m */,
+				CFF1701122C079A600916DBE /* LYWriteMoodDiaryGuideView.h */,
+				CFF1701222C079A600916DBE /* LYWriteMoodDiaryGuideView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1095,6 +1119,7 @@
 		CFDB56A02125210E00501905 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CFF16FFA22BCD56600916DBE /* Module */,
 				CFB968FD228D91EB0027DEF8 /* LYEmptyView */,
 				CFFF0D8621DF4D6A00060A2B /* MTLoadingHUD.h */,
 				CFFF0D8521DF4D6A00060A2B /* MTLoadingHUD.m */,
@@ -1164,6 +1189,8 @@
 			children = (
 				CFF16FEB22BCBD2A00916DBE /* LYService.h */,
 				CFF16FF422BCBF4700916DBE /* LYWriteMoodDiaryViewProtocol.h */,
+				CFF16FF922BCD52F00916DBE /* LYBaseCustomTableHeaderViewProtocol.h */,
+				CFF1700A22C0712A00916DBE /* LYGenneralSearchViewControllerProtocol.h */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1171,8 +1198,26 @@
 		CFF16FF522BCBFB300916DBE /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				CFF16FF622BCBFD000916DBE /* LYWriteMoodDiaryMoudule.h */,
-				CFF16FF722BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m */,
+				CFF1700B22C0731600916DBE /* LYWriteMoodDiaryModule.h */,
+				CFF1700C22C0731600916DBE /* LYWriteMoodDiaryModule.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		CFF16FFA22BCD56600916DBE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CFF16FFB22BCD59B00916DBE /* LYBaseCustomTableHeaderViewModule.h */,
+				CFF16FFC22BCD59B00916DBE /* LYBaseCustomTableHeaderViewModule.m */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		CFF1700122C06D4B00916DBE /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CFF1700722C070AD00916DBE /* LYGenneralSearchViewControllerModule.h */,
+				CFF1700822C070AD00916DBE /* LYGenneralSearchViewControllerModule.m */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1407,6 +1452,7 @@
 				CF6C9F20228B007F00A003CF /* LYEmojiPopMenu.m in Sources */,
 				CF6C431D21AE78B2002287F9 /* UIColor+MTColorTool.m in Sources */,
 				CF0BD6DA22855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m in Sources */,
+				CFF1700922C070AD00916DBE /* LYGenneralSearchViewControllerModule.m in Sources */,
 				CF7C3267228C14D3003BF247 /* LYCalendarMoodViewController.m in Sources */,
 				CFFF0D8721DF4D6A00060A2B /* MTLoadingHUD.m in Sources */,
 				CF706F2D21B7CF8F00442D67 /* LYPrivacyAgreementInfoView.m in Sources */,
@@ -1438,6 +1484,7 @@
 				CF6C431A21AE7703002287F9 /* LYWKWebViewController.m in Sources */,
 				CF9DA3FB22A3CECA0097D6A4 /* WKWebView+TYSnapshot.m in Sources */,
 				CF6C431421AE6C5A002287F9 /* LYBaseNavigationController.m in Sources */,
+				CFF1700022C06B9800916DBE /* LYGenneralSearchViewController.m in Sources */,
 				CF6C42FC21AE36EC002287F9 /* LYServerConfig.m in Sources */,
 				CFFF0DBA21E2EEC400060A2B /* LYCustomNavgationBarView.m in Sources */,
 				CFFF0DA821DF618600060A2B /* LYToastTool.m in Sources */,
@@ -1496,6 +1543,8 @@
 				CF3DEFEE21F066DA000B8853 /* UIButton+SGCountdown.m in Sources */,
 				CF432EB622A2982400ABD7E6 /* LYTouchIDDefultViewController.m in Sources */,
 				CF6C432321AE7B57002287F9 /* LYAppTool.m in Sources */,
+				CFF16FFD22BCD59B00916DBE /* LYBaseCustomTableHeaderViewModule.m in Sources */,
+				CFF1701322C079A600916DBE /* LYWriteMoodDiaryGuideView.m in Sources */,
 				CF432EA522A22C0600ABD7E6 /* LYGeneralPasscodeCell.m in Sources */,
 				CF9DA3FD22A3CECA0097D6A4 /* UIView+TYSnapshot.m in Sources */,
 				CFDB56B0212521BA00501905 /* LYBaseModel.m in Sources */,
@@ -1506,6 +1555,8 @@
 				CFB96907228D91EC0027DEF8 /* LYEmptyBaseView.m in Sources */,
 				CFB969A622924CDA0027DEF8 /* LYPrivacyAgreementTableViewCell.m in Sources */,
 				CF432E9822A225D200ABD7E6 /* LYPasscodeField.m in Sources */,
+				CFF1700D22C0731600916DBE /* LYWriteMoodDiaryModule.m in Sources */,
+				CFF1701022C0773200916DBE /* LYGenneralSearchNavigationView.m in Sources */,
 				CF432E8C22A2249A00ABD7E6 /* LYPasscodeDummyViewController.m in Sources */,
 				CFB96981229010FF0027DEF8 /* LYExportMoodViewController.m in Sources */,
 				CF9DA40E22A4C0660097D6A4 /* LYRoutersRegister.m in Sources */,
@@ -1517,7 +1568,6 @@
 				CF706F2A21B7C79C00442D67 /* LYNoviceManualViewController.m in Sources */,
 				CF3DEFF321F078CD000B8853 /* UIView+LYCorners.m in Sources */,
 				CFFF0D9721DF4EC700060A2B /* SVRadialGradientLayer.m in Sources */,
-				CFF16FF822BCBFD000916DBE /* LYWriteMoodDiaryMoudule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

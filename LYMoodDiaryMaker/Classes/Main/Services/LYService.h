@@ -8,3 +8,5 @@
 
 
 #import "LYWriteMoodDiaryViewProtocol.h"
+#import "LYBaseCustomTableHeaderViewProtocol.h"
+#import "LYGenneralSearchViewControllerProtocol.h"
