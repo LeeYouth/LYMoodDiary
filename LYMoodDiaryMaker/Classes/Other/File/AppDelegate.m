@@ -46,7 +46,7 @@
     }
 #warning - 在这里配置正式、测试，log开关
     //配置服务器类型
-    [LYServerConfig setLYConfigEnv:LYServerEnvDevelop];
+    [LYServerConfig setLYConfigEnv:LYServerEnvProduct];
     
     [LYRoutersRegister registerAllRouters];
 
