@@ -9,6 +9,7 @@
 #import "LYMoodDiaryPreviewViewController.h"
 #import "LYMoodDiaryPreviewEmojiCell.h"
 #import "LYMoodDiaryPreviewTextCell.h"
+#import "LYShareTool.h"
 
 @interface LYMoodDiaryPreviewViewController()
 
@@ -36,12 +37,13 @@
         if (sender.tag == 0) {
             //返回
             [weakSelf backButtonAction];
+            
         }else if (sender.tag == 1){
             //功能
             [weakSelf rightBarItemAction];
         }
     };
-    self.tableView.backgroundColor = LYHomePageColor;
+    self.tableView.backgroundColor = [UIColor tableViewColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;
@@ -126,7 +128,7 @@
 - (void)rightBarItemAction{
     
     WEAKSELF(weakSelf);
-    LYActionSheet *sheetView = [[LYActionSheet alloc] initWithSheetTitles:@[LY_LocalizedString(@"kLYSheetLongPicture"),LY_LocalizedString(@"kLYSheetEdit"),LY_LocalizedString(@"kLYSheetDelete")]];
+    LYActionSheet *sheetView = [[LYActionSheet alloc] initWithSheetTitles:@[LY_LocalizedString(@"kLYSheetShareWechatTimeLine"),LY_LocalizedString(@"kLYSheetEdit"),LY_LocalizedString(@"kLYSheetDelete")]];
     sheetView.didSelected = ^(NSInteger index) {
         if (index == 0) {
             //生成长图
@@ -149,7 +151,12 @@
     WEAKSELF(weakSelf);
     [LYToastTool showLoadingWithStatus:@""];
     [LYSnapshotManager screenShotForTableView:self.tableView finishBlock:^(UIImage * _Nonnull snapShotImage) {
-        UIImageWriteToSavedPhotosAlbum(snapShotImage, weakSelf, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        [LYToastTool dismiss];
+        
+        [LYShareTool shareImage:snapShotImage toPlatformType:UMSocialPlatformType_WechatTimeLine];
+
+        
+//        UIImageWriteToSavedPhotosAlbum(snapShotImage, weakSelf, @selector(image:didFinishSavingWithError:contextInfo:), nil);
     }];
 }
 

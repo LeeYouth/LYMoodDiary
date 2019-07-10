@@ -1,6 +1,6 @@
 //
 //  LYConst.h
-//  LYWeChatMaker
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2018/11/28.
 //  Copyright © 2018年 LYoung_iOS. All rights reserved.
@@ -11,7 +11,7 @@
 // 友盟AppKey
 UIKIT_EXTERN NSString *const UM_APPKEY;
 
-//微信分享
+//分享
 UIKIT_EXTERN NSString *const WECHAT_APPKEY;
 UIKIT_EXTERN NSString *const WECHAT_APPSECRET;
 

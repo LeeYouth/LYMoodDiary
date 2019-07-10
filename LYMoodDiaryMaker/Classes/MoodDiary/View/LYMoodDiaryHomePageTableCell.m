@@ -34,7 +34,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = LYHomePageColor;
+        self.backgroundColor = [UIColor tableViewColor];
         [self setUpSubViews];
     }
     return self;

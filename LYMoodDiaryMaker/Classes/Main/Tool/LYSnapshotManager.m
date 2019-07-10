@@ -13,17 +13,29 @@
 + (void)screenShotForTableView:(UITableView *)tableView
                     finishBlock:(void (^)(UIImage *snapShotImage))finishBlock{
     
-    UIImage* image = [[UIImage alloc]init];
+    UIImage* image = [[UIImage alloc] init];
     //下面方法，第一个参数表示区域大小。第二个参数表示是否是非透明的。
     //如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了，调整清晰度。
-    UIGraphicsBeginImageContextWithOptions(tableView.contentSize, YES, [UIScreen mainScreen].scale);
+    CGSize contentSize = tableView.contentSize;
+    if (tableView.contentSize.height <= (kScreenHeight - NAVBAR_HEIGHT)) {
+//        contentSize = CGSizeMake(tableView.contentSize.width, kScreenHeight - NAVBAR_HEIGHT);
+    }
+    UIGraphicsBeginImageContextWithOptions(contentSize, YES, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
     CGPoint savedContentOffset = tableView.contentOffset;
     CGRect savedFrame = tableView.frame;
     tableView.contentOffset = CGPointZero;
     tableView.frame = CGRectMake(0, 0, tableView.contentSize.width, tableView.contentSize.height);
-    [tableView.layer renderInContext: UIGraphicsGetCurrentContext()];
+
+
+
+//    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+//    CGContextFillRect(context, savedFrame);
+    [tableView.layer renderInContext: context];
+
     tableView.layer.contents = nil;//释放
-    image =UIGraphicsGetImageFromCurrentImageContext();
+    image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     tableView.contentOffset= savedContentOffset;
     tableView.frame = savedFrame;

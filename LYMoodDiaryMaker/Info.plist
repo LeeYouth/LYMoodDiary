@@ -25,12 +25,12 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wxba791f5ae0f3f394</string>
+				<string>wxf7aa13e9595fc214</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.1.2</string>
+	<string>1.1.5</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
@@ -57,12 +57,8 @@
 			</dict>
 		</dict>
 	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>如果不允许，您将无法选择手机相机进行拍照编辑。</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>如果不允许，您将无法保存图片到相册。</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>如果不允许，您将无法选择手机相册里的照片进行编辑。</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Alibaba-PuHuiTi-Light.otf</string>

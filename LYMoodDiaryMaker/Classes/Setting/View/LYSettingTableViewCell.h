@@ -1,6 +1,6 @@
 //
 //  LYSettingTableViewCell.h
-//  LYWeChatMaker
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2019/1/7.
 //  Copyright © 2019年 LYoung_iOS. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  LYStickerView.m
-//  LYWeChatMaker
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2018/12/29.
 //  Copyright © 2018年 LYoung_iOS. All rights reserved.

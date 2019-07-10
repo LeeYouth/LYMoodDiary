@@ -143,7 +143,6 @@
 		CFFF0D9921DF4EC700060A2B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D9321DF4EC700060A2B /* SVProgressHUD.m */; };
 		CFFF0D9A21DF4EC700060A2B /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D9421DF4EC700060A2B /* SVIndefiniteAnimatedView.m */; };
 		CFFF0D9B21DF4EC700060A2B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CFFF0D9521DF4EC700060A2B /* SVProgressHUD.bundle */; };
-		CFFF0D9E21DF536D00060A2B /* LYEnsureOrCancelAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0D9D21DF536D00060A2B /* LYEnsureOrCancelAlertView.m */; };
 		CFFF0DA821DF618600060A2B /* LYToastTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0DA721DF618600060A2B /* LYToastTool.m */; };
 		CFFF0DAE21DFADF400060A2B /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0DAC21DFADF300060A2B /* UIViewController+BackButtonHandler.m */; };
 		CFFF0DB721E1D64B00060A2B /* LYEmoticonListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFF0DB621E1D64B00060A2B /* LYEmoticonListModel.m */; };
@@ -449,8 +448,6 @@
 		CFFF0D9421DF4EC700060A2B /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
 		CFFF0D9521DF4EC700060A2B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		CFFF0D9621DF4EC700060A2B /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
-		CFFF0D9C21DF536D00060A2B /* LYEnsureOrCancelAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYEnsureOrCancelAlertView.h; sourceTree = "<group>"; };
-		CFFF0D9D21DF536D00060A2B /* LYEnsureOrCancelAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYEnsureOrCancelAlertView.m; sourceTree = "<group>"; };
 		CFFF0DA621DF618600060A2B /* LYToastTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYToastTool.h; sourceTree = "<group>"; };
 		CFFF0DA721DF618600060A2B /* LYToastTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYToastTool.m; sourceTree = "<group>"; };
 		CFFF0DAC21DFADF300060A2B /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
@@ -1125,8 +1122,6 @@
 				CFFF0D8521DF4D6A00060A2B /* MTLoadingHUD.m */,
 				CF6C430821AE66C8002287F9 /* LYAdvertisementAlertView.h */,
 				CF6C430921AE66C8002287F9 /* LYAdvertisementAlertView.m */,
-				CFFF0D9C21DF536D00060A2B /* LYEnsureOrCancelAlertView.h */,
-				CFFF0D9D21DF536D00060A2B /* LYEnsureOrCancelAlertView.m */,
 				CFFF0D6821D75B3100060A2B /* LYStickerView.h */,
 				CFFF0D6921D75B3100060A2B /* LYStickerView.m */,
 				CFFF0DB821E2EEC300060A2B /* LYCustomNavgationBarView.h */,
@@ -1528,7 +1523,6 @@
 				CF6C432D21AFC559002287F9 /* LYHomePageViewController.m in Sources */,
 				CF706F2421B7C2AD00442D67 /* LYAboutUsInfoView.m in Sources */,
 				CF432E8F22A224FC00ABD7E6 /* LYShiftingView.m in Sources */,
-				CFFF0D9E21DF536D00060A2B /* LYEnsureOrCancelAlertView.m in Sources */,
 				CF9DA3FC22A3CECA0097D6A4 /* UIScrollView+TYSnapshot.m in Sources */,
 				CF6C9F2C228BAEB300A003CF /* LYWriteMoodDiaryAddEmojiCell.m in Sources */,
 				CFDB56AD212521A300501905 /* LYTabbarViewController.m in Sources */,
@@ -1778,13 +1772,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KFUMX8335;
-				INFOPLIST_FILE = LYWeChatMakerTests/Info.plist;
+				INFOPLIST_FILE = LYMoodDiaryMakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LY.LYWeChatMakerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = LY.LYMoodDiaryMakerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYMoodDiaryMaker.app/LYMoodDiaryMaker";
@@ -1797,13 +1791,13 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7KFUMX8335;
-				INFOPLIST_FILE = LYWeChatMakerTests/Info.plist;
+				INFOPLIST_FILE = LYMoodDiaryMakerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LY.LYWeChatMakerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = LY.LYMoodDiaryMakerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LYMoodDiaryMaker.app/LYMoodDiaryMaker";
@@ -1814,17 +1808,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 385BQG9LRC;
-				INFOPLIST_FILE = LYWeChatMakerUITests/Info.plist;
+				DEVELOPMENT_TEAM = 7KFUMX8335;
+				INFOPLIST_FILE = LYMoodDiaryMakerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LY.LYWeChatMakerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = LY.LYMoodDiaryMakerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LYWeChatMaker;
+				TEST_TARGET_NAME = LYMoodDiaryMaker;
 			};
 			name = Debug;
 		};
@@ -1832,17 +1826,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 385BQG9LRC;
-				INFOPLIST_FILE = LYWeChatMakerUITests/Info.plist;
+				DEVELOPMENT_TEAM = 7KFUMX8335;
+				INFOPLIST_FILE = LYMoodDiaryMakerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LY.LYWeChatMakerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = LY.LYMoodDiaryMakerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = LYWeChatMaker;
+				TEST_TARGET_NAME = LYMoodDiaryMaker;
 			};
 			name = Release;
 		};

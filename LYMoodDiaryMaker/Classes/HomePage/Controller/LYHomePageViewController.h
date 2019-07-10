@@ -1,6 +1,6 @@
 //
 //  LYHomePageViewController.h
-//  LYWeChatMaker
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2018/11/29.
 //  Copyright © 2018年 LYoung_iOS. All rights reserved.

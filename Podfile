@@ -19,5 +19,11 @@ target 'LYMoodDiaryMaker' do
     pod 'FFRouter'
     pod "BeeHive", '1.1.1'
 
+    pod 'UMCCommon'
+    pod 'UMCSecurityPlugins'
+    pod 'UMCAnalytics'
+    pod 'UMCErrorCatch'
+    pod 'UMCShare/Social/ReducedWeChat'
+
 
 end

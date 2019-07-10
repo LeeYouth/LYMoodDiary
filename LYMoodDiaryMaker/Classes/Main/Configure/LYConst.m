@@ -1,6 +1,6 @@
 //
 //  LYConst.m
-//  LYWeChatMaker
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2018/11/28.
 //  Copyright © 2018年 LYoung_iOS. All rights reserved.
@@ -10,11 +10,11 @@
 
 
 // 友盟AppKey
-NSString *const UM_APPKEY = @"5ce3cead4ca357101b0006ae";
+NSString *const UM_APPKEY = @"5ce3cce84ca357101e0005a5";
 
-//微信分享
-NSString *const WECHAT_APPKEY    = @"wxba791f5ae0f3f394";
-NSString *const WECHAT_APPSECRET = @"17ec16fe5f475f2fd54b1474bbcd47f5";
+//分享
+NSString *const WECHAT_APPKEY    = @"wxf7aa13e9595fc214";
+NSString *const WECHAT_APPSECRET = @"ab6e28ea681e25f744e301ad7d54afb3";
 
 //表情类型
 NSString *const LYEMOJI_HAPPY  = @"LYEMOJI_HAPPY";

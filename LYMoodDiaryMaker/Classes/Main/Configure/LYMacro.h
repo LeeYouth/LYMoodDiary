@@ -1,6 +1,6 @@
 //
 //  LYMacro.h
-//  LYWeChatMaker
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2018/11/28.
 //  Copyright © 2018年 LYoung_iOS. All rights reserved.
@@ -71,17 +71,6 @@ tmp;\
 
 #define LYSystemFont(font)       [UIFont systemFontOfSize:(font)]
 
-//资源最后一张图片
-//熊猫人资源最后一张图片
-#define kXMRRESOURCELASTNAME @"10058"
-//蘑菇头资源最后一张图片
-#define kMGTRESOURCELASTNAME @"10037"
-
-//表情最后一张图片
-#define kMAKEMOJIFACERESOURCELASTNAME @"10052"
-//形象最后一张图片
-#define kMAKEMOJIEMCTICONESOURCELASTNAME @"10048"
-
 //主题颜色
 #define LYThemeColor       LYColor(@"#FE4365")
 //主题线的颜色
@@ -98,42 +87,9 @@ tmp;\
 #define LYBlackColorHex       @"#000000"
 #define LYClearColor       [UIColor clearColor]
 
-
-//按钮颜色
-#define LYButtonThemeColor       LYColor(@"#428BCA")
-//首页的背景颜色
-#define LYHomePageColor       LYColor(@"#ffffff")
-//图片背景颜色
-#define LYImageBackColor       LYColor(LYBlackColorHex)
-
-//样式高度
-#define LYWatermarkStyleViewH  (70 + kTabbarExtra)
-//样式颜色
-#define LYWatermarkStyleColor  LYColor(@"#ffffff")
-
-//样式的圆角
-#define kLYViewCornerRadius   2.f
-//样式的圆角边框颜色
-#define kLYViewBorderColor    LYColor(@"#EAEAEA")
-//样式的圆角边框宽度
-#define kLYViewBorderWidth   0.3
-
-
-#define LYWatermarkInputViewDefultText @"点击添加文字"
-
-
-#define kLYWatermarkColorsListViewH  70
-#define kLYWatermarkBottomBtnsViewH 44.f
 #define kLYContentLeftMargin 20.f
-
 //日历高度
 #define kLYCalendarHeight 240.f
-
-#define kLYTWatermarkBottomToolBarH (kLYWatermarkColorsListViewH + kLYWatermarkBottomBtnsViewH + kTabbarExtra)
-
-#define kLYTWatermarkImageMaxSize CGSizeMake(kScreenWidth, kScreenHeight - NAVBAR_HEIGHT - kLYTWatermarkBottomToolBarH)
-
-#define kLYServiceNumber @"13277853764"
 
 
 //按钮点击block

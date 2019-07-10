@@ -42,7 +42,7 @@
         }
     };
     
-    self.tableView.backgroundColor = LYHomePageColor;
+    self.tableView.backgroundColor = [UIColor tableViewColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     

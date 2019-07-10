@@ -1,6 +1,6 @@
 //
-//  LYWeChatMakerPrefixHeader.pch
-//  LYWeChatMaker
+//  LYMoodDiaryMakerPrefixHeader.pch
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2018/8/16.
 //  Copyright © 2018年 LYoung_iOS. All rights reserved.
@@ -64,7 +64,6 @@
 #import "LYWriteMoodDiaryViewController.h"
 #import "LYBaseNavigationController.h"
 
-#import "LYEnsureOrCancelAlertView.h"
 #import "LYStickerView.h"
 #import "LYEmojiPopMenu.h"
 #import "LYEmptyViewHeader.h"

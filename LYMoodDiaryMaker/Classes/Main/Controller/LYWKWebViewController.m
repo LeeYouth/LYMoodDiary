@@ -1,6 +1,6 @@
 //
 //  LYWKWebViewController.m
-//  LYWeChatMaker
+//  LYMoodDiaryMaker
 //
 //  Created by CNFOL_iOS on 2018/11/28.
 //  Copyright © 2018年 LYoung_iOS. All rights reserved.
@@ -172,15 +172,12 @@ static NSString *const canGoBack = @"canGoBack";
 //    [_shareArray addObject:MTPlatformNameSms];
 //    [_shareArray addObject:MTPlatformNameEmail];
 //    [_shareArray addObject:MTPlatformNameSina];
-//    [_shareArray addObject:MTPlatformNameWechat];
 //    [_shareArray addObject:MTPlatformNameQQ];
-//    [_shareArray addObject:MTPlatformNameAlipay];
 //
 //    MTShareView *shareView = [[MTShareView alloc] initWithShareItems:_shareArray functionItems:_functionArray itemSize:CGSizeMake(80,100)];
 //    [shareView addText:@"分享测试"];
 //    //    shareView.containViewColor = [UIColor colorWithRed:255 green:255 blue:255 alpha:0.4];
 //    [shareView addURL:[NSURL URLWithString:@"http://www.baidu.com"]];
-//    [shareView addImage:[UIImage imageNamed:@"share_alipay"]];
 //    shareView.itemSpace = 10;
 //    [shareView showFromControlle:self];
     

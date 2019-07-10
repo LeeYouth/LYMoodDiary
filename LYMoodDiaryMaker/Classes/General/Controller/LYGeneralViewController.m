@@ -106,10 +106,6 @@
         //新手指南
         LYNoviceManualViewController *xinVC = [[LYNoviceManualViewController  alloc] init];
         [self.navigationController pushViewController:xinVC animated:YES];
-    }else if ([typeName isEqualToString:@"star"]){
-        //去评分
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id1450481289"]];
-        
     }else if ([typeName isEqualToString:@"protocol"]){
         //隐私协议
         LYPrivacyAgreementViewController *privacyVC = [[LYPrivacyAgreementViewController alloc] init];
