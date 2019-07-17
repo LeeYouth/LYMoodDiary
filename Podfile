@@ -1,4 +1,6 @@
 
+source 'https://github.com/LeeYouth/LYMoodSpecs.git'   # 私有库
+
 target 'LYMoodDiaryMaker' do
     
 
@@ -24,6 +26,9 @@ target 'LYMoodDiaryMaker' do
     pod 'UMCAnalytics'
     pod 'UMCErrorCatch'
     pod 'UMCShare/Social/ReducedWeChat'
+
+    pod 'LYBaseView', '~>0.1.0'
+
 
 
 end

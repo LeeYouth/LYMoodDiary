@@ -28,6 +28,9 @@ PODS:
   - FSCalendar (2.8.0)
   - IQKeyboardManager (6.2.0)
   - JGProgressHUD (2.0.3)
+  - LYBaseView (0.1.0):
+    - LYBaseView/LYEmptyView (= 0.1.0)
+  - LYBaseView/LYEmptyView (0.1.0)
   - Masonry (0.6.4)
   - MBProgressHUD (1.0.0)
   - MSWeakTimer (1.1.0)
@@ -58,6 +61,7 @@ DEPENDENCIES:
   - FSCalendar
   - IQKeyboardManager
   - JGProgressHUD
+  - LYBaseView (~> 0.1.0)
   - Masonry
   - MBProgressHUD (~> 1.0.0)
   - MSWeakTimer (~> 1.1.0)
@@ -89,6 +93,8 @@ SPEC REPOS:
     - UMCSecurityPlugins
     - UMCShare
     - YYKit
+  https://github.com/LeeYouth/LYMoodSpecs.git:
+    - LYBaseView
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -99,6 +105,7 @@ SPEC CHECKSUMS:
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
+  LYBaseView: c22b4c73d94a1a4a4865a48c9b36ae52521defe1
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
@@ -110,6 +117,6 @@ SPEC CHECKSUMS:
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 8362931e1a34fc60d6d0c74716bc5df08d587e18
+PODFILE CHECKSUM: eff8cd231f137626181b76dabaa4f6fd91d8e0c7
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.7.4

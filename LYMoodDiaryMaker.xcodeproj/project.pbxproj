@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -103,10 +103,6 @@
 		CFB6D8AA2289417700590286 /* LYBaseCustomTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D8A92289417600590286 /* LYBaseCustomTableHeaderView.m */; };
 		CFB6D8B122896F0300590286 /* LYWriteMoodDiaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D8B022896F0300590286 /* LYWriteMoodDiaryViewController.m */; };
 		CFB6D8B4228976F100590286 /* LYWriteMoodDiaryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6D8B3228976F100590286 /* LYWriteMoodDiaryTableCell.m */; };
-		CFB96907228D91EC0027DEF8 /* LYEmptyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB968FE228D91EB0027DEF8 /* LYEmptyBaseView.m */; };
-		CFB96908228D91EC0027DEF8 /* UIView+Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB96900228D91EB0027DEF8 /* UIView+Empty.m */; };
-		CFB96909228D91EC0027DEF8 /* UIView+LYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB96901228D91EB0027DEF8 /* UIView+LYExtension.m */; };
-		CFB9690A228D91EC0027DEF8 /* LYEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB96904228D91EB0027DEF8 /* LYEmptyView.m */; };
 		CFB9690D228E51910027DEF8 /* LYCustomEmptyDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB9690C228E51910027DEF8 /* LYCustomEmptyDataView.m */; };
 		CFB96972228EAF2C0027DEF8 /* LYCustoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB96971228EAF2C0027DEF8 /* LYCustoomScrollView.m */; };
 		CFB96975228FB8D40027DEF8 /* LYActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB96974228FB8D40027DEF8 /* LYActionSheet.m */; };
@@ -358,15 +354,6 @@
 		CFB6D8B022896F0300590286 /* LYWriteMoodDiaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWriteMoodDiaryViewController.m; sourceTree = "<group>"; };
 		CFB6D8B2228976F100590286 /* LYWriteMoodDiaryTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYWriteMoodDiaryTableCell.h; sourceTree = "<group>"; };
 		CFB6D8B3228976F100590286 /* LYWriteMoodDiaryTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYWriteMoodDiaryTableCell.m; sourceTree = "<group>"; };
-		CFB968FE228D91EB0027DEF8 /* LYEmptyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYEmptyBaseView.m; sourceTree = "<group>"; };
-		CFB968FF228D91EB0027DEF8 /* LYEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYEmptyView.h; sourceTree = "<group>"; };
-		CFB96900228D91EB0027DEF8 /* UIView+Empty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Empty.m"; sourceTree = "<group>"; };
-		CFB96901228D91EB0027DEF8 /* UIView+LYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LYExtension.m"; sourceTree = "<group>"; };
-		CFB96902228D91EB0027DEF8 /* LYEmptyBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYEmptyBaseView.h; sourceTree = "<group>"; };
-		CFB96903228D91EB0027DEF8 /* LYEmptyViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYEmptyViewHeader.h; sourceTree = "<group>"; };
-		CFB96904228D91EB0027DEF8 /* LYEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYEmptyView.m; sourceTree = "<group>"; };
-		CFB96905228D91EB0027DEF8 /* UIView+LYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYExtension.h"; sourceTree = "<group>"; };
-		CFB96906228D91EB0027DEF8 /* UIView+Empty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Empty.h"; sourceTree = "<group>"; };
 		CFB9690B228E51910027DEF8 /* LYCustomEmptyDataView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYCustomEmptyDataView.h; sourceTree = "<group>"; };
 		CFB9690C228E51910027DEF8 /* LYCustomEmptyDataView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYCustomEmptyDataView.m; sourceTree = "<group>"; };
 		CFB96970228EAF2C0027DEF8 /* LYCustoomScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYCustoomScrollView.h; sourceTree = "<group>"; };
@@ -982,22 +969,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		CFB968FD228D91EB0027DEF8 /* LYEmptyView */ = {
-			isa = PBXGroup;
-			children = (
-				CFB96903228D91EB0027DEF8 /* LYEmptyViewHeader.h */,
-				CFB968FF228D91EB0027DEF8 /* LYEmptyView.h */,
-				CFB96904228D91EB0027DEF8 /* LYEmptyView.m */,
-				CFB96902228D91EB0027DEF8 /* LYEmptyBaseView.h */,
-				CFB968FE228D91EB0027DEF8 /* LYEmptyBaseView.m */,
-				CFB96905228D91EB0027DEF8 /* UIView+LYExtension.h */,
-				CFB96901228D91EB0027DEF8 /* UIView+LYExtension.m */,
-				CFB96906228D91EB0027DEF8 /* UIView+Empty.h */,
-				CFB96900228D91EB0027DEF8 /* UIView+Empty.m */,
-			);
-			path = LYEmptyView;
-			sourceTree = "<group>";
-		};
 		CFDB564E2125172E00501905 = {
 			isa = PBXGroup;
 			children = (
@@ -1117,7 +1088,6 @@
 			isa = PBXGroup;
 			children = (
 				CFF16FFA22BCD56600916DBE /* Module */,
-				CFB968FD228D91EB0027DEF8 /* LYEmptyView */,
 				CFFF0D8621DF4D6A00060A2B /* MTLoadingHUD.h */,
 				CFFF0D8521DF4D6A00060A2B /* MTLoadingHUD.m */,
 				CF6C430821AE66C8002287F9 /* LYAdvertisementAlertView.h */,
@@ -1412,17 +1382,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LYMoodDiaryMaker/Pods-LYMoodDiaryMaker-resources.sh",
-				"${PODS_ROOT}/BeeHive/BeeHive/BeeHive.bundle",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD/JGProgressHUD.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYMoodDiaryMaker/Pods-LYMoodDiaryMaker-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/BeeHive.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JGProgressHUD.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYMoodDiaryMaker/Pods-LYMoodDiaryMaker-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1459,7 +1424,6 @@
 				CF9DA42622A605D20097D6A4 /* LYGeneralLanguageController.m in Sources */,
 				CFFF0DAE21DFADF400060A2B /* UIViewController+BackButtonHandler.m in Sources */,
 				CFB9697B228FFDE90027DEF8 /* LYMoodDiaryPreviewEmojiCell.m in Sources */,
-				CFB9690A228D91EC0027DEF8 /* LYEmptyView.m in Sources */,
 				CFB969A322924CB30027DEF8 /* LYPrivacyAgreementViewController.m in Sources */,
 				CFDB56AA2125212D00501905 /* LYBaseViewController.m in Sources */,
 				CF432EAB22A2549000ABD7E6 /* LYPasscodeManager.m in Sources */,
@@ -1491,7 +1455,6 @@
 				CF9DA40322A4B2F00097D6A4 /* LYMoodDiaryDBManager.m in Sources */,
 				CF3DF00A21F83C60000B8853 /* LYHomePageService.m in Sources */,
 				CF432E8922A2239B00ABD7E6 /* LYPasscodeViewController.m in Sources */,
-				CFB96908228D91EC0027DEF8 /* UIView+Empty.m in Sources */,
 				CF0BD6F22285811800A3EECD /* LYMoodDiaryModel.m in Sources */,
 				CFDB566A2125173200501905 /* main.m in Sources */,
 				CF706F1E21B7B63B00442D67 /* LYSettingViewController.m in Sources */,
@@ -1518,7 +1481,6 @@
 				CFB96975228FB8D40027DEF8 /* LYActionSheet.m in Sources */,
 				CF0BD6EC22856EE700A3EECD /* UIFont+LYMoodFont.m in Sources */,
 				CF6C42EA21AE33BA002287F9 /* AppDelegate+UMSocial.m in Sources */,
-				CFB96909228D91EC0027DEF8 /* UIView+LYExtension.m in Sources */,
 				CF9DA3FE22A3CECA0097D6A4 /* UIImage+TYSnapshot.m in Sources */,
 				CF6C432D21AFC559002287F9 /* LYHomePageViewController.m in Sources */,
 				CF706F2421B7C2AD00442D67 /* LYAboutUsInfoView.m in Sources */,
@@ -1546,7 +1508,6 @@
 				CF9DA42922A606960097D6A4 /* LYGeneralLanguageCell.m in Sources */,
 				CF6C9F26228BAB7B00A003CF /* LYEmojiPopMenuPath.m in Sources */,
 				CF0BD6E02285600800A3EECD /* UIColor+LYMoodColor.m in Sources */,
-				CFB96907228D91EC0027DEF8 /* LYEmptyBaseView.m in Sources */,
 				CFB969A622924CDA0027DEF8 /* LYPrivacyAgreementTableViewCell.m in Sources */,
 				CF432E9822A225D200ABD7E6 /* LYPasscodeField.m in Sources */,
 				CFF1700D22C0731600916DBE /* LYWriteMoodDiaryModule.m in Sources */,

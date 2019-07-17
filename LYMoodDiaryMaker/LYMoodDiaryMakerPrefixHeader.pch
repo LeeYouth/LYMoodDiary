@@ -66,7 +66,7 @@
 
 #import "LYStickerView.h"
 #import "LYEmojiPopMenu.h"
-#import "LYEmptyViewHeader.h"
+#import <LYEmptyViewHeader.h>
 #import "LYCustomEmptyDataView.h"
 #import "LYHomepageGuideView.h"
 #import "LYActionSheet.h"
