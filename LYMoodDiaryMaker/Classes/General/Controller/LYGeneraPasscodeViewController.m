@@ -25,7 +25,7 @@
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    self.tableView.backgroundColor = LYTableViewBackColor;
+    self.tableView.backgroundColor = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:self.tableView];
 
@@ -34,11 +34,10 @@
         make.left.right.bottom.equalTo(self.view);
     }];
     
-    id <LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    if ([obj isKindOfClass:[UIView class]]) {
-        obj.title = LY_LocalizedString(@"kLYSettingCellPasscode");
-        self.tableView.tableHeaderView = (UIView *)obj;
-    }    
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    headView.title       = LY_LocalizedString(@"kLYSettingCellPasscode");
+    self.tableView.tableHeaderView = headView;
+    
     
     [self.tableView reloadData];
 }

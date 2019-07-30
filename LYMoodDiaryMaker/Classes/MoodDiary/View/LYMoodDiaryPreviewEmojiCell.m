@@ -84,8 +84,8 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font =  [UIFont fontAliWithName:AlibabaPuHuiTiR size:24.f];
-        view.textColor = [UIColor emptyDataTitleColor];
+        view.font = HPR24;
+        view.textColor = emptyDataTitleColor;
         view.numberOfLines = 0;
         [self addSubview:view];
         view;
@@ -95,8 +95,8 @@
 - (UILabel *)detailLabel{
     return LY_LAZY(_detailLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:38.f];
-        view.textColor = [UIColor emptyDataDetailTitleColor];
+        view.font = HPL38;
+        view.textColor = emptyDataDetailTitleColor;
         view.textAlignment = NSTextAlignmentRight;
         view.numberOfLines = 0;
         [self addSubview:view];

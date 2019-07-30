@@ -8,9 +8,9 @@
 
 #import "LYCustomEmptyDataView.h"
 
-#define LYEmptyDataViewTitleFont [UIFont fontAliWithName:AlibabaPuHuiTiR size:25.f]
-#define LYEmptyDataViewDetailTitleFont [UIFont fontAliWithName:AlibabaPuHuiTiL size:17.f]
-#define LYEmptyDataViewButtonFont [UIFont fontAliWithName:AlibabaPuHuiTiR size:14.f]
+#define LYEmptyDataViewTitleFont  HPR25
+#define LYEmptyDataViewDetailTitleFont HPL17
+#define LYEmptyDataViewButtonFont HPR14
 
 @interface LYCustomEmptyDataView()
 
@@ -113,7 +113,7 @@
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
         view.font =  LYEmptyDataViewTitleFont;
-        view.textColor = [UIColor emptyDataTitleColor];
+        view.textColor = emptyDataTitleColor;
         view.textAlignment = NSTextAlignmentCenter;
         view.numberOfLines = 0;
         view.hidden = YES;
@@ -126,7 +126,7 @@
         UILabel *view = [[UILabel alloc] init];
         view.font = LYEmptyDataViewDetailTitleFont;
         view.textAlignment = NSTextAlignmentCenter;
-        view.textColor = [UIColor emptyDataDetailTitleColor];
+        view.textColor = emptyDataDetailTitleColor;
         view.numberOfLines = 0;
         view.hidden = YES;
         view;
@@ -135,7 +135,7 @@
 - (UIButton *)clickButton{
     return LY_LAZY(_clickButton, ({
         UIButton *view = [UIButton new];
-        UIImage *image = [UIImage createImageWithColor:[UIColor themeButtonColor]];
+        UIImage *image = [UIImage createImageWithColor:themeButtonColor];
         [view setBackgroundImage:image forState:UIControlStateNormal];
         [view setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         view.titleLabel.font = LYEmptyDataViewButtonFont;

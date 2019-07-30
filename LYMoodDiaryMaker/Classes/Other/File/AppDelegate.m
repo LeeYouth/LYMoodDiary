@@ -25,17 +25,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [BHContext shareInstance].application = application;
-    [BHContext shareInstance].launchOptions = launchOptions;
-//    [BHContext shareInstance].moduleConfigName = @"BeeHive.bundle/BeeHive";//可选，默认为BeeHive.bundle/BeeHive.plist
-//    [BHContext shareInstance].serviceConfigName = @"BeeHive.bundle/LYService";
-    
-    [BeeHive shareInstance].enableException = YES;
-    [[BeeHive shareInstance] setContext:[BHContext shareInstance]];
-    [[BHTimeProfiler sharedTimeProfiler] recordEventTime:@"BeeHive::super start launch"];
-    [super application:application didFinishLaunchingWithOptions:launchOptions];
 
-    
     if (iOS11) {
         if (@available(iOS 11.0, *)) {
             [UIScrollView appearance].
@@ -48,10 +38,7 @@
     //配置服务器类型
     [LYServerConfig setLYConfigEnv:LYServerEnvProduct];
     
-    [LYRoutersRegister registerAllRouters];
-
     self.window = [[UIWindow alloc] init];
-    
     
  
     //设置了密码

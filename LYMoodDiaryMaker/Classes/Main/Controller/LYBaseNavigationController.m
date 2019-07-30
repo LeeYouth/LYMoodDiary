@@ -44,7 +44,7 @@
 //{
 //    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
 //
-//    NSDictionary *textAttributes = @{NSFontAttributeName:LYSystemFont(16),
+//    NSDictionary *textAttributes = @{NSFontAttributeName:SYS_FONT(16),
 //                                     NSForegroundColorAttributeName: [UIColor blackColor]
 //                                     };
 //

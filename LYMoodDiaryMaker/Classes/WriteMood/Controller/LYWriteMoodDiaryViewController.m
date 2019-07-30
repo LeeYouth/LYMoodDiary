@@ -14,7 +14,7 @@
 @interface LYWriteMoodDiaryViewController ()
 
 @property (nonatomic, strong) NSMutableArray *emojiArray;
-@property (nonatomic, strong) UIView *headerView;
+@property (nonatomic, strong) LYBaseCustomTableHeaderView *headerView;
 @property (nonatomic, strong) LYMoodDiaryModel *defultModel;
 
 @end
@@ -53,7 +53,7 @@
     WEAKSELF(weakSelf);
     self.navBarView.leftBarItemImage  = [UIImage imageNamed:@"navBar_closeicon"];
     self.navBarView.rightBarItemImage = [UIImage imageNamed:@"navBar_saveicon"];
-    self.navBarView.navColor = [UIColor whiteColor];
+    self.navBarView.navColor = bgColor;
     self.navBarView.btnBlock = ^(UIButton *sender) {
         [weakSelf.view endEditing:YES];
         if (sender.tag == 0) {
@@ -73,7 +73,7 @@
         }
     };
     
-    self.tableView.backgroundColor = [UIColor tableViewColor];
+    self.tableView.backgroundColor = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     [self setupTableHeaderUI];
@@ -204,15 +204,12 @@
 - (void)setupTableHeaderUI{
     BOOL isEditMood = self.editMoodArray.count;
     
-    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    if ([obj isKindOfClass:[UIView class]]) {
-        
-        obj.title = isEditMood?LY_LocalizedString(@"kLYEditMoodTitle"):LY_LocalizedString(@"kLYRecordMoodTitle");
-        obj.detailTitle = isEditMood?LY_LocalizedString(@"kLYEditMoodDetail"):LY_LocalizedString(@"kLYRecordMoodDetail");
-
-        self.tableView.tableHeaderView = (UIView *)obj;
-        self.headerView = (UIView *)obj;
-    }
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    headView.title = isEditMood?LY_LocalizedString(@"kLYEditMoodTitle"):LY_LocalizedString(@"kLYRecordMoodTitle");
+    headView.detailTitle = isEditMood?LY_LocalizedString(@"kLYEditMoodDetail"):LY_LocalizedString(@"kLYRecordMoodDetail");
+    self.tableView.tableHeaderView = headView;
+    self.headerView = headView;
+    
 
 }
 

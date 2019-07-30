@@ -34,7 +34,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = [UIColor tableViewColor];
+        self.backgroundColor = tableViewBgColor;
         [self setUpSubViews];
     }
     return self;
@@ -79,7 +79,7 @@
         make.size.mas_equalTo(CGSizeMake(iconW + 4, iconW + 4));
     }];
     
-    CGFloat timeW = [@" 23:59 " sizeWithAttributes:@{NSFontAttributeName:[UIFont moodTimeFont]}].width;
+    CGFloat timeW = [@" 23:59 " sizeWithAttributes:@{NSFontAttributeName:HPR16}].width;
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.iconImageView.mas_bottom).offset(5);
         make.right.equalTo(self.cardBackView.mas_right).offset(-contentLeft);
@@ -160,7 +160,7 @@
     return LY_LAZY(_iconBackView, ({
         CGFloat iconW = 54;
         UIView *view = [UIView new];
-        view.backgroundColor = [UIColor whiteColor];
+        view.backgroundColor = bgColor;
         view.layer.cornerRadius = iconW/2;
         view.layer.masksToBounds = YES;
         view;
@@ -191,8 +191,8 @@
 - (YYLabel *)contentLabel{
     return LY_LAZY(_contentLabel, ({
         YYLabel *view = [YYLabel new];
-        view.textColor = [UIColor whiteColor];
-        view.font = [UIFont moodFont];
+        view.textColor = bgColor;
+        view.font = HPR16;
         view.textVerticalAlignment = YYTextVerticalAlignmentTop;
         view.numberOfLines = 0;
         view;
@@ -201,9 +201,9 @@
 - (UILabel *)timeLabel{
     return LY_LAZY(_timeLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = [UIColor whiteColor];
+        view.textColor = bgColor;
         view.textAlignment = NSTextAlignmentRight;
-        view.font = [UIFont moodTimeFont];
+        view.font = HPR16;
         view;
     }));
 }

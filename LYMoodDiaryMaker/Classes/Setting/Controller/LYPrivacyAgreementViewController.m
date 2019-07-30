@@ -17,11 +17,10 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.title = LY_LocalizedString(@"kLYSettingCellPrivacy");
 
-    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    if ([obj isKindOfClass:[UIView class]]) {
-        obj.title       = LY_LocalizedString(@"kLYSettingCellPrivacy");
-        self.tableView.tableHeaderView = (UIView *)obj;
-    }
+    
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    headView.title       = LY_LocalizedString(@"kLYSettingCellPrivacy");
+    self.tableView.tableHeaderView = headView;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

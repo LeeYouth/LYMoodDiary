@@ -73,7 +73,7 @@
 
         NSMutableAttributedString *attString11 = [[NSMutableAttributedString alloc] initWithString:contectUsStr];
         [attString11 addAttributes:@{NSParagraphStyleAttributeName:paraStyle,NSFontAttributeName:[UIFont systemFontOfSize:14.f]} range:NSMakeRange(0, contectUsStr.length - email.length)];
-        [attString11 addAttributes:@{NSParagraphStyleAttributeName:paraStyle,NSFontAttributeName:[UIFont systemFontOfSize:14.f],NSForegroundColorAttributeName:LYColor(@"#0000FF")} range:NSMakeRange(contectUsStr.length - email.length, email.length)];
+        [attString11 addAttributes:@{NSParagraphStyleAttributeName:paraStyle,NSFontAttributeName:[UIFont systemFontOfSize:14.f],NSForegroundColorAttributeName:LYHexRGB(0x0000FF)} range:NSMakeRange(contectUsStr.length - email.length, email.length)];
 
         self.contectUsLabel.attributedText = attString11;
         
@@ -96,9 +96,9 @@
 - (UILabel *)infoLabel{
     return LY_LAZY(_infoLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font = LYSystemFont(14.f);
+        view.font = SYS_FONT(14.f);
         view.numberOfLines = 0;
-        view.textColor = LYColor(@"444444");
+        view.textColor = LYHexRGB(0x444444);
         [self addSubview:view];
         view;
     }));
@@ -106,9 +106,9 @@
 - (UILabel *)contectUsLabel{
     return LY_LAZY(_contectUsLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font = LYSystemFont(14.f);
+        view.font = SYS_FONT(14.f);
         view.numberOfLines = 0;
-        view.textColor = LYColor(@"444444");
+        view.textColor = LYHexRGB(0x444444);
         view.userInteractionEnabled = YES;
         [self addSubview:view];
         view;
@@ -126,9 +126,9 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font = LYSystemFont(14.f);
+        view.font = SYS_FONT(14.f);
         view.numberOfLines = 0;
-        view.textColor = LYColor(LYBlackColorHex);
+        view.textColor = black_color;
         view.textAlignment = NSTextAlignmentCenter;
         [self addSubview:view];
         view;

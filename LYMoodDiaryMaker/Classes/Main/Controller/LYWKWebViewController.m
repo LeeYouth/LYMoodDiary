@@ -97,9 +97,7 @@ static NSString *const canGoBack = @"canGoBack";
 }
 #pragma mark 设置BarButtonItem
 - (void)_setBarButtonItem{
-    
-    UIColor *tinColor = LYColor(@"#666666");
-    
+        
     
 //    if (iOS11)
 //    {
@@ -358,7 +356,7 @@ static NSString *const canGoBack = @"canGoBack";
     if (!_progressView) {
         _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 4)];
         _progressView.trackTintColor = [UIColor clearColor];
-        _progressView.progressTintColor = LYRGBACOLOR(51, 133, 255, 1);
+        _progressView.progressTintColor = LYRGBAlpha(51, 133, 255, 1);
         _progressView.clipsToBounds = YES;
     }
     return _progressView;

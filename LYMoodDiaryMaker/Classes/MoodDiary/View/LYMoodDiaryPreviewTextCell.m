@@ -53,7 +53,7 @@
     
     
     CGSize size = CGSizeMake(kScreenWidth - 2*kLYContentLeftMargin, CGFLOAT_MAX);
-    NSAttributedString *text = [[NSAttributedString alloc] initWithString: model.moodDiaryText attributes:@{NSFontAttributeName:[UIFont writeMoodFont],NSForegroundColorAttributeName:LYColor(LYBlackColorHex)}];
+    NSAttributedString *text = [[NSAttributedString alloc] initWithString: model.moodDiaryText attributes:@{NSFontAttributeName:HPL20,NSForegroundColorAttributeName:black_color}];
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:size text:text];
     
     self.height = layout.textBoundingSize.height + kLYContentLeftMargin;
@@ -66,8 +66,8 @@
 - (YYTextView *)textView{
     return LY_LAZY(_textView, ({
         YYTextView *view = [YYTextView new];
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont writeMoodFont];
+        view.textColor = black_color;
+        view.font = HPL20;
         view.editable = NO;
         view.scrollEnabled = NO;
         view.textVerticalAlignment = YYTextVerticalAlignmentTop;

@@ -13,7 +13,7 @@
 
 @interface LYMoodDiaryPreviewViewController()
 
-@property (nonatomic, weak) id <LYBaseCustomTableHeaderViewProtocol> headProtocol;
+@property (nonatomic, strong) LYBaseCustomTableHeaderView *headView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @end
@@ -32,7 +32,7 @@
     
     WEAKSELF(weakSelf);
     self.navBarView.rightBarItemImage = [UIImage imageNamed:@"homepage_rightBarItem"];
-    self.navBarView.navColor = [UIColor whiteColor];
+    self.navBarView.navColor = bgColor;
     self.navBarView.btnBlock = ^(UIButton *sender) {
         if (sender.tag == 0) {
             //返回
@@ -43,19 +43,15 @@
             [weakSelf rightBarItemAction];
         }
     };
-    self.tableView.backgroundColor = [UIColor tableViewColor];
+    self.tableView.backgroundColor = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;
     
 
-
-    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    self.headProtocol = obj;
-    if ([obj isKindOfClass:[UIView class]]) {
-        self.tableView.tableHeaderView = (UIView *)obj;
-    }
-    
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    self.headView = headView;
+    self.tableView.tableHeaderView = headView;
     
 }
 
@@ -72,9 +68,9 @@
     
     if (self.dataArray.count) {
         LYMoodDiaryModel *model = (LYMoodDiaryModel *)self.dataArray[0];
-        self.headProtocol.title       = [model.enterDate tableHeaderTitle];
-        self.headProtocol.detailTitle = [model.enterDate tableHeaderDetailTitle];
-        self.tableView.tableHeaderView = (UIView *)self.headProtocol;
+        self.headView.title       = [model.enterDate tableHeaderTitle];
+        self.headView.detailTitle = [model.enterDate tableHeaderDetailTitle];
+        self.tableView.tableHeaderView = self.headView;
         self.title = [model.enterDate navigationTitle];
         [self.tableView reloadData];
     }
@@ -171,16 +167,16 @@
 
 #pragma makr - 跳转到编辑心情界面
 - (void)editMoodWithModel{
-    id<LYWriteMoodDiaryViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYWriteMoodDiaryViewProtocol)];
-    if ([obj isKindOfClass:[UIViewController class]]) {
-        
-        UIViewController *writeVC = (UIViewController *)obj;
-        obj.editMoodArray = self.dataArray;
-        obj.itemBlock = ^(NSInteger index) {
-            
-        };
-        [self presentViewController:writeVC animated:YES completion:nil];
-    }
+//    id<LYWriteMoodDiaryViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYWriteMoodDiaryViewProtocol)];
+//    if ([obj isKindOfClass:[UIViewController class]]) {
+//        
+//        UIViewController *writeVC = (UIViewController *)obj;
+//        obj.editMoodArray = self.dataArray;
+//        obj.itemBlock = ^(NSInteger index) {
+//            
+//        };
+//        [self presentViewController:writeVC animated:YES completion:nil];
+//    }
 
 }
 

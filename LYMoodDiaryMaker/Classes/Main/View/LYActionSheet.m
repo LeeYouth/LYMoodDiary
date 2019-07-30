@@ -185,7 +185,7 @@
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.backgroundColor = LYCellLineColor;
+        _tableView.backgroundColor = sepLineColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.scrollEnabled = NO;
@@ -197,9 +197,9 @@
     if (!_cancelButton) {
         _cancelButton = [UIButton new];
         [_cancelButton setBackgroundImage:[UIImage createImageWithColor:[UIColor whiteColor]] forState:UIControlStateNormal];
-        [_cancelButton setTitleColor:LYColor(@"#444444") forState:UIControlStateNormal];
+        [_cancelButton setTitleColor:LYHexRGB(0x444444) forState:UIControlStateNormal];
         [_cancelButton setTitle:LY_LocalizedString(@"kLYSheetCancel") forState:UIControlStateNormal];
-        _cancelButton.titleLabel.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:18];
+        _cancelButton.titleLabel.font = HPR18;
         [_cancelButton addTarget:self action:@selector(closeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
@@ -214,9 +214,9 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = LYColor(@"#999999");
+        view.textColor = LYHexRGB(0x999999);
         view.textAlignment = NSTextAlignmentCenter;
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:14];
+        view.font = HPL14;
         view.numberOfLines = 0;
         view;
     }));
@@ -224,7 +224,7 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [[UIView alloc] init];
-        view.backgroundColor = LYCellLineColor;
+        view.backgroundColor = sepLineColor;
         view;
     }));
 }
@@ -255,7 +255,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.backgroundColor = LYColor(LYWhiteColorHex);
+        self.backgroundColor = white_color;
         
         [self _setupSubViews];
         
@@ -288,9 +288,9 @@
     _title = title;
     self.titleVew.text = title;
     if ([title isEqualToString:LY_LocalizedString(@"kLYSheetDelete")]) {
-        self.titleVew.textColor = [UIColor themeButtonColor];
+        self.titleVew.textColor = themeButtonColor;
     }else{
-        self.titleVew.textColor = LYColor(LYBlackColorHex);
+        self.titleVew.textColor = black_color;
     }
 }
 
@@ -298,16 +298,16 @@
 - (UILabel *)titleVew{
     return LY_LAZY(_titleVew, ({
         UILabel *view = [UILabel new];
-        view.textColor = LYColor(LYBlackColorHex);
+        view.textColor = black_color;
         view.textAlignment = NSTextAlignmentCenter;
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:18];
+        view.font = HPR18;
         view;
     }));
 }
 - (UIView *)topLine{
     return LY_LAZY(_topLine, ({
         UIView *view = [[UIView alloc] init];
-        view.backgroundColor = LYCellLineColor;
+        view.backgroundColor = sepLineColor;
         view;
     }));
 }

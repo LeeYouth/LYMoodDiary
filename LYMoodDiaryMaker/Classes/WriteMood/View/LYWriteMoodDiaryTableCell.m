@@ -58,8 +58,8 @@
 - (YYTextView *)textView{
     return LY_LAZY(_textView, ({
         YYTextView *view = [YYTextView new];
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont writeMoodFont];
+        view.textColor = black_color;
+        view.font = HPL20;
         view;
     }));
 }

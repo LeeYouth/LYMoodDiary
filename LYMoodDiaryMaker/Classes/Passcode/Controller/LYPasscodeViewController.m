@@ -131,7 +131,7 @@ typedef enum : NSUInteger {
         }
     };
     
-    [self.view setBackgroundColor:[UIColor tableViewColor]];
+    [self.view setBackgroundColor:tableViewBgColor];
     
     [self updatePasscodeInputViewTitle:self.passcodeInputView];
     

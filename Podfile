@@ -1,5 +1,7 @@
 
 source 'https://github.com/LeeYouth/LYMoodSpecs.git'   # 私有库
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/ModulizationDemo/PrivatePods.git'
 
 target 'LYMoodDiaryMaker' do
     
@@ -18,8 +20,6 @@ target 'LYMoodDiaryMaker' do
     pod 'FSCalendar'
 
     pod 'CYLTabBarController', '~> 1.24.0'
-    pod 'FFRouter'
-    pod "BeeHive", '1.1.1'
 
     pod 'UMCCommon'
     pod 'UMCSecurityPlugins'
@@ -27,7 +27,9 @@ target 'LYMoodDiaryMaker' do
     pod 'UMCErrorCatch'
     pod 'UMCShare/Social/ReducedWeChat'
 
+    pod 'CTMediator'
     pod 'LYBaseView', '~>0.1.0'
+    pod 'LYBaseConfigure', '~>0.1.0'
 
 
 

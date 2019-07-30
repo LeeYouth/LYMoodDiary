@@ -24,33 +24,31 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.title = LY_LocalizedString(@"kLYSettingCellSupport");
 
-    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    if ([obj isKindOfClass:[UIView class]]) {
-        obj.title       = LY_LocalizedString(@"kLYSettingCellSupport");
-        self.tableView.tableHeaderView = (UIView *)obj;
-    }
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    headView.title       = LY_LocalizedString(@"kLYSettingCellSupport");
+    self.tableView.tableHeaderView = headView;
 }
 
 - (void)exportAppTitle{
     //测试代码
     UIView *backView = [UIView new];
-    backView.backgroundColor = [[UIColor themeButtonColor] colorWithAlphaComponent:0.3];
+    backView.backgroundColor = [themeButtonColor colorWithAlphaComponent:0.3];
     backView.frame = CGRectMake(62, (kScreenHeight - 40)/2 + 46, kScreenWidth - 106, 40);
 //    [self.view addSubview:backView];
     
     UILabel *view = [UILabel new];
-    view.textColor = LYColor(LYBlackColorHex);
+    view.textColor = black_color;
     view.textAlignment = NSTextAlignmentCenter;
     view.text = @"日記";
-    view.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:150];
+    view.font = FONT_ALiHuiPu_Regular(150);
 //    [self.view addSubview:view];
     view.frame = self.view.frame;
     
     UILabel *detailview = [UILabel new];
-    detailview.textColor = LYColor(LYBlackColorHex);
+    detailview.textColor = black_color;
     detailview.textAlignment = NSTextAlignmentCenter;
     detailview.text = @"记录美好心情";
-    detailview.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:40];
+    detailview.font = FONT_ALiHuiPu_Regular(40);
     [self.view addSubview:detailview];
     detailview.frame = CGRectMake(0, 200, kScreenWidth, 100);
 //    CGAffineTransform transform =CGAffineTransformMakeRotation(M_PI/2);

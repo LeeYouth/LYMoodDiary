@@ -21,15 +21,13 @@
     [super viewDidLoad];
     
     
-    self.tableView.backgroundColor = [UIColor tableViewColor];
+    self.tableView.backgroundColor = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.title = LY_LocalizedString(@"kLYSettingCellNovice");
     
-    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    if ([obj isKindOfClass:[UIView class]]) {
-        obj.title       = LY_LocalizedString(@"kLYSettingCellNovice");
-        self.tableView.tableHeaderView = (UIView *)obj;
-    }
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    headView.title       = LY_LocalizedString(@"kLYSettingCellNovice");
+    self.tableView.tableHeaderView = headView;
     
     [self.tableView reloadData];
     

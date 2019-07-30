@@ -57,7 +57,7 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        _tableView.backgroundColor = LYTableViewBackColor;
+        _tableView.backgroundColor = tableViewBgColor;
 
 //        _tableView.contentInset = UIEdgeInsetsMake(iOS11?NAVBAR_HEIGHT:0, 0, kTabbarExtra, 0);
 //        _tableView.scrollIndicatorInsets = _tableView.contentInset;

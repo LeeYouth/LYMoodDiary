@@ -38,11 +38,9 @@
         make.left.right.bottom.equalTo(self.view);
     }];
     
-    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    if ([obj isKindOfClass:[UIView class]]) {
-        obj.title       = LY_LocalizedString(@"kLYSettingCellAbout");
-        self.tableView.tableHeaderView = (UIView *)obj;
-    }
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    headView.title       = LY_LocalizedString(@"kLYSettingCellAbout");
+    self.tableView.tableHeaderView = headView;
     
     self.title = LY_LocalizedString(@"kLYSettingCellAbout");
     

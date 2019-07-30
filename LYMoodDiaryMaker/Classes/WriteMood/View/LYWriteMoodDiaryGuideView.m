@@ -39,7 +39,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchOutSide)];
     [_menuBackView addGestureRecognizer: tap];
     self.alpha = 0;
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = bgColor;
     [self addSubview:self.iconImageView];
     [self addSubview:self.titleLabel];
     [self addSubview:self.okButton];
@@ -116,7 +116,7 @@
     CGSize btnSize      = CGSizeMake(kScreenWidth - 2*leftMargin, 44);
     
     if (self.title.length) {
-        titleHeight = [self.title sizeForFont:[UIFont writeMoodFont] size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
+        titleHeight = [self.title sizeForFont:HPL20 size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
         self.titleLabel.text = self.title;
     }
     CGFloat height = tempMargin + imageWidth + tempMargin + titleHeight + tempMargin + btnSize.height + tempMargin;
@@ -140,7 +140,7 @@
     CGSize btnSize      = CGSizeMake(kScreenWidth - 2*leftMargin, 44);
     
     if (self.title.length) {
-        titleHeight = [self.title sizeForFont:[UIFont writeMoodFont] size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
+        titleHeight = [self.title sizeForFont:HPL20 size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
         self.titleLabel.text = self.title;
     }
     
@@ -172,9 +172,9 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = LYColor(@"444444");
+        view.textColor = LYHexRGB(0444444);
         view.textAlignment = NSTextAlignmentCenter;
-        view.font = [UIFont writeMoodFont];
+        view.font = HPL20;
         view.numberOfLines = 0;
         view;
     }));
@@ -182,10 +182,10 @@
 - (UIButton *)okButton{
     return LY_LAZY(_okButton, ({
         UIButton *view = [UIButton new];
-        [view setBackgroundImage:[UIImage createImageWithColor:[UIColor themeButtonColor]] forState:UIControlStateNormal];
-        [view setTitleColor:LYColor(LYWhiteColorHex) forState:UIControlStateNormal];
+        [view setBackgroundImage:[UIImage createImageWithColor:themeButtonColor] forState:UIControlStateNormal];
+        [view setTitleColor:white_color forState:UIControlStateNormal];
         [view setTitle:LY_LocalizedString(@"kLYHomePageGuideOK") forState:UIControlStateNormal];
-        view.titleLabel.font = [UIFont writeMoodFont];
+        view.titleLabel.font = HPL20;
         [view addTarget:self action:@selector(closeButtonAction) forControlEvents:UIControlEventTouchUpInside];
         view.layer.cornerRadius = 4.f;
         view.layer.masksToBounds = YES;

@@ -83,7 +83,7 @@
     aLabel.numberOfLines = 1;
     aLabel.textAlignment = NSTextAlignmentCenter;
     aLabel.lineBreakMode = NSLineBreakByTruncatingTail;
-    aLabel.font = [UIFont writeMoodFont];
+    aLabel.font = HPL20;
 }
 
 + (void)configureMessageLabel:(UILabel *)aLabel
@@ -92,7 +92,7 @@
     aLabel.numberOfLines = 0;
     aLabel.textAlignment = NSTextAlignmentCenter;
     aLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    aLabel.font = [UIFont moodTimeFont];
+    aLabel.font = HPR16;
 }
 
 + (void)configureErrorMessageLabel:(UILabel *)aLabel
@@ -101,9 +101,9 @@
     aLabel.numberOfLines = 0;
     aLabel.textAlignment = NSTextAlignmentCenter;
     aLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    aLabel.backgroundColor = LYColor(@"#E53A40");
-    aLabel.textColor = [UIColor whiteColor];
-    aLabel.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:14.f];
+    aLabel.backgroundColor = LYHexRGB(0xE53A40);
+    aLabel.textColor = bgColor;
+    aLabel.font = HPL14;
     
     aLabel.layer.cornerRadius = 4.0f;
     aLabel.layer.masksToBounds = YES;
@@ -165,7 +165,7 @@
                 textField.enablesReturnKeyAutomatically = YES;
                 textField.keyboardType = _keyboardType;
                 textField.secureTextEntry = YES;
-                textField.font = [UIFont writeMoodFont];
+                textField.font = HPL20;
                 textField.clearButtonMode = UITextFieldViewModeWhileEditing;
                 textField.returnKeyType = UIReturnKeyDone;
                 textField.inputAccessoryView = [[UIView alloc] initWithFrame:CGRectZero];

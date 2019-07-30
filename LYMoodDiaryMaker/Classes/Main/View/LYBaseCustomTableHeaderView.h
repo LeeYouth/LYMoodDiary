@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface LYBaseCustomTableHeaderView : UIView<LYBaseCustomTableHeaderViewProtocol>
+@interface LYBaseCustomTableHeaderView : UIView
 
+/** 标题 */
+@property(nonatomic, copy) NSString *title;
+
+/** 副标题 */
+@property(nonatomic, copy) NSString *detailTitle;
 
 @end

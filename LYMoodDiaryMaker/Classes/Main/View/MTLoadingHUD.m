@@ -70,7 +70,7 @@ static CGFloat lineWidth = 4.0f;
     _animationLayer.bounds = CGRectMake(0, 0, 60, 60);
     _animationLayer.position = CGPointMake(self.bounds.size.width/2.0f, self.bounds.size.height/2.0);
     _animationLayer.fillColor = [UIColor clearColor].CGColor;
-    _animationLayer.strokeColor = LYThemeColor.CGColor;
+    _animationLayer.strokeColor = themeColor.CGColor;
     _animationLayer.lineWidth = lineWidth;
     _animationLayer.lineCap = kCALineCapRound;
     [self.layer addSublayer:_animationLayer];

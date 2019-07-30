@@ -106,7 +106,7 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [UIView new];
-        view.backgroundColor = LYCellLineColor;
+        view.backgroundColor = sepLineColor;
         view;
     }));
 }
@@ -121,8 +121,8 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:18];
+        view.textColor = black_color;
+        view.font = HPL18;
         view;
     }));
 }

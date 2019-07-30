@@ -26,7 +26,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = LYColor(LYWhiteColorHex);
+        self.backgroundColor = white_color;
         [self _setupSubViews];
         
     }
@@ -101,8 +101,8 @@
     return LY_LAZY(_beginTitleLabel, ({
         UILabel *view = [UILabel new];
         view.text = LY_LocalizedString(@"kLYExportBegin");
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont headerTitleFont];
+        view.textColor = black_color;
+        view.font = HPR36;
         view;
     }));
 }
@@ -110,8 +110,8 @@
     return LY_LAZY(_beginDetailLabel, ({
         UILabel *view = [UILabel new];
         view.text = LY_LocalizedString(@"kLYExportTime");
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont headerDetailFont];
+        view.textColor = black_color;
+        view.font = HPL15;
         view;
     }));
 }
@@ -119,8 +119,8 @@
     return LY_LAZY(_endTitleLabel, ({
         UILabel *view = [UILabel new];
         view.text = LY_LocalizedString(@"kLYExportEnd");
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont headerTitleFont];
+        view.textColor = black_color;
+        view.font = HPR36;
         view.textAlignment = NSTextAlignmentRight;
         view;
     }));
@@ -129,8 +129,8 @@
     return LY_LAZY(_endDetailLabel, ({
         UILabel *view = [UILabel new];
         view.text = LY_LocalizedString(@"kLYExportTime");
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont headerDetailFont];
+        view.textColor = black_color;
+        view.font = HPL15;
         view.textAlignment = NSTextAlignmentRight;
         view;
     }));
@@ -140,8 +140,8 @@
     return LY_LAZY(_tempLabel, ({
         UILabel *view = [UILabel new];
         view.text = @"-";
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont headerTitleFont];
+        view.textColor = black_color;
+        view.font = HPR36;
         view.textAlignment = NSTextAlignmentCenter;
         view;
     }));

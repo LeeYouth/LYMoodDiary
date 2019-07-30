@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) NSDate *currentDate;
-@property (nonatomic, weak) id <LYBaseCustomTableHeaderViewProtocol> headProtocol;
+@property (nonatomic, weak) LYBaseCustomTableHeaderView *headView;
 
 @end
 
@@ -36,19 +36,14 @@
         }
     };
     
-    self.tableView.backgroundColor = [UIColor tableViewColor];
+    self.tableView.backgroundColor = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    
-    id<LYBaseCustomTableHeaderViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYBaseCustomTableHeaderViewProtocol)];
-    self.headProtocol = obj;
-    if ([obj isKindOfClass:[UIView class]]) {
-        
-        obj.title       = [self.currentDate tableHeaderTitle];
-        obj.detailTitle = [self.currentDate tableHeaderDetailTitle];
-        
-        self.tableView.tableHeaderView = (UIView *)obj;
-    }
+    LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
+    self.headView = headView;
+    headView.title       = [self.currentDate tableHeaderTitle];
+    headView.detailTitle = [self.currentDate tableHeaderDetailTitle];
+    self.tableView.tableHeaderView = headView;
     
     self.title = [self.currentDate navigationTitle];
     
@@ -90,8 +85,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     //进入预览
-    [FFRouter routeURL:kMoodDiaryPreviewRouter withParameters:@{kRouterParamKey:self.dataArray[indexPath.row]}];
-
+    //进入预览
+    LYMoodDiaryModel *model = self.dataArray[indexPath.row];
+    LYMoodDiaryPreviewViewController *previewVC = [[LYMoodDiaryPreviewViewController alloc] init];
+    previewVC.creatDate = model.enterDate;
+    [[LYAppTool getCurrentViewController].navigationController pushViewController:previewVC animated:YES];
 }
 #pragma mark - 选择日期
 - (void)calendarPickerDate{
@@ -99,8 +97,8 @@
     LYCalendarPickerMenu *menu = [[LYCalendarPickerMenu alloc] initRelyOnView:self.view];
     menu.showMaskView = NO;
     menu.didSelected  = ^(NSDate * _Nonnull didSelectDate) {
-        weakSelf.headProtocol.title       = [didSelectDate tableHeaderTitle];
-        weakSelf.headProtocol.detailTitle = [didSelectDate tableHeaderDetailTitle];
+        weakSelf.headView.title       = [didSelectDate tableHeaderTitle];
+        weakSelf.headView.detailTitle = [didSelectDate tableHeaderDetailTitle];
         
         weakSelf.currentDate = didSelectDate;
         weakSelf.title = [self.currentDate navigationTitle];

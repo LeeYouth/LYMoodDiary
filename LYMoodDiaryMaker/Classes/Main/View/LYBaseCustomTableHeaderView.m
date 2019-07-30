@@ -25,7 +25,7 @@
     if ([super init]) {
         self.userInteractionEnabled = YES;
         
-        self.backgroundColor = LYColor(LYWhiteColorHex);
+        self.backgroundColor = white_color;
         [self addSubview:self.titleLabel];
         [self addSubview:self.detailLabel];
         
@@ -60,14 +60,14 @@
     CGSize detailMaxSize = CGSizeMake(kScreenWidth - 2*leftMargin1, MAXFLOAT);
 
     if (self.title.length) {
-        titleH = [self.title sizeForFont:[UIFont headerTitleFont] size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
+        titleH = [self.title sizeForFont:HPR36 size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
         
         view1H = titleH + topMargin;
         self.titleLabel.text = self.title;
     }
     
     if (self.detailTitle.length) {
-        detailH = [self.detailTitle sizeForFont:[UIFont headerDetailFont] size:detailMaxSize mode:NSLineBreakByWordWrapping].height;
+        detailH = [self.detailTitle sizeForFont:HPL15 size:detailMaxSize mode:NSLineBreakByWordWrapping].height;
         view2H = detailH + tempMargin;
         self.detailLabel.text = self.detailTitle;
     }
@@ -93,8 +93,8 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font =  [UIFont headerTitleFont];
-        view.textColor = [UIColor tableHeaderTitleColor];
+        view.font =  HPR36;
+        view.textColor = tableHeaderTitleColor;
         view.numberOfLines = 0;
         view.hidden = YES;
         view;
@@ -104,8 +104,8 @@
 - (UILabel *)detailLabel{
     return LY_LAZY(_detailLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font = [UIFont headerDetailFont];
-        view.textColor = [UIColor tableHeaderTitleColor];
+        view.font = HPL15;
+        view.textColor = tableHeaderTitleColor;
         view.numberOfLines = 0;
         view.hidden = YES;
         view;

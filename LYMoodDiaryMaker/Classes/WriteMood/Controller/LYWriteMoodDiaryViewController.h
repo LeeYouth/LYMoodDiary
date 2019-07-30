@@ -8,7 +8,12 @@
 
 #import "LYBaseViewController.h"
 
-@interface LYWriteMoodDiaryViewController : LYBaseTableViewController<LYWriteMoodDiaryViewProtocol>
+@interface LYWriteMoodDiaryViewController : LYBaseTableViewController
+
+/** 需要编辑的心情 */
+@property(nonatomic, strong) NSMutableArray *editMoodArray;
+/** 回调 */
+@property(nonatomic, copy) LYViewDidSelected itemBlock;
 
 @end
 

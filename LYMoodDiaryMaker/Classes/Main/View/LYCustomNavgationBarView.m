@@ -23,7 +23,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = LYNavBarBackColor;
+        self.backgroundColor = white_color;
         
         
         [self _setupSubViews];
@@ -66,7 +66,7 @@
     }];
     
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(@(LYCellLineHeight));
+        make.height.mas_equalTo(@(kLYCellLineHeight));
         make.bottom.left.right.equalTo(self);
     }];
 }
@@ -87,10 +87,6 @@
 - (void)setNavColor:(UIColor *)navColor{
     _navColor = navColor;
     self.backgroundColor = navColor;
-}
-- (void)setNavTitleColor:(UIColor *)navTitleColor{
-    _navTitleColor = navTitleColor;
-    self.titleLabel.textColor = navTitleColor;
 }
 - (void)setNavTitleFont:(UIFont *)navTitleFont{
     _navTitleFont = navTitleFont;
@@ -116,9 +112,9 @@
     if (rightItemTitle.length) {
         [self.rightButton setTitle:rightItemTitle forState:UIControlStateNormal];
         NSMutableAttributedString *btnAttriTitle = [[NSMutableAttributedString alloc] initWithString:rightItemTitle];
-        [btnAttriTitle addAttributes:@{NSForegroundColorAttributeName : LYColor(LYBlackColorHex) ,NSFontAttributeName : [UIFont fontAliWithName:AlibabaPuHuiTiL size:16.f]} range:NSMakeRange(0, btnAttriTitle.length)];
+        [btnAttriTitle addAttributes:@{NSForegroundColorAttributeName : black_color ,NSFontAttributeName : HPL16} range:NSMakeRange(0, btnAttriTitle.length)];
 //         NSRange rangeNor = NSMakeRange(first.length+1, second.length) range:rangeNor];
-        CGSize size = [rightItemTitle sizeForFont:[UIFont fontAliWithName:AlibabaPuHuiTiL size:16.f] size:CGSizeMake(300, MAXFLOAT) mode:NSLineBreakByWordWrapping];
+        CGSize size = [rightItemTitle sizeForFont:HPL16 size:CGSizeMake(300, MAXFLOAT) mode:NSLineBreakByWordWrapping];
         
         CGSize btnSize = CGSizeMake(size.width + 16, 44);
         [self.rightButton mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -149,7 +145,7 @@
     _showShadow = showShadow;
     if (showShadow) {
         self.clipsToBounds = NO;
-        self.layer.shadowColor = LYColor(@"#5a5a5a").CGColor;
+        self.layer.shadowColor = LYHexRGB(0x5a5a5a).CGColor;
         self.layer.shadowRadius = 4.0;
         self.layer.shadowOpacity = 0.2;
         self.layer.masksToBounds = NO;
@@ -211,8 +207,8 @@
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
         view.textAlignment = NSTextAlignmentCenter;
-        view.textColor = [UIColor navTitleColor];
-        view.font = [UIFont navTitleFont];
+        view.textColor = navTitleColor;
+        view.font = HPR18;
         [self addSubview:view];
         view;
     }));
@@ -228,7 +224,7 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [UIView new];
-        view.backgroundColor = LYCellLineColor;
+        view.backgroundColor = sepLineColor;
         [self addSubview:view];
         view.hidden = YES;
         view;

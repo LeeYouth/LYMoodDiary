@@ -47,7 +47,7 @@
     
     CGSize maxSize = CGSizeMake(kScreenWidth - 2*kLYContentLeftMargin, CGFLOAT_MAX);
     
-    NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:[UIFont aboutUsFont],NSForegroundColorAttributeName:LYColor(LYBlackColorHex)}];
+    NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:HPL15,NSForegroundColorAttributeName:black_color}];
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:attText];
     CGFloat textHeight = layout.textBoundingSize.height;
     
@@ -71,8 +71,8 @@
 - (YYTextView *)textView{
     return LY_LAZY(_textView, ({
         YYTextView *view = [YYTextView new];
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont aboutUsFont];
+        view.textColor = black_color;
+        view.font = HPL15;
         view.editable = NO;
         view.scrollEnabled = NO;
         view.textVerticalAlignment = YYTextVerticalAlignmentTop;

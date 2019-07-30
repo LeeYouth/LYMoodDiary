@@ -46,8 +46,8 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:40];
-        view.textColor = LYColor(LYBlackColorHex);
+        view.font = FONT_ALiHuiPu_Regular(40);
+        view.textColor = black_color;
         view.textAlignment = NSTextAlignmentCenter;
         [self addSubview:view];
         view;

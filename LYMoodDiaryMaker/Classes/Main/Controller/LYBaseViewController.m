@@ -31,7 +31,7 @@
     [self.view addSubview:self.navBarView];
     
 
-    self.view.backgroundColor = LYTableViewBackColor;
+    self.view.backgroundColor = tableViewBgColor;
 
 }
 

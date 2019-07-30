@@ -31,7 +31,7 @@
 - (void)_initialize
 {
     self.switchBackgroundView = [[UIView alloc] init];
-    self.switchBackgroundView.backgroundColor = [UIColor whiteColor];
+    self.switchBackgroundView.backgroundColor = bgColor;
     self.switchBackgroundView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.switchBackgroundView.layer.borderWidth = .5f;
     [self addSubview:self.switchBackgroundView];

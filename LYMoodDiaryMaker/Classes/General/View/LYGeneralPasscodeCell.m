@@ -84,7 +84,7 @@
             self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellPasscode");
             self.accessoryType = UITableViewCellAccessoryNone;
             
-            self.titleLabel.textColor = LYColor(LYBlackColorHex);
+            self.titleLabel.textColor = black_color;
 
             self.switchButton.selected = switchOn;
 
@@ -92,21 +92,21 @@
             self.titleLabel.text = LY_LocalizedString(@"kLYGeneralPasscodeChange");
             self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             
-            self.titleLabel.textColor = switchOn?LYColor(LYBlackColorHex):[UIColor emptyDataTitleColor];
+            self.titleLabel.textColor = switchOn?black_color:emptyDataTitleColor;
         }
         
     }else{
         self.switchButton.hidden = NO;
 
         if ([LYTouchIDManager canUseTouchID]) {
-            self.titleLabel.textColor = switchOn?LYColor(LYBlackColorHex):[UIColor emptyDataTitleColor];
+            self.titleLabel.textColor = switchOn?black_color:emptyDataTitleColor;
             self.switchButton.enabled = switchOn;
             
             self.switchButton.selected = touchidOn;
 
         }else{
             self.switchButton.enabled = NO;
-            self.titleLabel.textColor = [UIColor emptyDataTitleColor];
+            self.titleLabel.textColor = emptyDataTitleColor;
         }
         self.titleLabel.text = LY_LocalizedString(@"kLYGeneralPasscodeTouchID");
     }
@@ -146,7 +146,7 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [UIView new];
-        view.backgroundColor = LYCellLineColor;
+        view.backgroundColor = sepLineColor;
         view;
     }));
 }
@@ -163,8 +163,8 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:18];
+        view.textColor = black_color;
+        view.font = HPL18;
         view;
     }));
 }

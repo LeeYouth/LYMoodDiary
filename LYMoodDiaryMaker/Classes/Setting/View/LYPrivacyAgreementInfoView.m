@@ -43,9 +43,9 @@
 - (UILabel *)infoLabel{
     return LY_LAZY(_infoLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font = LYSystemFont(14.f);
+        view.font = SYS_FONT(14.f);
         view.numberOfLines = 0;
-        view.textColor = LYColor(@"444444");
+        view.textColor = LYHexRGB(0x444444);
         [self addSubview:view];
         view;
     }));

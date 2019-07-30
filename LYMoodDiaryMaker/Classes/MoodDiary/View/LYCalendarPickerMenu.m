@@ -9,7 +9,7 @@
 #import "LYCalendarPickerMenu.h"
 #import "FSCalendar.h"
 
-#define LYCalendarPickerTitleColor [UIColor whiteColor]
+#define LYCalendarPickerTitleColor bgColor
 
 #define LYCalendarPickerMenuButtonH 80.f
 #define LYCalendarPickerMenuHeight (LYCalendarPickerMenuButtonH + kNavBarExtra + kLYCalendarHeight)
@@ -45,7 +45,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchOutSide)];
     [_menuBackView addGestureRecognizer: tap];
     self.alpha = 0;
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = bgColor;
     self.frame = CGRectMake(0, 0, kScreenWidth, LYCalendarPickerMenuHeight);
 
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
@@ -156,7 +156,7 @@
 - (void)setFrame:(CGRect)frame{
     [super setFrame:frame];
     
-    CGFloat btnW = [LY_LocalizedString(@"kLYButtonEnsureTitle") sizeForFont:[UIFont fontAliWithName:AlibabaPuHuiTiR size:14.f] size:CGSizeMake(300, MAXFLOAT) mode:NSLineBreakByWordWrapping].width + 24;
+    CGFloat btnW = [LY_LocalizedString(@"kLYButtonEnsureTitle") sizeForFont:HPR14 size:CGSizeMake(300, MAXFLOAT) mode:NSLineBreakByWordWrapping].width + 24;
         
     self.calendar.frame = CGRectMake(10, LYCalendarPickerMenuButtonH + kNavBarExtra, kScreenWidth - 20, kLYCalendarHeight);
     self.ensureButton.frame = CGRectMake(kScreenWidth - btnW - kLYContentLeftMargin, kNavBarExtra + 30, btnW, 24);
@@ -199,7 +199,7 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     NSString *key = [dateFormatter stringFromDate:date];
     if ([self.allMoodDateArray containsObject:key]) {
-        return @[[UIColor happyColor],[UIColor inLoveColor],[UIColor madColor]];
+        return @[happyColor,inLoveColor,madColor];
     }
     return nil;
 }
@@ -220,13 +220,13 @@
         _calendar.placeholderType = FSCalendarPlaceholderTypeNone;
 
         _calendar.appearance.headerTitleColor = LYCalendarPickerTitleColor;
-        _calendar.appearance.headerTitleFont = [UIFont fontAliWithName:AlibabaPuHuiTiR size:24.f];
+        _calendar.appearance.headerTitleFont = HPR24;
         _calendar.appearance.weekdayTextColor = LYCalendarPickerTitleColor;
-        _calendar.appearance.weekdayFont = [UIFont fontAliWithName:AlibabaPuHuiTiB size:16.f];
+        _calendar.appearance.weekdayFont = HPB16;
         _calendar.appearance.titleDefaultColor = LYCalendarPickerTitleColor;
-        _calendar.appearance.titleFont = [UIFont fontAliWithName:AlibabaPuHuiTiL size:16.f];
+        _calendar.appearance.titleFont = HPL16;
         
-        _calendar.appearance.todayColor = [UIColor themeButtonColor];
+        _calendar.appearance.todayColor = themeButtonColor;
         
         _calendar.appearance.headerDateFormat = @"yyyy/MM";
         _calendar.appearance.headerMinimumDissolvedAlpha = 0;
@@ -246,7 +246,7 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
-        view.font =  [UIFont fontAliWithName:AlibabaPuHuiTiR size:26];
+        view.font = HPR26;
         view.textColor = LYCalendarPickerTitleColor;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"yyyy/MM";
@@ -258,11 +258,11 @@
     return LY_LAZY(_ensureButton, ({
         UIButton *view = [UIButton new];
         view.tag = 1;
-        UIImage *image = [UIImage createImageWithColor:[UIColor themeButtonColor] rect:CGRectMake(0, 0, 44, 24)];
+        UIImage *image = [UIImage createImageWithColor:themeButtonColor rect:CGRectMake(0, 0, 44, 24)];
         [view setBackgroundImage:image forState:UIControlStateNormal];
         [view setTitle:LY_LocalizedString(@"kLYButtonEnsureTitle") forState:UIControlStateNormal];
-        [view setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        view.titleLabel.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:14.f];
+        [view setTitleColor:white_color forState:UIControlStateNormal];
+        view.titleLabel.font = HPR14;
         [view addTarget:self action:@selector(closeButtonAction:) forControlEvents:UIControlEventTouchUpInside];
         view.layer.cornerRadius = 4.f;
         view.layer.masksToBounds = YES;

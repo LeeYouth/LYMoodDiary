@@ -14,8 +14,6 @@ typedef void(^LYCustomNavgationBarViewBlcok)(UIButton *sender);
 
 /** 导航栏颜色(默认为) */
 @property (nonatomic, strong) UIColor *navColor;
-/** 导航栏title颜色(默认为白色) */
-@property (nonatomic, strong) UIColor *navTitleColor;
 /** 导航栏title大小(默认16.f.f) */
 @property (nonatomic, strong) UIFont *navTitleFont;
 /** 导航栏左侧按钮(默认为x号) */

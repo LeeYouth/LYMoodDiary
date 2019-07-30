@@ -638,10 +638,10 @@
 - (void)showContentViewBorder:(BOOL)b{
     if (b) {
         self.contentView.layer.borderWidth = 0.3;
-        self.contentView.layer.borderColor = LYThemeColor.CGColor;
+        self.contentView.layer.borderColor = themeColor.CGColor;
     }else{
         self.contentView.layer.borderWidth = 0;
-        self.contentView.layer.borderColor = LYClearColor.CGColor;
+        self.contentView.layer.borderColor = [UIColor clearColor].CGColor;
     }
 }
 

@@ -52,10 +52,10 @@
         button.tag = 0;
         button.layer.cornerRadius = 4;
         button.showsTouchWhenHighlighted = YES;
-        button.titleLabel.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:18.f];
-        [button setTitleColor:LYColor(LYWhiteColorHex) forState:UIControlStateNormal];
+        button.titleLabel.font = HPL18;
+        [button setTitleColor:white_color forState:UIControlStateNormal];
         [button setTitle:LY_LocalizedString(@"kLYSettingCellExport") forState:UIControlStateNormal];
-        [button setBackgroundColor:[UIColor themeButtonColor]];
+        [button setBackgroundColor:themeButtonColor];
         [button addTarget:self action:@selector(exportAction:) forControlEvents:UIControlEventTouchUpInside];
         button;
     }));

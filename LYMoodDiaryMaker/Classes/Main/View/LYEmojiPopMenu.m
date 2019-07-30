@@ -191,7 +191,7 @@
     
     CGFloat cornerRadius = 30.f;
     CGFloat borderWidth  = 0.8;
-    UIColor *borderColor = LYColor(@"#E8E8E8");
+    UIColor *borderColor = LYHexRGB(0xE8E8E8);
     
     UIBezierPath *bezierPath = [LYEmojiPopMenuPath ly_bezierPathWithRect:rect rectCorner:UIRectCornerAllCorners cornerRadius:cornerRadius borderWidth:borderWidth borderColor:borderColor backgroundColor:[UIColor whiteColor] arrowWidth:_arrowWidth arrowHeight:_arrowHeight arrowPosition:_arrowPosition arrowDirection:LYPopupMenuArrowDirectionBottom];
     [bezierPath fill];

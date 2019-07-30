@@ -16,28 +16,28 @@
     if (moodType == LYMoodDiaryHappy) {
         
         self.typeName   = LYEMOJI_HAPPY;
-        self.moodColor  = [UIColor happyColor];
+        self.moodColor  = happyColor;
     }else if (moodType == LYMoodDiarySad){
         self.typeName   = LYEMOJI_SAD;
-        self.moodColor  = [UIColor sadColor];
+        self.moodColor  = sadColor;
     }else if (moodType == LYMoodDiaryMad){
         self.typeName   = LYEMOJI_MAD;
-        self.moodColor  = [UIColor madColor];
+        self.moodColor  = madColor;
     }else if (moodType == LYMoodDiaryInLove){
         self.typeName   = LYEMOJI_INLOVE;
-        self.moodColor  = [UIColor inLoveColor];
+        self.moodColor  = inLoveColor;
     }else if (moodType == LYMoodDiaryCool){
         self.typeName   = LYEMOJI_COOL;
-        self.moodColor  = [UIColor coolColor];
+        self.moodColor  = coolColor;
     }else if (moodType == LYMoodDiaryCry){
         self.typeName   = LYEMOJI_CRY;
-        self.moodColor  = [UIColor cryColor];
+        self.moodColor  = cryColor;
     }else if (moodType == LYMoodDiarySleeping){
         self.typeName   = LYEMOJI_SLEEP;
-        self.moodColor  = [UIColor sleepColor];
+        self.moodColor  = sleepColor;
     }else if (moodType == LYMoodDiaryHungry){
         self.typeName   = LYEMOJI_HUNGRY;
-        self.moodColor  = [UIColor hungryColor];
+        self.moodColor  = hungryColor;
     }
 }
 

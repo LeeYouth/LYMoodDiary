@@ -57,7 +57,7 @@ static LYPasscodeLockScreenManager *_sharedManager;
     
     if (nil == blindView) {
         blindView = [[UIView alloc] init];
-        blindView.backgroundColor = [UIColor whiteColor];
+        blindView.backgroundColor = white_color;
     }
     
     blindView.frame = self.mainWindow.bounds;

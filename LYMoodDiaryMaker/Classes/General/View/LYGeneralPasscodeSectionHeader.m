@@ -21,7 +21,7 @@
     if ([super init]) {
         self.userInteractionEnabled = YES;
         
-        self.backgroundColor = LYColor(LYWhiteColorHex);
+        self.backgroundColor = white_color;
         [self addSubview:self.titleLabel];
         [self addSubview:self.detailLabel];
         
@@ -56,14 +56,14 @@
     CGSize detailMaxSize = CGSizeMake(kScreenWidth - 2*leftMargin1, MAXFLOAT);
     
     if (self.title.length) {
-        titleH = [self.title sizeForFont:[UIFont fontAliWithName:AlibabaPuHuiTiR size:18] size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
+        titleH = [self.title sizeForFont:HPR18 size:titleMaxSize mode:NSLineBreakByWordWrapping].height;
         
         view1H = titleH + topMargin;
         self.titleLabel.text = self.title;
     }
     
     if (self.detailTitle.length) {
-        detailH = [self.detailTitle sizeForFont:[UIFont fontAliWithName:AlibabaPuHuiTiL size:15] size:detailMaxSize mode:NSLineBreakByWordWrapping].height;
+        detailH = [self.detailTitle sizeForFont:HPL15 size:detailMaxSize mode:NSLineBreakByWordWrapping].height;
         view2H = detailH + tempMargin;
         self.detailLabel.text = self.detailTitle;
     }
@@ -89,16 +89,16 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiR size:18];
+        view.textColor = black_color;
+        view.font = HPR18;
         view;
     }));
 }
 - (UILabel *)detailLabel{
     return LY_LAZY(_detailLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = LYColor(LYBlackColorHex);
-        view.font = [UIFont fontAliWithName:AlibabaPuHuiTiL size:15];
+        view.textColor = black_color;
+        view.font = HPL15;
         view.numberOfLines = 0;
         view;
     }));
