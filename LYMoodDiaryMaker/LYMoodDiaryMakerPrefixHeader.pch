@@ -9,9 +9,10 @@
 #ifdef __OBJC__
 
 //macro
-#import <LYMacroHeader.h>
-#import "LYBaseCustomTableHeaderView.h"
-
+#import <LYCommonKit/LYCommonKit.h>
+#import <LYCommonUIKit/LYCommonUIKit.h>
+#import <LYCommonUIKit/LYPasscodeManager.h>
+#import <LYCommonKit/LYTouchIDManager.h>
 
 //third part
 #import <CYLTabBarController/CYLTabBarController.h>
@@ -21,49 +22,18 @@
 #import <SDWebImage/UIButton+WebCache.h>
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
-#import "LYNetworkHelper.h"
 
 //const & tool
-#import "LYServerConfig.h"
-#import "LYToastTool.h"
-#import "LYAppTool.h"
-#import "LYPasscodeMacro.h"
 #import "TYSnapshotScroll.h"
 
 //category
 #import "UIControl+LYUMTrack.h"
-#import "UIImage+Extention.h"
-#import "UIView+LYCorners.h"
-#import "UIViewController+BackButtonHandler.h"
-#import "MBProgressHUD+LYHUD.h"
 #import "UIViewController+LYUMTrack.h"
-#import "UIViewController+LYAlpha.h"
 #import "TYSnapshotScroll.h"
 
 //base
-#import "LYMoodDiaryModel.h"
-
-#import "LYBaseViewController.h"
-#import "LYBaseTableViewController.h"
 #import "LYMoodDiaryPreviewViewController.h"
 #import "LYWriteMoodDiaryViewController.h"
-#import "LYBaseNavigationController.h"
-
-#import "LYStickerView.h"
-#import "LYEmojiPopMenu.h"
-#import <LYEmptyViewHeader.h>
-#import "LYCustomEmptyDataView.h"
 #import "LYHomepageGuideView.h"
-#import "LYActionSheet.h"
-#import "LYBaseTableViewCell.h"
-
-#import "LYMoodDiaryDBManager.h"
-#import "LYSnapshotManager.h"
-#import "NSDate+LYFormatDate.h"
-#import "LYLocalizedConfig.h"
-#import "LYLocalizedConfig.h"
-#import "NSBundle+LYUtils.h"
-
-#import <Flutter/Flutter.h>
 
 #endif

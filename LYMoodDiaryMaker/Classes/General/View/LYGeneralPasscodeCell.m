@@ -7,7 +7,6 @@
 //
 
 #import "LYGeneralPasscodeCell.h"
-#import "LYTouchIDManager.h"
 
 @interface LYGeneralPasscodeCell()
 

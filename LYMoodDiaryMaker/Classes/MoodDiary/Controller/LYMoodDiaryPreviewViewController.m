@@ -9,7 +9,6 @@
 #import "LYMoodDiaryPreviewViewController.h"
 #import "LYMoodDiaryPreviewEmojiCell.h"
 #import "LYMoodDiaryPreviewTextCell.h"
-#import "LYShareTool.h"
 
 @interface LYMoodDiaryPreviewViewController()
 
@@ -149,7 +148,7 @@
     [LYSnapshotManager screenShotForTableView:self.tableView finishBlock:^(UIImage * _Nonnull snapShotImage) {
         [LYToastTool dismiss];
         
-        [LYShareTool shareImage:snapShotImage toPlatformType:UMSocialPlatformType_WechatTimeLine];
+//        [LYShareTool shareImage:snapShotImage toPlatformType:UMSocialPlatformType_WechatTimeLine];
 
         
 //        UIImageWriteToSavedPhotosAlbum(snapShotImage, weakSelf, @selector(image:didFinishSavingWithError:contextInfo:), nil);

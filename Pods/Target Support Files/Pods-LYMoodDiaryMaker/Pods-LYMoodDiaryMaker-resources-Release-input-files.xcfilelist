@@ -1,3 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-LYMoodDiaryMaker/Pods-LYMoodDiaryMaker-resources.sh
 ${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle
-${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD/JGProgressHUD.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/LYCommonUIKit/LYCommonUIKit.bundle
