@@ -76,8 +76,9 @@
     NSString *typeName = self.typeArray[indexPath.row];
     if ([typeName isEqualToString:@"language"]) {
         //多语言
-        LYGeneralLanguageController *languageVC = [[LYGeneralLanguageController alloc] init];
-        [self.navigationController pushViewController:languageVC animated:YES];
+        NSString *classStr = @"LYGeneralLanguageController";
+        UIViewController *vc = [self instanceOfViewController:classStr];
+        [self.navigationController pushViewController:vc animated:YES];
 
     }else if ([typeName isEqualToString:@"search"]){
         //搜索
@@ -123,6 +124,39 @@
         return;
     }
     
+}
+
+- (UIViewController *)instanceOfViewController:(NSString *)aClassName
+{
+    Class aClass = NSClassFromString(aClassName);
+    if(aClass){
+        return (UIViewController *)[[aClass alloc] init];
+    }
+    LYLog(@"Undefined class '%@'", aClassName);
+    return nil;
+}
+
+- (void)performSelector:(NSObject*)vc selector:(NSString*)selector withObject:(id)object{
+    if(!vc){
+        LYLog(@"调用异常");
+        return;
+    }
+    SEL aSelector = NSSelectorFromString(selector);
+    if ([vc respondsToSelector:aSelector]) {
+        if(object == nil){
+            ((void (*)(id, SEL))[vc methodForSelector:aSelector])(vc, aSelector);
+        }
+        else{
+            ((void (*)(id, SEL, id))[vc methodForSelector:aSelector])(vc, aSelector, object);
+        }
+    }
+    else{
+#if DEBUG
+        NSString *reason = [NSString stringWithFormat:@"%@实例无法调用Setter方法(%@)", NSStringFromClass([vc class]), NSStringFromSelector(aSelector)];
+        LYLog(@"%@", reason);
+        [[NSException exceptionWithName:@"方法调用异常" reason:reason userInfo:@{}] raise];
+#endif
+    }
 }
 
 #pragma mark - UIScrollViewDelegate

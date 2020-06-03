@@ -23,13 +23,9 @@
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
 
-//const & tool
-#import "TYSnapshotScroll.h"
-
 //category
 #import "UIControl+LYUMTrack.h"
 #import "UIViewController+LYUMTrack.h"
-#import "TYSnapshotScroll.h"
 
 //base
 #import "LYMoodDiaryPreviewViewController.h"
