@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Target_General : NSObject
 
+/// 通用界面
+- (UIViewController *)Action_pushGeneralViewController:(NSDictionary *)params;
 /// 多语言
 - (UIViewController *)Action_pushGeneralLanguageController:(NSDictionary *)params;
 /// 搜索

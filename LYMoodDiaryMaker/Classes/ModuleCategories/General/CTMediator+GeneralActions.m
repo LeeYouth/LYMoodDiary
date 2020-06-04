@@ -1,14 +1,15 @@
 //
-//  CTMediator+CTMediatorGeneralActions.m
+//  CTMediator+GeneralActions.m
 //  LYMoodDiaryMaker
 //
-//  Created by yuanliyong on 2020/6/3.
+//  Created by yuanliyong on 2020/6/4.
 //  Copyright © 2020 LYoung_iOS. All rights reserved.
 //
 
-#import "CTMediator+CTMediatorGeneralActions.h"
+#import "CTMediator+GeneralActions.h"
 
 NSString *const kLYTarget_General = @"General";
+NSString *const kLYActionPushGeneralViewController = @"pushGeneralViewController";
 NSString *const kLYActionPushGeneralLanguageController = @"pushGeneralLanguageController";
 NSString *const kLYActionPushGenneralSearchViewController = @"pushGenneralSearchViewController";
 NSString *const kLYActionPushCalendarMoodViewController = @"pushCalendarMoodViewController";
@@ -18,7 +19,18 @@ NSString *const kLYActionPushPrivacyAgreementViewController = @"pushPrivacyAgree
 NSString *const kLYActionPushSettingViewController = @"pushSettingViewController";
 NSString *const kLYActionPushGeneraPasscodeViewController = @"pushGeneraPasscodeViewController";
 
-@implementation CTMediator (CTMediatorGeneralActions)
+@implementation CTMediator (GeneralActions)
+
+/// 通用
+- (UIViewController *)CTMediator_GeneralViewController
+{
+    return [self performTarget:kLYTarget_General
+                        action:kLYActionPushGeneralViewController
+                        params:@{}
+             shouldCacheTarget:NO
+    ];
+}
+
 /// 多语言
 - (UIViewController *)CTMediator_GeneralLanguageController
 {

@@ -18,19 +18,17 @@
 #import <CYLTabBarController/CYLTabBarController.h>
 #import <Masonry.h>
 #import <YYKit.h>
-#import "SGEasyButton.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import "UIImageView+WebCache.h"
-#import "MBProgressHUD.h"
+#import "SGEasyButton.h"
 #import "CTMediator.h"
+#import "MBProgressHUD.h"
 
 //category
 #import "UIControl+LYUMTrack.h"
 #import "UIViewController+LYUMTrack.h"
 
 //base
-#import "LYMoodDiaryPreviewViewController.h"
-#import "LYWriteMoodDiaryViewController.h"
 #import "LYModuleCategoriesKit.h"
 
 #endif

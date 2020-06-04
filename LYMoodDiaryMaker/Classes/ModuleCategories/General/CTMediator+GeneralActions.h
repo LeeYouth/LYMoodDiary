@@ -1,8 +1,8 @@
 //
-//  CTMediator+CTMediatorGeneralActions.h
+//  CTMediator+GeneralActions.h
 //  LYMoodDiaryMaker
 //
-//  Created by yuanliyong on 2020/6/3.
+//  Created by yuanliyong on 2020/6/4.
 //  Copyright © 2020 LYoung_iOS. All rights reserved.
 //
 
@@ -10,8 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CTMediator (CTMediatorGeneralActions)
+@interface CTMediator (GeneralActions)
 
+/// 通用
+- (UIViewController *)CTMediator_GeneralViewController;
 /// 多语言
 - (UIViewController *)CTMediator_GeneralLanguageController;
 /// 搜索

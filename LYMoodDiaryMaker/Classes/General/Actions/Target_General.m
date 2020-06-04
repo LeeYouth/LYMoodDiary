@@ -7,6 +7,7 @@
 //
 
 #import "Target_General.h"
+#import "LYGeneralViewController.h"
 #import "LYGeneralLanguageController.h"
 #import "LYGenneralSearchViewController.h"
 #import "LYCalendarMoodViewController.h"
@@ -17,6 +18,11 @@
 #import "LYGeneraPasscodeViewController.h"
 
 @implementation Target_General
+
+- (UIViewController *)Action_pushGeneralViewController:(NSDictionary *)params
+{
+    return [[LYGeneralViewController alloc] init];
+}
 
 - (UIViewController *)Action_pushGeneralLanguageController:(NSDictionary *)params
 {

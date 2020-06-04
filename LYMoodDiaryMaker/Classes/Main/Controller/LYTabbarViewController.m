@@ -7,8 +7,6 @@
 //
 
 #import "LYTabbarViewController.h"
-#import "LYMoodDiaryHomePageController.h"
-#import "LYGeneralViewController.h"
 
 @interface LYTabbarViewController ()<UITabBarControllerDelegate>
 
@@ -48,13 +46,11 @@
 }
 
 - (NSArray *)viewControllers {
-    LYMoodDiaryHomePageController *first = [[LYMoodDiaryHomePageController alloc] init];
     UIViewController *homePageVC = [[CYLBaseNavigationController alloc]
-                                                   initWithRootViewController:first];
+                                                   initWithRootViewController:[[CTMediator sharedInstance] CTMediator_MoodDiaryHomePageController]];
 
-    LYGeneralViewController *second = [[LYGeneralViewController alloc] init];
     UIViewController *generalVC = [[CYLBaseNavigationController alloc]
-                                                    initWithRootViewController:second];
+                                                    initWithRootViewController:[[CTMediator sharedInstance] CTMediator_GeneralViewController]];
     [generalVC cyl_setHideNavigationBarSeparator:YES];
     
     return @[homePageVC,generalVC,];

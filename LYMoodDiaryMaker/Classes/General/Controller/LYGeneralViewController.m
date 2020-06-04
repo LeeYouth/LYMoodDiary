@@ -7,18 +7,7 @@
 //
 
 #import "LYGeneralViewController.h"
-#import "LYAboutUsViewController.h"
-#import "LYWKWebViewController.h"
 #import "LYSettingTableViewCell.h"
-
-#import "LYNoviceManualViewController.h"
-#import "LYCalendarMoodViewController.h"
-#import "LYExportMoodViewController.h"
-#import "LYPrivacyAgreementViewController.h"
-#import "LYSettingViewController.h"
-#import "LYGeneraPasscodeViewController.h"
-#import "LYGeneralLanguageController.h"
-#import "LYGenneralSearchViewController.h"
 
 @interface LYGeneralViewController ()<UITableViewDataSource,UITableViewDelegate>
 

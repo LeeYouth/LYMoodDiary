@@ -30,11 +30,16 @@
 		69E2EE9924878FDF0001FFF2 /* LYPrivacyAgreementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EE8924878FDF0001FFF2 /* LYPrivacyAgreementTableViewCell.m */; };
 		69E2EE9A24878FDF0001FFF2 /* LYPrivacyAgreementInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EE8B24878FDF0001FFF2 /* LYPrivacyAgreementInfoView.m */; };
 		69E2EEA4248794F10001FFF2 /* Target_General.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEA3248794F10001FFF2 /* Target_General.m */; };
-		69E2EEAB2487A0C90001FFF2 /* CTMediator+CTMediatorGeneralActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEAA2487A0C90001FFF2 /* CTMediator+CTMediatorGeneralActions.m */; };
 		69E2EEB52488C8470001FFF2 /* Alibaba-PuHuiTi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69E2EEB12488C8470001FFF2 /* Alibaba-PuHuiTi-Bold.otf */; };
 		69E2EEB62488C8470001FFF2 /* Alibaba-PuHuiTi-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69E2EEB22488C8470001FFF2 /* Alibaba-PuHuiTi-Light.otf */; };
 		69E2EEB72488C8470001FFF2 /* Alibaba-PuHuiTi-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69E2EEB32488C8470001FFF2 /* Alibaba-PuHuiTi-Medium.otf */; };
 		69E2EEB82488C8470001FFF2 /* Alibaba-PuHuiTi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 69E2EEB42488C8470001FFF2 /* Alibaba-PuHuiTi-Regular.otf */; };
+		69E2EEBB2488CCB40001FFF2 /* CTMediator+GeneralActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEBA2488CCB40001FFF2 /* CTMediator+GeneralActions.m */; };
+		69E2EEBE2488CD100001FFF2 /* Target_WriteMood.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEBD2488CD100001FFF2 /* Target_WriteMood.m */; };
+		69E2EEC12488CD2D0001FFF2 /* Target_MoodDiary.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEC02488CD2D0001FFF2 /* Target_MoodDiary.m */; };
+		69E2EEC42488CD510001FFF2 /* CTMediator+MoodDiaryActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEC32488CD510001FFF2 /* CTMediator+MoodDiaryActions.m */; };
+		69E2EEC72488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEC62488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m */; };
+		69E2EECA2488E2F40001FFF2 /* UIViewController+presentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEC92488E2F40001FFF2 /* UIViewController+presentVC.m */; };
 		CF0BD6DA22855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0BD6D922855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m */; };
 		CF0BD6EF22857B6300A3EECD /* LYMoodDiaryHomePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0BD6EE22857B6300A3EECD /* LYMoodDiaryHomePageHeaderView.m */; };
 		CF3DF01121F9AAB8000B8853 /* LYMoodDiaryHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3DF01021F9AAB8000B8853 /* LYMoodDiaryHomePageController.m */; };
@@ -141,12 +146,22 @@
 		69E2EEA2248794F10001FFF2 /* Target_General.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_General.h; sourceTree = "<group>"; };
 		69E2EEA3248794F10001FFF2 /* Target_General.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_General.m; sourceTree = "<group>"; };
 		69E2EEA824879C0C0001FFF2 /* LYModuleCategoriesKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYModuleCategoriesKit.h; sourceTree = "<group>"; };
-		69E2EEA92487A0C90001FFF2 /* CTMediator+CTMediatorGeneralActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+CTMediatorGeneralActions.h"; sourceTree = "<group>"; };
-		69E2EEAA2487A0C90001FFF2 /* CTMediator+CTMediatorGeneralActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+CTMediatorGeneralActions.m"; sourceTree = "<group>"; };
 		69E2EEB12488C8470001FFF2 /* Alibaba-PuHuiTi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Bold.otf"; sourceTree = "<group>"; };
 		69E2EEB22488C8470001FFF2 /* Alibaba-PuHuiTi-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Light.otf"; sourceTree = "<group>"; };
 		69E2EEB32488C8470001FFF2 /* Alibaba-PuHuiTi-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Medium.otf"; sourceTree = "<group>"; };
 		69E2EEB42488C8470001FFF2 /* Alibaba-PuHuiTi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alibaba-PuHuiTi-Regular.otf"; sourceTree = "<group>"; };
+		69E2EEB92488CCB40001FFF2 /* CTMediator+GeneralActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+GeneralActions.h"; sourceTree = "<group>"; };
+		69E2EEBA2488CCB40001FFF2 /* CTMediator+GeneralActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+GeneralActions.m"; sourceTree = "<group>"; };
+		69E2EEBC2488CD100001FFF2 /* Target_WriteMood.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_WriteMood.h; sourceTree = "<group>"; };
+		69E2EEBD2488CD100001FFF2 /* Target_WriteMood.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_WriteMood.m; sourceTree = "<group>"; };
+		69E2EEBF2488CD2D0001FFF2 /* Target_MoodDiary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_MoodDiary.h; sourceTree = "<group>"; };
+		69E2EEC02488CD2D0001FFF2 /* Target_MoodDiary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_MoodDiary.m; sourceTree = "<group>"; };
+		69E2EEC22488CD510001FFF2 /* CTMediator+MoodDiaryActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+MoodDiaryActions.h"; sourceTree = "<group>"; };
+		69E2EEC32488CD510001FFF2 /* CTMediator+MoodDiaryActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+MoodDiaryActions.m"; sourceTree = "<group>"; };
+		69E2EEC52488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+WriteDiaryActions.h"; sourceTree = "<group>"; };
+		69E2EEC62488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+WriteDiaryActions.m"; sourceTree = "<group>"; };
+		69E2EEC82488E2F40001FFF2 /* UIViewController+presentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+presentVC.h"; sourceTree = "<group>"; };
+		69E2EEC92488E2F40001FFF2 /* UIViewController+presentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+presentVC.m"; sourceTree = "<group>"; };
 		998E5F40CEF7D3827D2DA449 /* libPods-LYMoodDiaryMaker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYMoodDiaryMaker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0BD6D822855CA800A3EECD /* LYMoodDiaryHomePageTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYMoodDiaryHomePageTableCell.h; sourceTree = "<group>"; };
 		CF0BD6D922855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYMoodDiaryHomePageTableCell.m; sourceTree = "<group>"; };
@@ -283,10 +298,12 @@
 		6923A7FA248777AF00511FC6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				6923A7FB248777AF00511FC6 /* UIControl+LYUMTrack.m */,
-				6923A7FC248777AF00511FC6 /* UIViewController+LYUMTrack.m */,
 				6923A7FD248777AF00511FC6 /* UIControl+LYUMTrack.h */,
+				6923A7FB248777AF00511FC6 /* UIControl+LYUMTrack.m */,
 				6923A7FE248777AF00511FC6 /* UIViewController+LYUMTrack.h */,
+				6923A7FC248777AF00511FC6 /* UIViewController+LYUMTrack.m */,
+				69E2EEC82488E2F40001FFF2 /* UIViewController+presentVC.h */,
+				69E2EEC92488E2F40001FFF2 /* UIViewController+presentVC.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -370,6 +387,8 @@
 		69E2EE9C248790130001FFF2 /* MoodDiary */ = {
 			isa = PBXGroup;
 			children = (
+				69E2EEC22488CD510001FFF2 /* CTMediator+MoodDiaryActions.h */,
+				69E2EEC32488CD510001FFF2 /* CTMediator+MoodDiaryActions.m */,
 			);
 			path = MoodDiary;
 			sourceTree = "<group>";
@@ -377,8 +396,8 @@
 		69E2EE9D248790130001FFF2 /* General */ = {
 			isa = PBXGroup;
 			children = (
-				69E2EEA92487A0C90001FFF2 /* CTMediator+CTMediatorGeneralActions.h */,
-				69E2EEAA2487A0C90001FFF2 /* CTMediator+CTMediatorGeneralActions.m */,
+				69E2EEB92488CCB40001FFF2 /* CTMediator+GeneralActions.h */,
+				69E2EEBA2488CCB40001FFF2 /* CTMediator+GeneralActions.m */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -386,6 +405,8 @@
 		69E2EE9E248790130001FFF2 /* WriteMood */ = {
 			isa = PBXGroup;
 			children = (
+				69E2EEC52488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.h */,
+				69E2EEC62488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m */,
 			);
 			path = WriteMood;
 			sourceTree = "<group>";
@@ -393,6 +414,8 @@
 		69E2EE9F248794960001FFF2 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				69E2EEBC2488CD100001FFF2 /* Target_WriteMood.h */,
+				69E2EEBD2488CD100001FFF2 /* Target_WriteMood.m */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -409,6 +432,8 @@
 		69E2EEA1248794B10001FFF2 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				69E2EEBF2488CD2D0001FFF2 /* Target_MoodDiary.h */,
+				69E2EEC02488CD2D0001FFF2 /* Target_MoodDiary.m */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -903,29 +928,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E2EEBB2488CCB40001FFF2 /* CTMediator+GeneralActions.m in Sources */,
 				69E2EE9924878FDF0001FFF2 /* LYPrivacyAgreementTableViewCell.m in Sources */,
+				69E2EEC12488CD2D0001FFF2 /* Target_MoodDiary.m in Sources */,
 				CF6C9F1D228AA11F00A003CF /* LYMoodDiaryHomePageToolBar.m in Sources */,
 				69E2EE9A24878FDF0001FFF2 /* LYPrivacyAgreementInfoView.m in Sources */,
 				6923A807248777AF00511FC6 /* AppDelegate+UMSocial.m in Sources */,
+				69E2EEC42488CD510001FFF2 /* CTMediator+MoodDiaryActions.m in Sources */,
 				CF6C431121AE6AD4002287F9 /* LYTabBarControllerConfig.m in Sources */,
 				69E2EE8F24878FDF0001FFF2 /* LYPrivacyAgreementViewController.m in Sources */,
 				69E2EE9424878FDF0001FFF2 /* LYSettingTableViewCell.m in Sources */,
 				CF0BD6DA22855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m in Sources */,
 				CF7C3267228C14D3003BF247 /* LYCalendarMoodViewController.m in Sources */,
 				CF9DA42622A605D20097D6A4 /* LYGeneralLanguageController.m in Sources */,
+				69E2EEC72488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m in Sources */,
 				CFB9697B228FFDE90027DEF8 /* LYMoodDiaryPreviewEmojiCell.m in Sources */,
 				6923A80C248777AF00511FC6 /* UIButton+SGImagePosition.m in Sources */,
 				CF857720229FC35C0065409B /* LYTabbarPlusButton.m in Sources */,
 				CFB9697E228FFDFD0027DEF8 /* LYMoodDiaryPreviewTextCell.m in Sources */,
 				CF432EA822A230CE00ABD7E6 /* LYGeneralPasscodeSectionHeader.m in Sources */,
 				CF432E7822A16C4700ABD7E6 /* LYGeneraPasscodeViewController.m in Sources */,
+				69E2EEBE2488CD100001FFF2 /* Target_WriteMood.m in Sources */,
 				CF3DF01421F9AD68000B8853 /* LYHomePageMenuButton.m in Sources */,
 				CFF1700022C06B9800916DBE /* LYGenneralSearchViewController.m in Sources */,
 				69E2EE9224878FDF0001FFF2 /* LYAboutUsTableViewCell.m in Sources */,
 				69E2EE9124878FDF0001FFF2 /* LYNoviceManualViewController.m in Sources */,
 				6923A809248777AF00511FC6 /* UIControl+LYUMTrack.m in Sources */,
 				CFDB566A2125173200501905 /* main.m in Sources */,
-				69E2EEAB2487A0C90001FFF2 /* CTMediator+CTMediatorGeneralActions.m in Sources */,
 				6923A80A248777AF00511FC6 /* UIViewController+LYUMTrack.m in Sources */,
 				6923A808248777AF00511FC6 /* AppDelegate.m in Sources */,
 				CFB6D8B122896F0300590286 /* LYWriteMoodDiaryViewController.m in Sources */,
@@ -940,6 +969,7 @@
 				69E2EE9624878FDF0001FFF2 /* LYDIYCalendarCell.m in Sources */,
 				69E2EE9724878FDF0001FFF2 /* LYNoviceManualTableViewCell.m in Sources */,
 				CF6C9F2C228BAEB300A003CF /* LYWriteMoodDiaryAddEmojiCell.m in Sources */,
+				69E2EECA2488E2F40001FFF2 /* UIViewController+presentVC.m in Sources */,
 				CFDB56AD212521A300501905 /* LYTabbarViewController.m in Sources */,
 				69E2EE9024878FDF0001FFF2 /* LYAboutUsViewController.m in Sources */,
 				69E2EE8E24878FDF0001FFF2 /* LYExportMoodViewController.m in Sources */,

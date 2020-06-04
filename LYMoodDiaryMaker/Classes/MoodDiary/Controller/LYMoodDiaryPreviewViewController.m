@@ -166,17 +166,9 @@
 
 #pragma makr - 跳转到编辑心情界面
 - (void)editMoodWithModel{
-//    id<LYWriteMoodDiaryViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYWriteMoodDiaryViewProtocol)];
-//    if ([obj isKindOfClass:[UIViewController class]]) {
-//        
-//        UIViewController *writeVC = (UIViewController *)obj;
-//        obj.editMoodArray = self.dataArray;
-//        obj.itemBlock = ^(NSInteger index) {
-//            
-//        };
-//        [self presentViewController:writeVC animated:YES completion:nil];
-//    }
-
+    
+    UIViewController *writeVC = [[CTMediator sharedInstance] CTMediator_WriteMoodDiaryViewController:@{@"editMood":self.dataArray}];
+    [self presentViewController:writeVC animated:YES completion:nil];
 }
 
 #pragma mark - 删除心情

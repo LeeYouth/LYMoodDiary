@@ -87,9 +87,7 @@
     //进入预览
     //进入预览
     LYMoodDiaryModel *model = self.dataArray[indexPath.row];
-    LYMoodDiaryPreviewViewController *previewVC = [[LYMoodDiaryPreviewViewController alloc] init];
-    previewVC.creatDate = model.enterDate;
-    [self.navigationController pushViewController:previewVC animated:YES];
+    [self.navigationController pushViewController:[[CTMediator sharedInstance] CTMediator_MoodDiaryPreviewViewControllerWithDate:model.enterDate] animated:YES];
 }
 #pragma mark - 选择日期
 - (void)calendarPickerDate{

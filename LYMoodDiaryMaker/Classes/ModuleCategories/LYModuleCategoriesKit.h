@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "CTMediator+CTMediatorGeneralActions.h"
-
+#import "CTMediator+GeneralActions.h"
+#import "CTMediator+WriteDiaryActions.h"
+#import "CTMediator+MoodDiaryActions.h"
 
 
 
