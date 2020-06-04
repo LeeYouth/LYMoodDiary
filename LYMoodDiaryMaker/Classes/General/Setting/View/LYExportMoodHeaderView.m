@@ -26,7 +26,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = white_color;
+        self.backgroundColor = tableViewBgColor;
         [self _setupSubViews];
         
     }

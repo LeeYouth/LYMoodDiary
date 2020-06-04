@@ -21,7 +21,7 @@
     if ([super init]) {
         self.userInteractionEnabled = YES;
         
-        self.backgroundColor = white_color;
+        self.backgroundColor = tableViewBgColor;
         [self addSubview:self.titleLabel];
         [self addSubview:self.detailLabel];
         

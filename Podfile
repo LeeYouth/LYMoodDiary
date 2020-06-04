@@ -21,7 +21,7 @@ target 'LYMoodDiaryMaker' do
 
     # 私有库
     pod 'LYCommonKit', '~> 0.1.9'
-    pod 'LYCommonUIKit', '~> 0.1.3'
+    pod 'LYCommonUIKit', '~> 0.1.4'
 
 
 

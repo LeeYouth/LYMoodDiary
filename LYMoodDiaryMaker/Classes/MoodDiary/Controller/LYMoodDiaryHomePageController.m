@@ -68,7 +68,6 @@
     NSDate *today   = self.currentDate;
     NSString* where = [NSString stringWithFormat:@"where %@=%@",bg_sqlKey(@"saveFormatDate"),bg_sqlValue([today stringWithFormat:kSEARCHDATEFORMAT])];
     
-    NSArray *res = [LYMoodDiaryModel bg_findAll:kLYMOODTABLENAME];
     NSArray *resultArray = [LYMoodDiaryModel bg_find:kLYMOODTABLENAME where:where];
     [self.dataArray addObjectsFromArray:resultArray];
     
