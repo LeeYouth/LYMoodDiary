@@ -76,51 +76,43 @@
     NSString *typeName = self.typeArray[indexPath.row];
     if ([typeName isEqualToString:@"language"]) {
         //多语言
-        NSString *classStr = @"LYGeneralLanguageController";
-        UIViewController *vc = [self instanceOfViewController:classStr];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GeneralLanguageController];
         [self.navigationController pushViewController:vc animated:YES];
 
     }else if ([typeName isEqualToString:@"search"]){
         //搜索
-//        id <LYGenneralSearchViewControllerProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYGenneralSearchViewControllerProtocol)];
-//        if ([obj isKindOfClass:[UIViewController class]]) {
-//
-//            LYGenneralSearchViewController *historyVC = [[LYGenneralSearchViewController alloc] init];
-//            [self.navigationController pushViewController:(UIViewController *)obj animated:YES];
-//        }
-        
-        LYGenneralSearchViewController *searchVC = [[LYGenneralSearchViewController alloc] init];
-        [self.navigationController pushViewController:searchVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GenneralSearchViewController];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([typeName isEqualToString:@"history"]) {
         //历史心情
-        LYCalendarMoodViewController *historyVC = [[LYCalendarMoodViewController alloc] init];
-        [self.navigationController pushViewController:historyVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_CalendarMoodViewController];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([typeName isEqualToString:@"export"]){
         //导出
-        LYExportMoodViewController *exportVC = [[LYExportMoodViewController alloc] init];
-        [self presentViewController:exportVC animated:YES completion:nil];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_ExportMoodViewController];
+        [self presentViewController:vc animated:YES completion:nil];
         
     }else if ([typeName isEqualToString:@"noviceManual"]){
         //新手指南
-        LYNoviceManualViewController *xinVC = [[LYNoviceManualViewController  alloc] init];
-        [self.navigationController pushViewController:xinVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_NoviceManualViewController];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if ([typeName isEqualToString:@"protocol"]){
         //隐私协议
-        LYPrivacyAgreementViewController *privacyVC = [[LYPrivacyAgreementViewController alloc] init];
-        [self.navigationController pushViewController:privacyVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_PrivacyAgreementViewController];
+        [self.navigationController pushViewController:vc animated:YES];
         return;
     }else if ([typeName isEqualToString:@"aboutUs"]){
-        LYSettingViewController *viewController = [[LYSettingViewController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_SettingViewController];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if ([typeName isEqualToString:@"version"]){
         NSString *str = [NSString stringWithFormat: @"%@%@",LY_LocalizedString(@"kLYSettingCurrentVersion"),[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
         [LYToastTool bottomShowWithText:str delay:1.f];
     }else if([typeName isEqualToString:@"passcode"]){
         
-        LYGeneraPasscodeViewController *privacyVC = [[LYGeneraPasscodeViewController alloc] init];
-        [self.navigationController pushViewController:privacyVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GeneraPasscodeViewController];
+        [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     

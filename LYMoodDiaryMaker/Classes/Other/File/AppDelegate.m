@@ -10,7 +10,6 @@
 #import "AppDelegate+UMSocial.h"
 #import "LYMoodDiaryHomePageController.h"
 #import "LYBaseNavigationController.h"
-#import "LYHomePageViewController.h"
 #import "LYMainRootViewController.h"
 #import "LYCustomPasscodeViewController.h"
 #import "LYTouchIDDefultViewController.h"
