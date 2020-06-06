@@ -49,8 +49,10 @@
     
     NSString *text = LY_LocalizedString(@"kLYSettingPricacyText");
     
+    DKColorPicker picker = listTitleColor;
+    
     CGSize size = CGSizeMake(kScreenWidth - 2*kLYContentLeftMargin, CGFLOAT_MAX);
-    NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:HPL15,NSForegroundColorAttributeName:black_color}];
+    NSMutableAttributedString *attText = [[NSMutableAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:HPL15,NSForegroundColorAttributeName:picker(self.dk_manager.themeVersion)}];
 
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:size text:attText];
     
@@ -63,7 +65,8 @@
 - (YYTextView *)textView{
     return LY_LAZY(_textView, ({
         YYTextView *view = [YYTextView new];
-        view.textColor = black_color;
+        DKColorPicker picker = listTitleColor;
+        view.textColor = picker(self.dk_manager.themeVersion);
         view.font = HPL15;
         view.editable = NO;
         view.scrollEnabled = NO;

@@ -9,8 +9,6 @@
 #import "LYCalendarPickerMenu.h"
 #import "FSCalendar.h"
 
-#define LYCalendarPickerTitleColor bgColor
-
 #define LYCalendarPickerMenuButtonH 80.f
 #define LYCalendarPickerMenuHeight (LYCalendarPickerMenuButtonH + kNavBarExtra + kLYCalendarHeight)
 
@@ -45,7 +43,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchOutSide)];
     [_menuBackView addGestureRecognizer: tap];
     self.alpha = 0;
-    self.backgroundColor = bgColor;
+    self.dk_backgroundColorPicker = bgColor;
     self.frame = CGRectMake(0, 0, kScreenWidth, LYCalendarPickerMenuHeight);
 
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
@@ -118,7 +116,9 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(lyCalendarMenuBeganDismiss)]) {
         [self.delegate lyCalendarMenuBeganDismiss];
     }
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+    if ([self.dk_manager.themeVersion isEqualToString:DKThemeVersionNormal]) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+    }
 
     __weak UIView *weakMenu = _menuBackView;
 
@@ -199,7 +199,11 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     NSString *key = [dateFormatter stringFromDate:date];
     if ([self.allMoodDateArray containsObject:key]) {
-        return @[happyColor,inLoveColor,madColor];
+        DKColorPicker picker1 = happyColor;
+        DKColorPicker picker2 = inLoveColor;
+        DKColorPicker picker3 = madColor;
+        
+        return @[picker1(self.dk_manager.themeVersion),picker2(self.dk_manager.themeVersion),picker3(self.dk_manager.themeVersion)];
     }
     return nil;
 }
@@ -219,15 +223,18 @@
         _calendar.headerHeight = 0;
         _calendar.placeholderType = FSCalendarPlaceholderTypeNone;
 
-        _calendar.appearance.headerTitleColor = LYCalendarPickerTitleColor;
+        DKColorPicker bgP = themeColor;
+
+        UIColor *titleColor = white_color;
+        UIColor *bbbbgColor = bgP(self.dk_manager.themeVersion);
+
+        _calendar.appearance.headerTitleColor = titleColor;
         _calendar.appearance.headerTitleFont = HPR24;
-        _calendar.appearance.weekdayTextColor = LYCalendarPickerTitleColor;
+        _calendar.appearance.weekdayTextColor = titleColor;
         _calendar.appearance.weekdayFont = HPB16;
-        _calendar.appearance.titleDefaultColor = LYCalendarPickerTitleColor;
+        _calendar.appearance.titleDefaultColor = titleColor;
         _calendar.appearance.titleFont = HPL16;
-        
-        _calendar.appearance.todayColor = themeButtonColor;
-        
+                
         _calendar.appearance.headerDateFormat = @"yyyy/MM";
         _calendar.appearance.headerMinimumDissolvedAlpha = 0;
         _calendar.appearance.caseOptions = FSCalendarCaseOptionsWeekdayUsesSingleUpperCase|FSCalendarCaseOptionsHeaderUsesUpperCase;
@@ -235,7 +242,7 @@
 
         _calendar.calendarHeaderView.backgroundColor = [UIColor clearColor];
         _calendar.calendarWeekdayView.backgroundColor = [UIColor clearColor];
-        _calendar.appearance.eventSelectionColor = LYCalendarPickerTitleColor;
+        _calendar.appearance.eventSelectionColor = bbbbgColor;
         _calendar.appearance.eventOffset = CGPointMake(0, -7);
         _calendar.today = [NSDate date]; // Hide the today circle
         
@@ -247,7 +254,7 @@
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
         view.font = HPR26;
-        view.textColor = LYCalendarPickerTitleColor;
+        view.textColor = white_color;
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"yyyy/MM";
         view.text = [dateFormatter stringFromDate:[NSDate date]];
@@ -258,7 +265,8 @@
     return LY_LAZY(_ensureButton, ({
         UIButton *view = [UIButton new];
         view.tag = 1;
-        UIImage *image = [UIImage createImageWithColor:themeButtonColor rect:CGRectMake(0, 0, 44, 24)];
+        DKColorPicker themeP = themeColor;
+        UIImage *image = [UIImage createImageWithColor:themeP(self.dk_manager.themeVersion) rect:CGRectMake(0, 0, 44, 24)];
         [view setBackgroundImage:image forState:UIControlStateNormal];
         [view setTitle:LY_LocalizedString(@"kLYButtonEnsureTitle") forState:UIControlStateNormal];
         [view setTitleColor:white_color forState:UIControlStateNormal];

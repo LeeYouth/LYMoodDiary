@@ -31,7 +31,8 @@
     
     WEAKSELF(weakSelf);
     self.navBarView.leftBarItemImage = nil;
-    self.navBarView.rightBarItemImage = [UIImage imageNamed:@"homepage_addMoodDiary_calendar"];
+    DKImagePicker picker = DKImagePickerWithNames(@"homepage_addMoodDiary_calendar",@"homepage_addMoodDiary_calendar-dark");
+    self.navBarView.rightBarItemImage = picker;
     self.navBarView.btnBlock = ^(UIButton *sender) {
         if (sender.tag == 0) {
             //返回
@@ -42,7 +43,7 @@
         }
     };
     
-    self.tableView.backgroundColor = tableViewBgColor;
+    self.tableView.dk_backgroundColorPicker = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     

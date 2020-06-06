@@ -32,12 +32,12 @@
 - (void)exportAppTitle{
     //测试代码
     UIView *backView = [UIView new];
-    backView.backgroundColor = [themeButtonColor colorWithAlphaComponent:0.3];
+    backView.dk_backgroundColorPicker = themeButtonColor;
     backView.frame = CGRectMake(62, (kScreenHeight - 40)/2 + 46, kScreenWidth - 106, 40);
 //    [self.view addSubview:backView];
     
     UILabel *view = [UILabel new];
-    view.textColor = black_color;
+    view.dk_textColorPicker = listTitleColor;
     view.textAlignment = NSTextAlignmentCenter;
     view.text = @"日記";
     view.font = FONT_ALiHuiPu_Regular(150);
@@ -45,7 +45,7 @@
     view.frame = self.view.frame;
     
     UILabel *detailview = [UILabel new];
-    detailview.textColor = black_color;
+    detailview.dk_textColorPicker = listTitleColor;
     detailview.textAlignment = NSTextAlignmentCenter;
     detailview.text = @"记录美好心情";
     detailview.font = FONT_ALiHuiPu_Regular(40);

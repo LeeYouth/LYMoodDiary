@@ -30,7 +30,7 @@
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor = bgColor;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -43,8 +43,8 @@
     CGFloat leftMargin = kLYContentLeftMargin;
     
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(24, 24));
-        make.right.equalTo(self.mas_right).offset(-leftMargin);
+        make.size.mas_equalTo(CGSizeMake(15, 15));
+        make.right.equalTo(self.mas_right).offset(-15);
         make.centerY.equalTo(self.mas_centerY);
     }];
     
@@ -120,8 +120,10 @@
     self.titleLabel.text  = title;
     
     if ([typeName isEqualToString:@"version"]){
+        self.iconView.hidden = YES;
         self.accessoryType = UITableViewCellAccessoryNone;
     }else{
+        self.iconView.hidden = NO;
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 }
@@ -130,13 +132,14 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [UIView new];
-        view.backgroundColor = sepLineColor;
+        view.dk_backgroundColorPicker = sepLineColor;
         view;
     }));
 }
 - (UIImageView *)iconView{
     return LY_LAZY(_iconView, ({
         UIImageView *view = [UIImageView new];
+        view.dk_imagePicker = DKImagePickerWithNames(@"homePage_cellRightindicator",@"homePage_cellRightindicator-dark");
         view.hidden = YES;
         view;
     }));
@@ -144,7 +147,7 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.font = HPL18;
         view;
     }));

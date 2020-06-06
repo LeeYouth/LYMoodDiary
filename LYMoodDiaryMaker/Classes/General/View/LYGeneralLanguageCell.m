@@ -31,6 +31,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -106,7 +107,7 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [UIView new];
-        view.backgroundColor = sepLineColor;
+        view.dk_backgroundColorPicker = sepLineColor;
         view;
     }));
 }
@@ -121,7 +122,7 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.font = HPL18;
         view;
     }));

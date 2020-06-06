@@ -8,7 +8,8 @@
 
 #ifdef __OBJC__
 
-//macro
+//podspec
+#import <DKNightVersion/DKNightVersion.h>
 #import <LYCommonKit/LYCommonKit.h>
 #import <LYCommonUIKit/LYCommonUIKit.h>
 #import <LYCommonUIKit/LYPasscodeManager.h>

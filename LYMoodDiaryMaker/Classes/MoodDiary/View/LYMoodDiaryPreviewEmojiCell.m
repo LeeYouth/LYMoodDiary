@@ -31,6 +31,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -85,7 +86,7 @@
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
         view.font = HPR24;
-        view.textColor = emptyDataTitleColor;
+        view.dk_textColorPicker = emptyDataTitleColor;
         view.numberOfLines = 0;
         [self addSubview:view];
         view;
@@ -96,7 +97,7 @@
     return LY_LAZY(_detailLabel, ({
         UILabel *view = [[UILabel alloc] init];
         view.font = HPL38;
-        view.textColor = emptyDataDetailTitleColor;
+        view.dk_textColorPicker = emptyDataDetailTitleColor;
         view.textAlignment = NSTextAlignmentRight;
         view.numberOfLines = 0;
         [self addSubview:view];

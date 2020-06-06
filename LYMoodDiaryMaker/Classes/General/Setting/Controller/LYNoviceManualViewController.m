@@ -21,7 +21,7 @@
     [super viewDidLoad];
     
     
-    self.tableView.backgroundColor = tableViewBgColor;
+    self.tableView.dk_backgroundColorPicker = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.title = LY_LocalizedString(@"kLYSettingCellNovice");
     

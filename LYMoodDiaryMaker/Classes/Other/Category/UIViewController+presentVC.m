@@ -27,12 +27,8 @@
 - (void)lyPresentViewController:(UIViewController*)viewControllerToPresent animated:(BOOL)animated completion:(void(^)(void))completion {
 
     if(@available(iOS 13.0, *)) {
-        Class presentVC = NSClassFromString(@"LYWriteMoodDiaryViewController");
-         if([viewControllerToPresent isKindOfClass:[presentVC class]]) {
-             viewControllerToPresent.modalPresentationStyle = UIModalPresentationFullScreen;
-         } else {
-             viewControllerToPresent.modalPresentationStyle = UIModalPresentationPageSheet;
-         }
+//        Class presentVC = NSClassFromString(@"LYWriteMoodDiaryViewController");
+         viewControllerToPresent.modalPresentationStyle = UIModalPresentationFullScreen;
      }
     [self lyPresentViewController:viewControllerToPresent animated:animated completion:completion];
 }

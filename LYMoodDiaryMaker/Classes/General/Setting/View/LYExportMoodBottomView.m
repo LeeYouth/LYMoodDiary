@@ -55,7 +55,7 @@
         button.titleLabel.font = HPL18;
         [button setTitleColor:white_color forState:UIControlStateNormal];
         [button setTitle:LY_LocalizedString(@"kLYSettingCellExport") forState:UIControlStateNormal];
-        [button setBackgroundColor:themeButtonColor];
+        button.dk_backgroundColorPicker = themeButtonColor;
         [button addTarget:self action:@selector(exportAction:) forControlEvents:UIControlEventTouchUpInside];
         button;
     }));

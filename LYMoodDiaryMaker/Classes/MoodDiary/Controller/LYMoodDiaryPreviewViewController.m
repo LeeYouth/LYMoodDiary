@@ -30,7 +30,9 @@
     [super viewDidLoad];
     
     WEAKSELF(weakSelf);
-    self.navBarView.rightBarItemImage = [UIImage imageNamed:@"homepage_rightBarItem"];
+    DKImagePicker picker = DKImagePickerWithNames(@"homepage_rightBarItem",@"homepage_rightBarItem");
+
+    self.navBarView.rightBarItemImage = picker;
     self.navBarView.navColor = bgColor;
     self.navBarView.btnBlock = ^(UIButton *sender) {
         if (sender.tag == 0) {
@@ -42,7 +44,7 @@
             [weakSelf rightBarItemAction];
         }
     };
-    self.tableView.backgroundColor = tableViewBgColor;
+    self.tableView.dk_backgroundColorPicker = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.showsVerticalScrollIndicator = NO;
     self.tableView.showsHorizontalScrollIndicator = NO;

@@ -39,7 +39,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchOutSide)];
     [_menuBackView addGestureRecognizer: tap];
     self.alpha = 0;
-    self.backgroundColor = bgColor;
+    self.dk_backgroundColorPicker = bgColor;
     [self addSubview:self.iconImageView];
     [self addSubview:self.titleLabel];
     [self addSubview:self.okButton];

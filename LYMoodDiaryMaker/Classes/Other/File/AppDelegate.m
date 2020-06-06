@@ -24,7 +24,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-
+    //初始化theme主题
+    [DKColorTable sharedColorTable].file = @"LYMoodColorTable.txt";
+    self.dk_manager.changeStatusBar = YES;
+    self.dk_manager.themeVersion = DKThemeVersionNight;
     if (iOS11) {
         if (@available(iOS 11.0, *)) {
             [UIScrollView appearance].

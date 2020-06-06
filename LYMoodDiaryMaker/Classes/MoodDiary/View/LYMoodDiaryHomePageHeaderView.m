@@ -47,7 +47,7 @@
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [[UILabel alloc] init];
         view.font = FONT_ALiHuiPu_Regular(40);
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.textAlignment = NSTextAlignmentCenter;
         [self addSubview:view];
         view;

@@ -31,6 +31,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -83,7 +84,7 @@
             self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellPasscode");
             self.accessoryType = UITableViewCellAccessoryNone;
             
-            self.titleLabel.textColor = black_color;
+            self.titleLabel.dk_textColorPicker = listTitleColor;
 
             self.switchButton.selected = switchOn;
 
@@ -91,21 +92,21 @@
             self.titleLabel.text = LY_LocalizedString(@"kLYGeneralPasscodeChange");
             self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             
-            self.titleLabel.textColor = switchOn?black_color:emptyDataTitleColor;
+            self.titleLabel.dk_textColorPicker = switchOn?listTitleColor:listDetailColor;
         }
         
     }else{
         self.switchButton.hidden = NO;
 
         if ([LYTouchIDManager canUseTouchID]) {
-            self.titleLabel.textColor = switchOn?black_color:emptyDataTitleColor;
+            self.titleLabel.dk_textColorPicker = switchOn?listTitleColor:listDetailColor;
             self.switchButton.enabled = switchOn;
             
             self.switchButton.selected = touchidOn;
 
         }else{
             self.switchButton.enabled = NO;
-            self.titleLabel.textColor = emptyDataTitleColor;
+            self.titleLabel.dk_textColorPicker = emptyDataTitleColor;
         }
         self.titleLabel.text = LY_LocalizedString(@"kLYGeneralPasscodeTouchID");
     }
@@ -145,7 +146,7 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [UIView new];
-        view.backgroundColor = sepLineColor;
+        view.dk_backgroundColorPicker = sepLineColor;
         view;
     }));
 }
@@ -162,7 +163,7 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.font = HPL18;
         view;
     }));

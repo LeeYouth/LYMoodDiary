@@ -35,7 +35,9 @@
     [super viewDidLoad];
     
     WEAKSELF(weakSelf);
-    self.navBarView.leftBarItemImage  = [UIImage imageNamed:@"navBar_closeicon"];
+    DKImagePicker picker = DKImagePickerWithNames(@"navBar_closeicon",@"navBar_closeicon-dark");
+    
+    self.navBarView.leftBarItemImage  = picker;
     self.navBarView.navColor = bgColor;
     self.navBarView.rightBarItemImage = nil;
     self.navBarView.btnBlock = ^(UIButton *sender) {
@@ -180,7 +182,12 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     NSString *key = [dateFormatter stringFromDate:date];
     if ([self.allMoodDateArray containsObject:key]) {
-        return @[happyColor,inLoveColor,madColor];
+        
+        DKColorPicker picker1 = happyColor;
+        DKColorPicker picker2 = inLoveColor;
+        DKColorPicker picker3 = madColor;
+        
+        return @[picker1(self.dk_manager.themeVersion),picker2(self.dk_manager.themeVersion),picker3(self.dk_manager.themeVersion)];
     }
     return nil;
 }
@@ -323,7 +330,8 @@
 - (FSCalendar *)calendar{
     if (!_calendar) {
         _calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0,  0, kScreenWidth, kScreenHeight  )];
-        _calendar.backgroundColor = [UIColor whiteColor];
+        DKColorPicker bgPicker = bgColor;
+        _calendar.backgroundColor = bgPicker(self.dk_manager.themeVersion);
 
         _calendar.dataSource = self;
         _calendar.delegate   = self;
@@ -337,13 +345,19 @@
         _calendar.firstWeekday = 2;
         _calendar.headerHeight = 56;
         _calendar.placeholderType = FSCalendarPlaceholderTypeNone;
-        _calendar.calendarHeaderView.backgroundColor = bgColor;
+        _calendar.calendarHeaderView.dk_backgroundColorPicker = bgColor;
 
-        _calendar.appearance.headerTitleColor = black_color;
+        DKColorPicker bgP = themeColor;
+        DKColorPicker titleP = listTitleColor;
+
+        UIColor *bbbbgColor = bgP(self.dk_manager.themeVersion);
+        UIColor *titleColor = titleP(self.dk_manager.themeVersion);
+
+        _calendar.appearance.headerTitleColor = titleColor;
         _calendar.appearance.headerTitleFont = HPR24;
-        _calendar.appearance.weekdayTextColor = black_color;
+        _calendar.appearance.weekdayTextColor = titleColor;
         _calendar.appearance.weekdayFont = HPR16;
-//        _calendar.appearance.titleDefaultColor = [UIColor whiteColor];
+        _calendar.appearance.titleDefaultColor = titleColor;
         _calendar.appearance.titleFont = HPL16;
         
 //        _calendar.appearance.separators = FSCalendarSeparatorNone;
@@ -356,7 +370,7 @@
         
         _calendar.calendarHeaderView.backgroundColor = [UIColor clearColor];
         _calendar.calendarWeekdayView.backgroundColor = [UIColor clearColor];
-        _calendar.appearance.eventSelectionColor = black_color;
+        _calendar.appearance.eventSelectionColor = bbbbgColor;
         _calendar.appearance.eventOffset = CGPointMake(0, -7);
         _calendar.today = nil; // Hide the today circle
         [_calendar registerClass:[LYDIYCalendarCell class] forCellReuseIdentifier:@"cell"];

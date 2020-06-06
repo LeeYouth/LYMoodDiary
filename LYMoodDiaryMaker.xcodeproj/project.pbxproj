@@ -40,6 +40,7 @@
 		69E2EEC42488CD510001FFF2 /* CTMediator+MoodDiaryActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEC32488CD510001FFF2 /* CTMediator+MoodDiaryActions.m */; };
 		69E2EEC72488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEC62488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m */; };
 		69E2EECA2488E2F40001FFF2 /* UIViewController+presentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E2EEC92488E2F40001FFF2 /* UIViewController+presentVC.m */; };
+		69E2EF39248A3BBA0001FFF2 /* LYMoodColorTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = 69E2EF38248A3BB90001FFF2 /* LYMoodColorTable.txt */; };
 		CF0BD6DA22855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0BD6D922855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m */; };
 		CF0BD6EF22857B6300A3EECD /* LYMoodDiaryHomePageHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0BD6EE22857B6300A3EECD /* LYMoodDiaryHomePageHeaderView.m */; };
 		CF3DF01121F9AAB8000B8853 /* LYMoodDiaryHomePageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF3DF01021F9AAB8000B8853 /* LYMoodDiaryHomePageController.m */; };
@@ -162,6 +163,7 @@
 		69E2EEC62488CD6C0001FFF2 /* CTMediator+WriteDiaryActions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+WriteDiaryActions.m"; sourceTree = "<group>"; };
 		69E2EEC82488E2F40001FFF2 /* UIViewController+presentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+presentVC.h"; sourceTree = "<group>"; };
 		69E2EEC92488E2F40001FFF2 /* UIViewController+presentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+presentVC.m"; sourceTree = "<group>"; };
+		69E2EF38248A3BB90001FFF2 /* LYMoodColorTable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LYMoodColorTable.txt; sourceTree = "<group>"; };
 		998E5F40CEF7D3827D2DA449 /* libPods-LYMoodDiaryMaker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYMoodDiaryMaker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0BD6D822855CA800A3EECD /* LYMoodDiaryHomePageTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYMoodDiaryHomePageTableCell.h; sourceTree = "<group>"; };
 		CF0BD6D922855CA800A3EECD /* LYMoodDiaryHomePageTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYMoodDiaryHomePageTableCell.m; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		6923A7F5248777AF00511FC6 /* File */ = {
 			isa = PBXGroup;
 			children = (
+				69E2EF38248A3BB90001FFF2 /* LYMoodColorTable.txt */,
 				6923A7F7248777AF00511FC6 /* AppDelegate.h */,
 				6923A7F9248777AF00511FC6 /* AppDelegate.m */,
 				6923A7F8248777AF00511FC6 /* AppDelegate+UMSocial.h */,
@@ -334,16 +337,16 @@
 		69E2EE6F24878FDE0001FFF2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				69E2EE7024878FDE0001FFF2 /* LYExportMoodViewController.h */,
-				69E2EE7124878FDE0001FFF2 /* LYPrivacyAgreementViewController.h */,
-				69E2EE7224878FDE0001FFF2 /* LYSettingViewController.m */,
-				69E2EE7324878FDE0001FFF2 /* LYNoviceManualViewController.h */,
 				69E2EE7424878FDE0001FFF2 /* LYAboutUsViewController.h */,
-				69E2EE7524878FDE0001FFF2 /* LYExportMoodViewController.m */,
-				69E2EE7624878FDE0001FFF2 /* LYPrivacyAgreementViewController.m */,
 				69E2EE7724878FDE0001FFF2 /* LYAboutUsViewController.m */,
+				69E2EE7024878FDE0001FFF2 /* LYExportMoodViewController.h */,
+				69E2EE7524878FDE0001FFF2 /* LYExportMoodViewController.m */,
+				69E2EE7324878FDE0001FFF2 /* LYNoviceManualViewController.h */,
 				69E2EE7824878FDE0001FFF2 /* LYNoviceManualViewController.m */,
+				69E2EE7124878FDE0001FFF2 /* LYPrivacyAgreementViewController.h */,
+				69E2EE7624878FDE0001FFF2 /* LYPrivacyAgreementViewController.m */,
 				69E2EE7924878FDE0001FFF2 /* LYSettingViewController.h */,
+				69E2EE7224878FDE0001FFF2 /* LYSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,24 +354,24 @@
 		69E2EE7A24878FDE0001FFF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				69E2EE7B24878FDE0001FFF2 /* LYDIYCalendarCell.h */,
 				69E2EE7C24878FDE0001FFF2 /* LYAboutUsInfoView.h */,
-				69E2EE7D24878FDE0001FFF2 /* LYNoviceManualTableViewCell.h */,
-				69E2EE7E24878FDE0001FFF2 /* LYPrivacyAgreementTableViewCell.h */,
-				69E2EE7F24878FDE0001FFF2 /* LYAboutUsTableViewCell.m */,
-				69E2EE8024878FDE0001FFF2 /* LYExportMoodBottomView.h */,
-				69E2EE8124878FDE0001FFF2 /* LYPrivacyAgreementInfoView.h */,
-				69E2EE8224878FDE0001FFF2 /* LYExportMoodHeaderView.m */,
-				69E2EE8324878FDE0001FFF2 /* LYSettingTableViewCell.m */,
 				69E2EE8424878FDE0001FFF2 /* LYAboutUsInfoView.m */,
-				69E2EE8524878FDE0001FFF2 /* LYDIYCalendarCell.m */,
-				69E2EE8624878FDE0001FFF2 /* LYNoviceManualTableViewCell.m */,
-				69E2EE8724878FDF0001FFF2 /* LYExportMoodBottomView.m */,
 				69E2EE8824878FDF0001FFF2 /* LYAboutUsTableViewCell.h */,
+				69E2EE7F24878FDE0001FFF2 /* LYAboutUsTableViewCell.m */,
+				69E2EE7B24878FDE0001FFF2 /* LYDIYCalendarCell.h */,
+				69E2EE8524878FDE0001FFF2 /* LYDIYCalendarCell.m */,
+				69E2EE8024878FDE0001FFF2 /* LYExportMoodBottomView.h */,
+				69E2EE8724878FDF0001FFF2 /* LYExportMoodBottomView.m */,
+				69E2EE8C24878FDF0001FFF2 /* LYExportMoodHeaderView.h */,
+				69E2EE8224878FDE0001FFF2 /* LYExportMoodHeaderView.m */,
+				69E2EE7D24878FDE0001FFF2 /* LYNoviceManualTableViewCell.h */,
+				69E2EE8624878FDE0001FFF2 /* LYNoviceManualTableViewCell.m */,
+				69E2EE8124878FDE0001FFF2 /* LYPrivacyAgreementInfoView.h */,
+				69E2EE8B24878FDF0001FFF2 /* LYPrivacyAgreementInfoView.m */,
+				69E2EE7E24878FDE0001FFF2 /* LYPrivacyAgreementTableViewCell.h */,
 				69E2EE8924878FDF0001FFF2 /* LYPrivacyAgreementTableViewCell.m */,
 				69E2EE8A24878FDF0001FFF2 /* LYSettingTableViewCell.h */,
-				69E2EE8B24878FDF0001FFF2 /* LYPrivacyAgreementInfoView.m */,
-				69E2EE8C24878FDF0001FFF2 /* LYExportMoodHeaderView.h */,
+				69E2EE8324878FDE0001FFF2 /* LYSettingTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				69E2EEB72488C8470001FFF2 /* Alibaba-PuHuiTi-Medium.otf in Resources */,
 				CF6C430D21AE69D6002287F9 /* LYResources.bundle in Resources */,
 				69E2EEB62488C8470001FFF2 /* Alibaba-PuHuiTi-Light.otf in Resources */,
+				69E2EF39248A3BBA0001FFF2 /* LYMoodColorTable.txt in Resources */,
 				CF9DA41722A51E1C0097D6A4 /* Localizable.strings in Resources */,
 				69E2EEB52488C8470001FFF2 /* Alibaba-PuHuiTi-Bold.otf in Resources */,
 				CFDB56642125173200501905 /* Assets.xcassets in Resources */,

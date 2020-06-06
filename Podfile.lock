@@ -18,19 +18,33 @@ PODS:
   - CYLTabBarController (1.24.1):
     - CYLTabBarController/Core (= 1.24.1)
   - CYLTabBarController/Core (1.24.1)
+  - DKNightVersion (2.4.3):
+    - DKNightVersion/Core (= 2.4.3)
+    - DKNightVersion/CoreAnimation (= 2.4.3)
+    - DKNightVersion/UIKit (= 2.4.3)
+  - DKNightVersion/Core (2.4.3):
+    - DKNightVersion/Core/DeallocBlockExecutor (= 2.4.3)
+    - DKNightVersion/Core/extobjc (= 2.4.3)
+  - DKNightVersion/Core/DeallocBlockExecutor (2.4.3)
+  - DKNightVersion/Core/extobjc (2.4.3)
+  - DKNightVersion/CoreAnimation (2.4.3):
+    - DKNightVersion/Core
+  - DKNightVersion/UIKit (2.4.3):
+    - DKNightVersion/Core
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - FSCalendar (2.8.0)
   - IQKeyboardManager (6.2.0)
   - JGProgressHUD (2.1)
-  - LYCommonKit (0.1.9):
+  - LYCommonKit (0.1.12):
     - AFNetworking
+    - DKNightVersion
     - FMDB
     - JGProgressHUD
     - MBProgressHUD
     - YYKit
-  - LYCommonUIKit (0.1.4):
+  - LYCommonUIKit (0.1.12):
     - LYCommonKit
     - Masonry
     - SDWebImage
@@ -60,8 +74,8 @@ DEPENDENCIES:
   - CYLTabBarController (~> 1.24.0)
   - FSCalendar
   - IQKeyboardManager
-  - LYCommonKit (~> 0.1.9)
-  - LYCommonUIKit (~> 0.1.4)
+  - LYCommonKit (~> 0.1.12)
+  - LYCommonUIKit (~> 0.1.12)
   - MSWeakTimer (~> 1.1.0)
   - UMCAnalytics
   - UMCCommon
@@ -74,6 +88,7 @@ SPEC REPOS:
     - AFNetworking
     - CTMediator
     - CYLTabBarController
+    - DKNightVersion
     - FMDB
     - FSCalendar
     - IQKeyboardManager
@@ -96,12 +111,13 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   CYLTabBarController: 46fa053a2fb165095e04792431ad91a759bb7f9f
+  DKNightVersion: eaa80cc4014b4bae7d4b535fd87ecc6a3c2767b3
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
-  LYCommonKit: e87be7e24112d61976cba7f71615cff544c15df1
-  LYCommonUIKit: 74f735044669913c890c7d90e5bd5571a2ad0bbb
+  LYCommonKit: 4b1770282a0e839bfd126f9cfaac7007aa57c2e4
+  LYCommonUIKit: 2ccc9f2228695dc8e5f3579638bf9073bba29f5f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
@@ -113,6 +129,6 @@ SPEC CHECKSUMS:
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f9e44c2593ca6c2720239fa1e133ba4f399597f2
+PODFILE CHECKSUM: 466b208b5bc1fdcf34edb2d210b7e2a289171862
 
 COCOAPODS: 1.9.1

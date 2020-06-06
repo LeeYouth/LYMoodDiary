@@ -34,7 +34,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-        self.backgroundColor = tableViewBgColor;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -102,7 +102,7 @@
     
     self.timeLabel.text    = [model.enterDate stringWithFormat:kLISTCELLDATEFORMAT];
     self.contentLabel.text = model.moodDiaryText;
-    self.cardBackView.backgroundColor  = model.moodColor;
+    self.cardBackView.dk_backgroundColorPicker = model.moodColor;
     self.iconImageView.image = [UIImage imageWithEmojiType:model.typeName];
 }
 
@@ -160,7 +160,7 @@
     return LY_LAZY(_iconBackView, ({
         CGFloat iconW = 54;
         UIView *view = [UIView new];
-        view.backgroundColor = bgColor;
+        view.dk_backgroundColorPicker = bgColor;
         view.layer.cornerRadius = iconW/2;
         view.layer.masksToBounds = YES;
         view;
@@ -191,7 +191,7 @@
 - (YYLabel *)contentLabel{
     return LY_LAZY(_contentLabel, ({
         YYLabel *view = [YYLabel new];
-        view.textColor = bgColor;
+//        view.textColor = bgColor;
         view.font = HPR16;
         view.textVerticalAlignment = YYTextVerticalAlignmentTop;
         view.numberOfLines = 0;
@@ -201,7 +201,7 @@
 - (UILabel *)timeLabel{
     return LY_LAZY(_timeLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = bgColor;
+        view.dk_textColorPicker = bgColor;
         view.textAlignment = NSTextAlignmentRight;
         view.font = HPR16;
         view;

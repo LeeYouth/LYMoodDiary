@@ -128,7 +128,7 @@
         UILabel *view = [[UILabel alloc] init];
         view.font = SYS_FONT(14.f);
         view.numberOfLines = 0;
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.textAlignment = NSTextAlignmentCenter;
         [self addSubview:view];
         view;
