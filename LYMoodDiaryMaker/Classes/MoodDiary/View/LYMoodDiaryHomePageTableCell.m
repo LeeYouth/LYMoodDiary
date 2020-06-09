@@ -102,7 +102,7 @@
     
     self.timeLabel.text    = [model.enterDate stringWithFormat:kLISTCELLDATEFORMAT];
     self.contentLabel.text = model.moodDiaryText;
-    self.cardBackView.dk_backgroundColorPicker = model.moodColor;
+    self.cardBackView.dk_backgroundColorPicker = [LYMoodDiaryModel matchEmojiColorWithType:model.moodType];
     self.iconImageView.image = [UIImage imageWithEmojiType:model.typeName];
 }
 
@@ -191,7 +191,8 @@
 - (YYLabel *)contentLabel{
     return LY_LAZY(_contentLabel, ({
         YYLabel *view = [YYLabel new];
-//        view.textColor = bgColor;
+        DKColorPicker picker = moodCardColor;
+        view.textColor = picker(self.dk_manager.themeVersion);
         view.font = HPR16;
         view.textVerticalAlignment = YYTextVerticalAlignmentTop;
         view.numberOfLines = 0;
@@ -201,7 +202,7 @@
 - (UILabel *)timeLabel{
     return LY_LAZY(_timeLabel, ({
         UILabel *view = [UILabel new];
-        view.dk_textColorPicker = bgColor;
+        view.dk_textColorPicker = moodCardColor;
         view.textAlignment = NSTextAlignmentRight;
         view.font = HPR16;
         view;

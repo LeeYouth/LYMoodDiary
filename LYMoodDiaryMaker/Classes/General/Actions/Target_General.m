@@ -12,10 +12,9 @@
 #import "LYGenneralSearchViewController.h"
 #import "LYCalendarMoodViewController.h"
 #import "LYExportMoodViewController.h"
-#import "LYNoviceManualViewController.h"
-#import "LYPrivacyAgreementViewController.h"
 #import "LYSettingViewController.h"
 #import "LYGeneraPasscodeViewController.h"
+#import "LYGeneralThemeSettingController.h"
 
 @implementation Target_General
 
@@ -44,16 +43,6 @@
     return [[LYExportMoodViewController alloc] init];
 }
 
-- (UIViewController *)Action_pushNoviceManualViewController:(NSDictionary *)params
-{
-    return [[LYNoviceManualViewController alloc] init];
-}
-
-- (UIViewController *)Action_pushPrivacyAgreementViewController:(NSDictionary *)params
-{
-    return [[LYPrivacyAgreementViewController alloc] init];
-}
-
 - (UIViewController *)Action_pushSettingViewController:(NSDictionary *)params
 {
     return [[LYSettingViewController alloc] init];
@@ -63,4 +52,10 @@
 {
     return [[LYGeneraPasscodeViewController alloc] init];
 }
+
+- (UIViewController *)Action_pushGeneralThemeSettingController:(NSDictionary *)params
+{
+    return [[LYGeneralThemeSettingController alloc] init];
+}
+
 @end

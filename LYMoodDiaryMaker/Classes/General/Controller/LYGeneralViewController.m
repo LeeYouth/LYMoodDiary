@@ -83,13 +83,23 @@
         UIViewController *vc = [[CTMediator sharedInstance] CTMediator_ExportMoodViewController];
         [self presentViewController:vc animated:YES completion:nil];
         
-    }else if ([typeName isEqualToString:@"noviceManual"]){
-        //新手指南
-        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_NoviceManualViewController];
+    }else if ([typeName isEqualToString:@"darkModel"]){
+        //夜间模式
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GeneralThemeSettingController];
         [self.navigationController pushViewController:vc animated:YES];
+        
+    }else if ([typeName isEqualToString:@"noviceManual"]){
+        //新手指南 
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_PushWKWebViewController:@{@"url":LY_LocalizedString(@"kLYSettingCellNoviceURL"),
+                                                                                                 @"title":LY_LocalizedString(@"kLYSettingCellNovice")
+        }];
+        [self.navigationController pushViewController:vc animated:YES];
+        
     }else if ([typeName isEqualToString:@"protocol"]){
         //隐私协议
-        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_PrivacyAgreementViewController];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_PushWKWebViewController:@{@"url":LY_LocalizedString(@"kLYSettingCellPrivacyURL"),
+                                                                                                 @"title":LY_LocalizedString(@"kLYSettingCellPrivacy")
+        }];
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }else if ([typeName isEqualToString:@"aboutUs"]){
@@ -185,7 +195,7 @@
 - (NSMutableArray *)typeArray{
     if (!_typeArray) {
         _typeArray = [NSMutableArray array];
-        //,@"search"
+        //,@"search",@"darkModel"
         [_typeArray addObjectsFromArray:@[@"language",@"export",@"passcode",@"protocol",@"noviceManual",@"aboutUs"]];
     }
     return _typeArray;

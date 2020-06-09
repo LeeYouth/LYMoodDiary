@@ -59,7 +59,7 @@
         make.left.equalTo(self.mas_left).offset(leftMargin);
         make.right.equalTo(self.mas_right).offset(-leftMargin);
         make.bottom.equalTo(self);
-        make.height.mas_equalTo(@0.8);
+        make.height.mas_equalTo(@(kLYCellLineHeight));
     }];
     self.titleLabel.text  = @"去评分";
 }
@@ -116,6 +116,10 @@
         
     }else if ([typeName isEqualToString:@"version"]){
         title = [NSString stringWithFormat: @"%@ %@",LY_LocalizedString(@"kLYSettingCellVersion"),[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    }else if ([typeName isEqualToString:@"darkModel"]){
+        
+        title = LY_LocalizedString(@"kLYSettingCellDarkModel");
+        
     }
     self.titleLabel.text  = title;
     

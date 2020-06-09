@@ -27,7 +27,22 @@
     //初始化theme主题
     [DKColorTable sharedColorTable].file = @"LYMoodColorTable.txt";
     self.dk_manager.changeStatusBar = YES;
-    self.dk_manager.themeVersion = DKThemeVersionNight;
+    if (@available(iOS 13.0, *)) {
+        if ([UITraitCollection currentTraitCollection].userInterfaceStyle == UIUserInterfaceStyleLight) {
+            if (![self.dk_manager.themeVersion isEqualToString:DKThemeVersionNormal]) {
+                [self setThemeLight];
+            }
+        }else {
+            if (![self.dk_manager.themeVersion isEqualToString:DKThemeVersionNight]) {
+                [self setThemeDark];
+            }
+        }
+    }else{
+        if (![self.dk_manager.themeVersion isEqualToString:DKThemeVersionNormal]) {
+            [self setThemeLight];
+        }
+    }
+    
     if (iOS11) {
         if (@available(iOS 11.0, *)) {
             [UIScrollView appearance].
@@ -83,7 +98,15 @@
     return YES;
 }
 
+- (void)setThemeDark
+{
+    [self.dk_manager nightFalling];
+}
 
+- (void)setThemeLight
+{
+    [self.dk_manager dawnComing];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

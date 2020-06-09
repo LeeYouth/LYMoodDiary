@@ -182,7 +182,8 @@
 - (UIButton *)okButton{
     return LY_LAZY(_okButton, ({
         UIButton *view = [UIButton new];
-        [view setBackgroundImage:[UIImage createImageWithColor:themeButtonColor] forState:UIControlStateNormal];
+        UIImage *image = [UIImage createImageWithColor:LYHexRGB(0xfe4365)];
+        [view dk_setBackgroundImage:DKImagePickerWithImages(image,image) forState:UIControlStateNormal];
         [view setTitleColor:white_color forState:UIControlStateNormal];
         [view setTitle:LY_LocalizedString(@"kLYHomePageGuideOK") forState:UIControlStateNormal];
         view.titleLabel.font = HPL20;

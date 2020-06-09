@@ -62,7 +62,7 @@
         make.left.equalTo(self.mas_left).offset(leftMargin);
         make.right.equalTo(self.mas_right).offset(-leftMargin);
         make.right.bottom.equalTo(self);
-        make.height.mas_equalTo(@0.8);
+        make.height.mas_equalTo(@(kLYCellLineHeight));
     }];
     
     self.height = 68;

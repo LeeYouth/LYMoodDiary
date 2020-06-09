@@ -10,4 +10,6 @@
 
 @interface LYTabbarViewController : CYLTabBarController
 
+- (void)customizeTabBarAppearance:(CYLTabBarController *)tabBarController;
+
 @end

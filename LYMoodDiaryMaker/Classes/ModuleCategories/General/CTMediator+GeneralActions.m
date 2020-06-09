@@ -14,7 +14,7 @@ NSString *const kLYActionPushGeneralLanguageController = @"pushGeneralLanguageCo
 NSString *const kLYActionPushGenneralSearchViewController = @"pushGenneralSearchViewController";
 NSString *const kLYActionPushCalendarMoodViewController = @"pushCalendarMoodViewController";
 NSString *const kLYActionPresentExportMoodViewController = @"presentExportMoodViewController";
-NSString *const kLYActionPushNoviceManualViewController = @"pushNoviceManualViewController";
+NSString *const kLYActionPushGeneralThemeSettingController = @"pushGeneralThemeSettingController";
 NSString *const kLYActionPushPrivacyAgreementViewController = @"pushPrivacyAgreementViewController";
 NSString *const kLYActionPushSettingViewController = @"pushSettingViewController";
 NSString *const kLYActionPushGeneraPasscodeViewController = @"pushGeneraPasscodeViewController";
@@ -71,11 +71,11 @@ NSString *const kLYActionPushGeneraPasscodeViewController = @"pushGeneraPasscode
     ];
 }
 
-/// 新手指南
-- (UIViewController *)CTMediator_NoviceManualViewController
+/// 夜间模式
+- (UIViewController *)CTMediator_GeneralThemeSettingController
 {
     return [self performTarget:kLYTarget_General
-                        action:kLYActionPushNoviceManualViewController
+                        action:kLYActionPushGeneralThemeSettingController
                         params:nil
              shouldCacheTarget:NO
     ];

@@ -7,14 +7,11 @@
 //
 
 #import "LYSettingViewController.h"
-#import "LYAboutUsViewController.h"
 #import "LYWKWebViewController.h"
 #import "LYSettingTableViewCell.h"
 
-#import "LYNoviceManualViewController.h"
 #import "LYCalendarMoodViewController.h"
 #import "LYExportMoodViewController.h"
-#import "LYPrivacyAgreementViewController.h"
 
 @interface LYSettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -80,22 +77,15 @@
         LYExportMoodViewController *exportVC = [[LYExportMoodViewController alloc] init];
         [self presentViewController:exportVC animated:YES completion:nil];
 
-    }else if ([typeName isEqualToString:@"noviceManual"]){
-        //新手指南
-        LYNoviceManualViewController *xinVC = [[LYNoviceManualViewController  alloc] init];
-        [self.navigationController pushViewController:xinVC animated:YES];
     }else if ([typeName isEqualToString:@"star"]){
         //去评分
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id1450481289"]];
 
-    }else if ([typeName isEqualToString:@"protocol"]){
-        //隐私协议
-        LYPrivacyAgreementViewController *privacyVC = [[LYPrivacyAgreementViewController alloc] init];
-        [self.navigationController pushViewController:privacyVC animated:YES];
-        return;
     }else if ([typeName isEqualToString:@"support"]){
-        LYAboutUsViewController *viewController = [[LYAboutUsViewController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_PushWKWebViewController:@{@"url":LY_LocalizedString(@"kLYSettingCellSupportURL"),
+                                                                                                 @"title":LY_LocalizedString(@"kLYSettingCellSupport")
+        }];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if ([typeName isEqualToString:@"version"]){
         NSString *str = [NSString stringWithFormat: @"%@%@",LY_LocalizedString(@"kLYSettingCurrentVersion"),[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
         [LYToastTool bottomShowWithText:str delay:1.f];

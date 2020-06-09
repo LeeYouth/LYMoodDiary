@@ -22,8 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController *)CTMediator_CalendarMoodViewController;
 /// 导出
 - (UIViewController *)CTMediator_ExportMoodViewController;
-/// 新手指南
-- (UIViewController *)CTMediator_NoviceManualViewController;
+/// 夜间模式
+- (UIViewController *)CTMediator_GeneralThemeSettingController;
 /// 隐私协议
 - (UIViewController *)CTMediator_PrivacyAgreementViewController;
 /// 设置

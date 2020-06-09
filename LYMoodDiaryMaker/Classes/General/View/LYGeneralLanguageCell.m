@@ -62,7 +62,7 @@
         make.left.equalTo(self.mas_left).offset(leftMargin);
         make.right.equalTo(self.mas_right).offset(-leftMargin);
         make.bottom.equalTo(self);
-        make.height.mas_equalTo(@0.8);
+        make.height.mas_equalTo(@(kLYCellLineHeight));
     }];
     
     self.height = 68;
@@ -88,6 +88,13 @@
         self.titleLabel.text = LY_LocalizedString(@"kLYGeneralLanguageFrench");
     }else if([typeName isEqualToString:@"ko"]){
         self.titleLabel.text = LY_LocalizedString(@"kLYGeneralLanguageKorean");
+    }
+    if ([typeName isEqualToString:@"flowSystem"]) {
+        self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellDarkModelSystem");
+    }else if ([typeName isEqualToString:@"night"]){
+        self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellDarkModelLight");
+    }else if ([typeName isEqualToString:@"dark"]){
+        self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellDarkModelDark");
     }
     
 }

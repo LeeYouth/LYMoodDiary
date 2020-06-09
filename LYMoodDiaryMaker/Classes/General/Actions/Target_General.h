@@ -22,14 +22,12 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIViewController *)Action_pushCalendarMoodViewController:(NSDictionary *)params;
 /// 导出
 - (UIViewController *)Action_presentExportMoodViewController:(NSDictionary *)params;
-/// 新手指南
-- (UIViewController *)Action_pushNoviceManualViewController:(NSDictionary *)params;
-/// 隐私协议
-- (UIViewController *)Action_pushPrivacyAgreementViewController:(NSDictionary *)params;
 /// 设置
 - (UIViewController *)Action_pushSettingViewController:(NSDictionary *)params;
 /// 密码
 - (UIViewController *)Action_pushGeneraPasscodeViewController:(NSDictionary *)params;
+/// 夜间模式
+- (UIViewController *)Action_pushGeneralThemeSettingController:(NSDictionary *)params;
 
 @end
 
