@@ -29,6 +29,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -51,22 +52,23 @@
 - (void)setModel:(LYMoodDiaryModel *)model{
     _model = model;
     
-    
+    DKColorPicker picker = moodTextColor;
+
     CGSize size = CGSizeMake(kScreenWidth - 2*kLYContentLeftMargin, CGFLOAT_MAX);
-    NSAttributedString *text = [[NSAttributedString alloc] initWithString: model.moodDiaryText attributes:@{NSFontAttributeName:HPL20,NSForegroundColorAttributeName:black_color}];
+    NSAttributedString *text = [[NSAttributedString alloc] initWithString: model.moodDiaryText attributes:@{NSFontAttributeName:HPL20,NSForegroundColorAttributeName:picker(self.dk_manager.themeVersion)}];
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:size text:text];
     
     self.height = layout.textBoundingSize.height + kLYContentLeftMargin;
     
     self.textView.attributedText = text;
-
 }
 
 #pragma mark - lazy
 - (YYTextView *)textView{
     return LY_LAZY(_textView, ({
         YYTextView *view = [YYTextView new];
-        view.textColor = black_color;
+        DKColorPicker picker = moodTextColor;
+        view.textColor = picker(self.dk_manager.themeVersion);
         view.font = HPL20;
         view.editable = NO;
         view.scrollEnabled = NO;

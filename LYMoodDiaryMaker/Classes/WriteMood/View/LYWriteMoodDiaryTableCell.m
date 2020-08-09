@@ -29,6 +29,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -58,7 +59,8 @@
 - (YYTextView *)textView{
     return LY_LAZY(_textView, ({
         YYTextView *view = [YYTextView new];
-        view.textColor = black_color;
+        DKColorPicker picker = listTitleColor;
+        view.textColor = picker(self.dk_manager.themeVersion);
         view.font = HPL20;
         view;
     }));

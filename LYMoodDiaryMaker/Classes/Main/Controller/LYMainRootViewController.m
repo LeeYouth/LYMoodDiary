@@ -11,7 +11,6 @@
 
 @interface LYMainRootViewController ()<UITabBarControllerDelegate, CYLTabBarControllerDelegate>
 
-
 @end
 
 @implementation LYMainRootViewController
@@ -22,6 +21,13 @@
     self.navigationBarHidden = YES;
     [LYTabbarPlusButton registerPlusButton];
     [self createNewTabBar];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:DKNightVersionThemeChangingNotification object:nil];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(themeDidChange)
+                                                 name:DKNightVersionThemeChangingNotification object:nil];
 }
 
 - (CYLTabBarController *)createNewTabBar {
@@ -33,6 +39,35 @@
     self.tabBarController = tabBarController;
     return tabBarController;
 }
+
+- (void)themeDidChange
+{
+    [self customizeTabBarAppearance:(CYLTabBarController *)self.tabBarController];
+}
+
+- (void)customizeTabBarAppearance:(CYLTabBarController *)tabBarController {
+     dispatch_async(dispatch_get_main_queue(), ^{
+   // Customize UITabBar height
+       DKColorPicker picker = bgColor;
+       DKColorPicker shadowPicker = listTitleColor;
+       UIColor *barColor = picker(self.dk_manager.themeVersion);
+       UIColor *shadowColor = shadowPicker(self.dk_manager.themeVersion);
+
+       [tabBarController.tabBar setBackgroundImage:[[UIImage alloc] init]];
+       [tabBarController.tabBar setBackgroundColor: barColor];
+       [tabBarController.tabBar setTintColor:barColor];
+       [tabBarController.tabBar setShadowImage:[UIImage new]];
+       tabBarController.tabBar.clipsToBounds = NO;
+       tabBarController.tabBar.layer.shadowColor = shadowColor.CGColor;
+       tabBarController.tabBar.layer.shadowRadius = 5.0;
+       tabBarController.tabBar.layer.shadowOpacity = 0.2;
+       tabBarController.tabBar.layer.masksToBounds = NO;
+       tabBarController.tabBar.layer.shadowOffset = CGSizeMake(0, 3);
+     
+ });
+    
+}
+
 
 #pragma mark - delegate
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {

@@ -7,18 +7,7 @@
 //
 
 #import "LYGeneralViewController.h"
-#import "LYAboutUsViewController.h"
-#import "LYWKWebViewController.h"
 #import "LYSettingTableViewCell.h"
-
-#import "LYNoviceManualViewController.h"
-#import "LYCalendarMoodViewController.h"
-#import "LYExportMoodViewController.h"
-#import "LYPrivacyAgreementViewController.h"
-#import "LYSettingViewController.h"
-#import "LYGeneraPasscodeViewController.h"
-#import "LYGeneralLanguageController.h"
-#import "LYGenneralSearchViewController.h"
 
 @interface LYGeneralViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -76,53 +65,89 @@
     NSString *typeName = self.typeArray[indexPath.row];
     if ([typeName isEqualToString:@"language"]) {
         //多语言
-        LYGeneralLanguageController *languageVC = [[LYGeneralLanguageController alloc] init];
-        [self.navigationController pushViewController:languageVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GeneralLanguageController];
+        [self.navigationController pushViewController:vc animated:YES];
 
     }else if ([typeName isEqualToString:@"search"]){
         //搜索
-//        id <LYGenneralSearchViewControllerProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYGenneralSearchViewControllerProtocol)];
-//        if ([obj isKindOfClass:[UIViewController class]]) {
-//
-//            LYGenneralSearchViewController *historyVC = [[LYGenneralSearchViewController alloc] init];
-//            [self.navigationController pushViewController:(UIViewController *)obj animated:YES];
-//        }
-        
-        LYGenneralSearchViewController *searchVC = [[LYGenneralSearchViewController alloc] init];
-        [self.navigationController pushViewController:searchVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GenneralSearchViewController];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([typeName isEqualToString:@"history"]) {
         //历史心情
-        LYCalendarMoodViewController *historyVC = [[LYCalendarMoodViewController alloc] init];
-        [self.navigationController pushViewController:historyVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_CalendarMoodViewController];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([typeName isEqualToString:@"export"]){
         //导出
-        LYExportMoodViewController *exportVC = [[LYExportMoodViewController alloc] init];
-        [self presentViewController:exportVC animated:YES completion:nil];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_ExportMoodViewController];
+        [self presentViewController:vc animated:YES completion:nil];
+        
+    }else if ([typeName isEqualToString:@"darkModel"]){
+        //夜间模式
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GeneralThemeSettingController];
+        [self.navigationController pushViewController:vc animated:YES];
         
     }else if ([typeName isEqualToString:@"noviceManual"]){
-        //新手指南
-        LYNoviceManualViewController *xinVC = [[LYNoviceManualViewController  alloc] init];
-        [self.navigationController pushViewController:xinVC animated:YES];
+        //新手指南 
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_PushWKWebViewController:@{@"url":LY_LocalizedString(@"kLYSettingCellNoviceURL"),
+                                                                                                 @"title":LY_LocalizedString(@"kLYSettingCellNovice")
+        }];
+        [self.navigationController pushViewController:vc animated:YES];
+        
     }else if ([typeName isEqualToString:@"protocol"]){
         //隐私协议
-        LYPrivacyAgreementViewController *privacyVC = [[LYPrivacyAgreementViewController alloc] init];
-        [self.navigationController pushViewController:privacyVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_PushWKWebViewController:@{@"url":LY_LocalizedString(@"kLYSettingCellPrivacyURL"),
+                                                                                                 @"title":LY_LocalizedString(@"kLYSettingCellPrivacy")
+        }];
+        [self.navigationController pushViewController:vc animated:YES];
         return;
     }else if ([typeName isEqualToString:@"aboutUs"]){
-        LYSettingViewController *viewController = [[LYSettingViewController alloc] init];
-        [self.navigationController pushViewController:viewController animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_SettingViewController];
+        [self.navigationController pushViewController:vc animated:YES];
     }else if ([typeName isEqualToString:@"version"]){
         NSString *str = [NSString stringWithFormat: @"%@%@",LY_LocalizedString(@"kLYSettingCurrentVersion"),[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
         [LYToastTool bottomShowWithText:str delay:1.f];
     }else if([typeName isEqualToString:@"passcode"]){
         
-        LYGeneraPasscodeViewController *privacyVC = [[LYGeneraPasscodeViewController alloc] init];
-        [self.navigationController pushViewController:privacyVC animated:YES];
+        UIViewController *vc = [[CTMediator sharedInstance] CTMediator_GeneraPasscodeViewController];
+        [self.navigationController pushViewController:vc animated:YES];
         return;
     }
     
+}
+
+- (UIViewController *)instanceOfViewController:(NSString *)aClassName
+{
+    Class aClass = NSClassFromString(aClassName);
+    if(aClass){
+        return (UIViewController *)[[aClass alloc] init];
+    }
+    LYLog(@"Undefined class '%@'", aClassName);
+    return nil;
+}
+
+- (void)performSelector:(NSObject*)vc selector:(NSString*)selector withObject:(id)object{
+    if(!vc){
+        LYLog(@"调用异常");
+        return;
+    }
+    SEL aSelector = NSSelectorFromString(selector);
+    if ([vc respondsToSelector:aSelector]) {
+        if(object == nil){
+            ((void (*)(id, SEL))[vc methodForSelector:aSelector])(vc, aSelector);
+        }
+        else{
+            ((void (*)(id, SEL, id))[vc methodForSelector:aSelector])(vc, aSelector, object);
+        }
+    }
+    else{
+#if DEBUG
+        NSString *reason = [NSString stringWithFormat:@"%@实例无法调用Setter方法(%@)", NSStringFromClass([vc class]), NSStringFromSelector(aSelector)];
+        LYLog(@"%@", reason);
+        [[NSException exceptionWithName:@"方法调用异常" reason:reason userInfo:@{}] raise];
+#endif
+    }
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -170,7 +195,7 @@
 - (NSMutableArray *)typeArray{
     if (!_typeArray) {
         _typeArray = [NSMutableArray array];
-        //,@"search"
+        //,@"search",@"darkModel"
         [_typeArray addObjectsFromArray:@[@"language",@"export",@"passcode",@"protocol",@"noviceManual",@"aboutUs"]];
     }
     return _typeArray;

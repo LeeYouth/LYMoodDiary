@@ -7,8 +7,6 @@
 //
 
 #import "LYTabbarViewController.h"
-#import "LYMoodDiaryHomePageController.h"
-#import "LYGeneralViewController.h"
 
 @interface LYTabbarViewController ()<UITabBarControllerDelegate>
 
@@ -48,13 +46,11 @@
 }
 
 - (NSArray *)viewControllers {
-    LYMoodDiaryHomePageController *first = [[LYMoodDiaryHomePageController alloc] init];
     UIViewController *homePageVC = [[CYLBaseNavigationController alloc]
-                                                   initWithRootViewController:first];
+                                                   initWithRootViewController:[[CTMediator sharedInstance] CTMediator_MoodDiaryHomePageController]];
 
-    LYGeneralViewController *second = [[LYGeneralViewController alloc] init];
     UIViewController *generalVC = [[CYLBaseNavigationController alloc]
-                                                    initWithRootViewController:second];
+                                                    initWithRootViewController:[[CTMediator sharedInstance] CTMediator_GeneralViewController]];
     [generalVC cyl_setHideNavigationBarSeparator:YES];
     
     return @[homePageVC,generalVC,];
@@ -79,56 +75,27 @@
 }
 
 - (void)customizeTabBarAppearance:(CYLTabBarController *)tabBarController {
-    // Customize UITabBar height
-    // 自定义 TabBar 高度
-    //        tabBarController.tabBarHeight = CYL_IS_IPHONE_X ? 65 : 40;
-    [tabBarController rootWindow].backgroundColor = [UIColor whiteColor];
-    
-    // set the text color for unselected state
-    // 普通状态下的文字属性
-    NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
-    normalAttrs[NSForegroundColorAttributeName] = [UIColor blackColor] ;
-    normalAttrs[NSFontAttributeName] = HPL11 ;
+        
+    dispatch_async(dispatch_get_main_queue(), ^{
+      // Customize UITabBar height
+          DKColorPicker picker = bgColor;
+          DKColorPicker shadowPicker = listTitleColor;
+          UIColor *barColor = picker(self.dk_manager.themeVersion);
+          UIColor *shadowColor = shadowPicker(self.dk_manager.themeVersion);
 
-    // set the text color for selected state
-    // 选中状态下的文字属性
-    NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSForegroundColorAttributeName] = themeButtonColor;
-    selectedAttrs[NSFontAttributeName] = HPL11 ;
-
-    // set the text Attributes
-    // 设置文字属性
-//    UITabBarItem *tabBar = [UITabBarItem appearance];
-//    [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
-//    [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
+          [tabBarController.tabBar setBackgroundImage:[[UIImage alloc] init]];
+          [tabBarController.tabBar setBackgroundColor: barColor];
+          [tabBarController.tabBar setTintColor:barColor];
+          [tabBarController.tabBar setShadowImage:[UIImage new]];
+          tabBarController.tabBar.clipsToBounds = NO;
+          tabBarController.tabBar.layer.shadowColor = shadowColor.CGColor;
+          tabBarController.tabBar.layer.shadowRadius = 5.0;
+          tabBarController.tabBar.layer.shadowOpacity = 0.2;
+          tabBarController.tabBar.layer.masksToBounds = NO;
+          tabBarController.tabBar.layer.shadowOffset = CGSizeMake(0, 3);
+        
+    });
     
-    // Set the dark color to selected tab (the dimmed background)
-    // TabBarItem选中后的背景颜色
-    //     [self customizeTabBarSelectionIndicatorImage];
-    
-    // update TabBar when TabBarItem width did update
-    // If your app need support UIDeviceOrientationLandscapeLeft or UIDeviceOrientationLandscapeRight，
-    // remove the comment '//'
-    // 如果你的App需要支持横竖屏，请使用该方法移除注释 '//'
-    
-    // set the bar shadow image
-    // This shadow image attribute is ignored if the tab bar does not also have a custom background image.So at least set somthing.
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setBackgroundColor: [UIColor whiteColor]];
-    // [[UITabBar appearance] setBackgroundImage:[[self class] imageWithColor: [UIColor blackColor] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, tabBarController.tabBarHeight ?: (CYL_IS_IPHONE_X ? 65 : 40))]];
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-    //Three way to deal with shadow 三种阴影处理方式：
-    // NO.3, without shadow
-    [[UITabBar appearance] setShadowImage:[UIImage new]];
-    //NO.2，using Image
-    //    [[UITabBar appearance] setShadowImage:[UIImage imageNamed:@"TabBar_Bg_Shadow"]];
-    //NO.1，using layer to add shadow. note:recommended. 推荐该方式，可以给PlusButton突出的部分也添加上阴影
-    tabBarController.tabBar.clipsToBounds = NO;
-    tabBarController.tabBar.layer.shadowColor = [UIColor blackColor].CGColor;
-    tabBarController.tabBar.layer.shadowRadius = 5.0;
-    tabBarController.tabBar.layer.shadowOpacity = 0.2;
-    tabBarController.tabBar.layer.masksToBounds = NO;
-    tabBarController.tabBar.layer.shadowOffset = CGSizeMake(0, 3);
 }
 
 @end

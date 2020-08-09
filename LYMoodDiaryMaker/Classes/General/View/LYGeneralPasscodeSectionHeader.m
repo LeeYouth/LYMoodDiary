@@ -21,7 +21,7 @@
     if ([super init]) {
         self.userInteractionEnabled = YES;
         
-        self.backgroundColor = white_color;
+        self.dk_backgroundColorPicker = bgColor;
         [self addSubview:self.titleLabel];
         [self addSubview:self.detailLabel];
         
@@ -89,7 +89,7 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.font = HPR18;
         view;
     }));
@@ -97,7 +97,7 @@
 - (UILabel *)detailLabel{
     return LY_LAZY(_detailLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.font = HPL15;
         view.numberOfLines = 0;
         view;

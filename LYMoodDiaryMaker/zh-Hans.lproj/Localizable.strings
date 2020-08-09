@@ -34,12 +34,20 @@ kLYSettingCellSearch    = "搜索";
 kLYSettingCellHistory   = "心情史";
 kLYSettingCellExport    = "导出CSV";
 kLYSettingCellNovice    = "新手指南";
+kLYSettingCellNoviceURL = "https://leeyouth.github.io/2018/01/01/writemood-howtouse/";
 kLYSettingCellRate      = "去评分";
 kLYSettingCellPrivacy   = "隐私协议";
+kLYSettingCellPrivacyURL= "https://leeyouth.github.io/2018/01/01/writemood-protocol/";
 kLYSettingCellAbout     = "关于";
 kLYSettingCellVersion   = "版本号";
 kLYSettingCellPasscode  = "密码";
 kLYSettingCellSupport   = "支持";
+kLYSettingCellSupportURL= "https://leeyouth.github.io/2018/01/01/tigernote-support/";
+kLYSettingCellDarkModel = "夜间模式";
+kLYSettingCellDarkModelSystem = "跟随系统";
+kLYSettingCellDarkModelLight  = "日间模式";
+kLYSettingCellDarkModelDark   = "夜间模式";
+
 kLYSettingCurrentVersion= "当前版本号";
 
 kLYGeneralPasscodeset     = "设置密码";

@@ -26,10 +26,11 @@
     
     
     self.defultLanguage = [LYLocalizedConfig userLanguage] ? :@"defult";
-    
+    DKImagePicker picker = DKImagePickerWithNames(@"navBar_saveicon",@"navBar_saveicon-dark");
+
     self.title = LY_LocalizedString(@"kLYSettingCellLanguage");
-    self.navBarView.rightBarItemImage = nil;
-    self.navBarView.rightItemTitle = LY_LocalizedString(@"kLYNavigationMoodSave");
+    self.navBarView.rightBarItemImage = picker;
+//    self.navBarView.rightItemTitle = LY_LocalizedString(@"kLYNavigationMoodSave");
     WEAKSELF(weakSelf);
     self.navBarView.btnBlock = ^(UIButton *sender) {
         [weakSelf.view endEditing:YES];

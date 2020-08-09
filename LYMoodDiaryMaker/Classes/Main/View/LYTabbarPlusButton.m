@@ -32,11 +32,7 @@
 - (void)clickPublish {
     CYLTabBarController *tabBarController = [self cyl_tabBarController];
     UIViewController *viewController = tabBarController.selectedViewController;
-    
-//    id <LYWriteMoodDiaryViewProtocol> obj = [[BeeHive shareInstance] createService:@protocol(LYWriteMoodDiaryViewProtocol)];
-//    if ([obj isKindOfClass:[UIViewController class]]) {
-//        [viewController presentViewController:(UIViewController *)obj animated:YES completion:nil];
-//    }
+    [viewController presentViewController:[[CTMediator sharedInstance] CTMediator_WriteMoodDiaryViewController:nil] animated:YES completion:nil];
 }
 
 #pragma mark - CYLPlusButtonSubclassing

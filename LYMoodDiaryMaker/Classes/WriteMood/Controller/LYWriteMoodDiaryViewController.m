@@ -51,8 +51,11 @@
 - (void)setupSubViews{
     
     WEAKSELF(weakSelf);
-    self.navBarView.leftBarItemImage  = [UIImage imageNamed:@"navBar_closeicon"];
-    self.navBarView.rightBarItemImage = [UIImage imageNamed:@"navBar_saveicon"];
+    DKImagePicker picker = DKImagePickerWithNames(@"navBar_closeicon",@"navBar_closeicon-dark");
+    DKImagePicker picker1 = DKImagePickerWithNames(@"navBar_saveicon",@"navBar_saveicon-dark");
+
+    self.navBarView.leftBarItemImage  = picker;
+    self.navBarView.rightBarItemImage = picker1;
     self.navBarView.navColor = bgColor;
     self.navBarView.btnBlock = ^(UIButton *sender) {
         [weakSelf.view endEditing:YES];
@@ -73,7 +76,7 @@
         }
     };
     
-    self.tableView.backgroundColor = tableViewBgColor;
+    self.tableView.dk_backgroundColorPicker = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     [self setupTableHeaderUI];

@@ -39,7 +39,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget: self action: @selector(touchOutSide)];
     [_menuBackView addGestureRecognizer: tap];
     self.alpha = 0;
-    self.backgroundColor = bgColor;
+    self.dk_backgroundColorPicker = bgColor;
     [self addSubview:self.iconImageView];
     [self addSubview:self.titleLabel];
     [self addSubview:self.okButton];
@@ -182,7 +182,8 @@
 - (UIButton *)okButton{
     return LY_LAZY(_okButton, ({
         UIButton *view = [UIButton new];
-        [view setBackgroundImage:[UIImage createImageWithColor:themeButtonColor] forState:UIControlStateNormal];
+        UIImage *image = [UIImage createImageWithColor:LYHexRGB(0xfe4365)];
+        [view dk_setBackgroundImage:DKImagePickerWithImages(image,image) forState:UIControlStateNormal];
         [view setTitleColor:white_color forState:UIControlStateNormal];
         [view setTitle:LY_LocalizedString(@"kLYHomePageGuideOK") forState:UIControlStateNormal];
         view.titleLabel.font = HPL20;

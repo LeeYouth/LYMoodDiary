@@ -25,7 +25,9 @@
     [super viewDidLoad];
     
     WEAKSELF(weakSelf);
-    self.navBarView.rightBarItemImage = [UIImage imageNamed:@"homepage_addMoodDiary_calendar"];
+    DKImagePicker picker = DKImagePickerWithNames(@"homepage_addMoodDiary_calendar",@"homepage_addMoodDiary_calendar");
+
+    self.navBarView.rightBarItemImage = picker;
     self.navBarView.btnBlock = ^(UIButton *sender) {
         if (sender.tag == 0) {
             //返回
@@ -36,7 +38,7 @@
         }
     };
     
-    self.tableView.backgroundColor = tableViewBgColor;
+    self.tableView.dk_backgroundColorPicker = tableViewBgColor;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     LYBaseCustomTableHeaderView *headView = [[LYBaseCustomTableHeaderView alloc] init];
@@ -87,9 +89,7 @@
     //进入预览
     //进入预览
     LYMoodDiaryModel *model = self.dataArray[indexPath.row];
-    LYMoodDiaryPreviewViewController *previewVC = [[LYMoodDiaryPreviewViewController alloc] init];
-    previewVC.creatDate = model.enterDate;
-    [self.navigationController pushViewController:previewVC animated:YES];
+    [self.navigationController pushViewController:[[CTMediator sharedInstance] CTMediator_MoodDiaryPreviewViewControllerWithDate:model.enterDate] animated:YES];
 }
 #pragma mark - 选择日期
 - (void)calendarPickerDate{

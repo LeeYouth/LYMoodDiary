@@ -18,20 +18,90 @@ PODS:
   - CYLTabBarController (1.24.1):
     - CYLTabBarController/Core (= 1.24.1)
   - CYLTabBarController/Core (1.24.1)
+  - DKNightVersion (2.4.3):
+    - DKNightVersion/Core (= 2.4.3)
+    - DKNightVersion/CoreAnimation (= 2.4.3)
+    - DKNightVersion/UIKit (= 2.4.3)
+  - DKNightVersion/Core (2.4.3):
+    - DKNightVersion/Core/DeallocBlockExecutor (= 2.4.3)
+    - DKNightVersion/Core/extobjc (= 2.4.3)
+  - DKNightVersion/Core/DeallocBlockExecutor (2.4.3)
+  - DKNightVersion/Core/extobjc (2.4.3)
+  - DKNightVersion/CoreAnimation (2.4.3):
+    - DKNightVersion/Core
+  - DKNightVersion/UIKit (2.4.3):
+    - DKNightVersion/Core
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - FSCalendar (2.8.0)
   - IQKeyboardManager (6.2.0)
   - JGProgressHUD (2.1)
-  - LYCommonKit (0.1.8):
+  - LYCommonKit (0.1.15):
     - AFNetworking
+    - DKNightVersion
+    - FMDB
+    - JGProgressHUD
+    - LYCommonKit/BGFMDB (= 0.1.15)
+    - LYCommonKit/Macros (= 0.1.15)
+    - LYCommonKit/Manager (= 0.1.15)
+    - MBProgressHUD
+    - YYKit
+  - LYCommonKit/BGFMDB (0.1.15):
+    - AFNetworking
+    - DKNightVersion
     - FMDB
     - JGProgressHUD
     - MBProgressHUD
     - YYKit
-  - LYCommonUIKit (0.1.1):
+  - LYCommonKit/Macros (0.1.15):
+    - AFNetworking
+    - DKNightVersion
+    - FMDB
+    - JGProgressHUD
+    - MBProgressHUD
+    - YYKit
+  - LYCommonKit/Manager (0.1.15):
+    - AFNetworking
+    - DKNightVersion
+    - FMDB
+    - JGProgressHUD
+    - LYCommonKit/BGFMDB
+    - LYCommonKit/Macros
+    - MBProgressHUD
+    - YYKit
+  - LYCommonUIKit (0.1.14):
     - LYCommonKit
+    - LYCommonUIKit/BaseController (= 0.1.14)
+    - LYCommonUIKit/BaseView (= 0.1.14)
+    - LYCommonUIKit/Category (= 0.1.14)
+    - LYCommonUIKit/EmptyView (= 0.1.14)
+    - LYCommonUIKit/Passcode (= 0.1.14)
+    - Masonry
+    - SDWebImage
+  - LYCommonUIKit/BaseController (0.1.14):
+    - LYCommonKit
+    - LYCommonUIKit/BaseView
+    - Masonry
+    - SDWebImage
+  - LYCommonUIKit/BaseView (0.1.14):
+    - LYCommonKit
+    - LYCommonUIKit/Category
+    - Masonry
+    - SDWebImage
+  - LYCommonUIKit/Category (0.1.14):
+    - LYCommonKit
+    - Masonry
+    - SDWebImage
+  - LYCommonUIKit/EmptyView (0.1.14):
+    - LYCommonKit
+    - LYCommonUIKit/Category
+    - Masonry
+    - SDWebImage
+  - LYCommonUIKit/Passcode (0.1.14):
+    - LYCommonKit
+    - LYCommonUIKit/BaseController
+    - LYCommonUIKit/BaseView
     - Masonry
     - SDWebImage
   - Masonry (1.1.0)
@@ -60,8 +130,8 @@ DEPENDENCIES:
   - CYLTabBarController (~> 1.24.0)
   - FSCalendar
   - IQKeyboardManager
-  - LYCommonKit (~> 0.1.8)
-  - LYCommonUIKit (~> 0.1.1)
+  - LYCommonKit (~> 0.1.15)
+  - LYCommonUIKit (~> 0.1.14)
   - MSWeakTimer (~> 1.1.0)
   - UMCAnalytics
   - UMCCommon
@@ -74,6 +144,7 @@ SPEC REPOS:
     - AFNetworking
     - CTMediator
     - CYLTabBarController
+    - DKNightVersion
     - FMDB
     - FSCalendar
     - IQKeyboardManager
@@ -96,12 +167,13 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   CYLTabBarController: 46fa053a2fb165095e04792431ad91a759bb7f9f
+  DKNightVersion: eaa80cc4014b4bae7d4b535fd87ecc6a3c2767b3
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
-  LYCommonKit: 20e21f86e7b14c1fec2feaebb16952c9ef64407e
-  LYCommonUIKit: 7047b7be4a37be6a88d326af67aed9d4a337ae12
+  LYCommonKit: 843db00bcbea514a93a9cf3126e1101fe68af701
+  LYCommonUIKit: 94bed432655f0f50fd52fe3b208bb5b34c309d8b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MSWeakTimer: 9426150f933b80ed3acf3f6d228e4b61f0e303c8
@@ -113,6 +185,6 @@ SPEC CHECKSUMS:
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 7bd8ca8824347a153370eeb9af520b54bc700766
+PODFILE CHECKSUM: c1948b10f260444f2e299a9b6be6c5b8e5754d63
 
 COCOAPODS: 1.9.1

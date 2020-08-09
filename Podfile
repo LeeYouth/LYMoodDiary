@@ -20,8 +20,8 @@ target 'LYMoodDiaryMaker' do
     pod 'CTMediator'
 
     # 私有库
-    pod 'LYCommonKit', '~> 0.1.8'
-    pod 'LYCommonUIKit', '~> 0.1.1'
+    pod 'LYCommonKit', '~> 0.1.15'
+    pod 'LYCommonUIKit', '~> 0.1.14'
 
 
 

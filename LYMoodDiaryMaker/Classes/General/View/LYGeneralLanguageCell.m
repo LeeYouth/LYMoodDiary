@@ -31,6 +31,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.dk_backgroundColorPicker = bgColor;
         [self setUpSubViews];
     }
     return self;
@@ -61,7 +62,7 @@
         make.left.equalTo(self.mas_left).offset(leftMargin);
         make.right.equalTo(self.mas_right).offset(-leftMargin);
         make.bottom.equalTo(self);
-        make.height.mas_equalTo(@0.8);
+        make.height.mas_equalTo(@(kLYCellLineHeight));
     }];
     
     self.height = 68;
@@ -88,6 +89,13 @@
     }else if([typeName isEqualToString:@"ko"]){
         self.titleLabel.text = LY_LocalizedString(@"kLYGeneralLanguageKorean");
     }
+    if ([typeName isEqualToString:@"flowSystem"]) {
+        self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellDarkModelSystem");
+    }else if ([typeName isEqualToString:@"night"]){
+        self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellDarkModelLight");
+    }else if ([typeName isEqualToString:@"dark"]){
+        self.titleLabel.text = LY_LocalizedString(@"kLYSettingCellDarkModelDark");
+    }
     
 }
 - (void)setIsCheck:(BOOL)isCheck{
@@ -106,7 +114,7 @@
 - (UIView *)lineView{
     return LY_LAZY(_lineView, ({
         UIView *view = [UIView new];
-        view.backgroundColor = sepLineColor;
+        view.dk_backgroundColorPicker = sepLineColor;
         view;
     }));
 }
@@ -121,7 +129,7 @@
 - (UILabel *)titleLabel{
     return LY_LAZY(_titleLabel, ({
         UILabel *view = [UILabel new];
-        view.textColor = black_color;
+        view.dk_textColorPicker = listTitleColor;
         view.font = HPL18;
         view;
     }));
